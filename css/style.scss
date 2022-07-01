@@ -1,0 +1,322 @@
+$main-color: #FFFFFF;
+$second-color: #438A9C;
+$three-color: #33302E;
+$form-color: #F3F3F0;
+$four-color: #190F14;
+$text-product-color: #747468;
+
+$border-color: #E8E8E8;
+
+$orange-main-color: #EA5D1A;
+$btn-hover-color: #F08D5F;
+$btn-second-color: #FFFFFF;
+
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+
+//helper class
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-evenly {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container {
+    width: 1436px;
+    margin: 0 auto 0;
+}
+
+@media (max-width: 1510px) {
+    .main-container {
+        width: 95%;
+    }
+}
+
+.second-container {
+    width: 952px;
+    margin: 0 auto 0;
+}
+
+.btn {
+    @extend .flex-row, .flex-center;
+    height: 48px;
+    font-weight: $font-bold;
+    font-size: 1rem;
+    line-height: 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+        svg {
+            margin-right: 15px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+}
+
+//code
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 104px;
+    background-color: $second-color;
+}
+
+.desktop-nav {
+    height: 104px;
+    @extend .flex-row, .flex-between;
+}
+
+.second-nav-item-desktop {
+    @extend .flex-row;
+
+    button:first-child {
+        position: relative;
+        width: 141px;
+        margin-right: 15px;
+        background: transparent;
+        border: 2px solid $btn-second-color;
+        color: $btn-second-color;
+        
+        .phone-button {
+            position: absolute;
+        }
+    }
+
+    button:nth-child(2) {
+        color: $four-color;
+        width: 200px;
+    }
+}
+
+.second-nav-item-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    header, .desktop-nav {
+        height: 74px;
+
+        svg {
+            max-width: 106px;
+        }
+    }
+
+    .second-nav-item-mobile {
+        display: block;
+        
+        button {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .second-nav-item-desktop {
+        display: none;
+    }
+}
+
+.home-section {
+    position: relative;
+    min-height: 80vh;
+    background-color: $second-color;
+     
+    .home-bg-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1;
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+}
+
+.home-container {
+    @extend .flex-col, .flex-center;
+    align-items: flex-start;
+    position: relative;
+    height: 80vh;
+    z-index: 10;
+
+    .home-title {
+        color: $btn-second-color;
+        h1 {
+            margin-top: 0;
+            font-weight: $font-bold;
+            font-size: 4rem;
+            line-height: 72px;
+            width: 70%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: $font-light;
+            line-height: 42px;
+
+            span {
+                font-weight: $font-bold;
+            }
+        }
+    }
+}
+
+.search-console {
+    @extend .flex-col, .flex-center;
+    margin-top: 5%;
+    align-items: flex-end;
+    width: 1070px;
+    height: 200px;
+    background-color: $main-color;
+
+    .console-items-container {
+        width: 100%;
+        @extend .flex-row, .flex-evenly;
+
+        .console-item {
+            @extend .flex-col;
+            position: relative;
+            width: 244px;
+            p {
+                color: $text-product-color;
+                font-weight: $font-bold;
+                font-size: 0.9rem;
+                line-height: 28px;
+                margin-bottom: 8px;
+            }
+
+            .selected-option {
+                @extend .flex-row, .flex-between;
+                border: 1px solid $border-color;
+                cursor: pointer;
+                user-select: none;
+
+                p {
+                    color: $four-color;
+                    font-weight: $font-bold;
+                    font-size: 0.9rem;
+                    line-height: 30px;
+                }
+                
+                svg, p {
+                    padding: 0 16px;
+                }
+
+                &--active {
+                    border-color: $orange-main-color;
+                }
+
+                &--active svg {
+                    transform: rotate(-180deg);
+                }
+            }
+
+            .dropdown-list {
+                position: absolute;
+                display: none;
+                box-sizing: border-box;
+                width: 244px;
+                max-height: 250px;
+                overflow-y: scroll;
+                padding: 16px 20px 16px;
+                top: 100px;
+                background-color: $main-color;
+                border: 1px  solid $border-color;
+                user-select: none;
+        
+                li {
+                    font-size: 0.9rem;
+                    font-weight: $font-bold;
+                    color: $four-color;
+                    list-style-type: none;
+                    padding: 8px 0;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $orange-main-color;
+                    }
+                }
+
+                .dropdown-border {
+                    width: 100%;
+                    height: 1px;
+                    padding: 0;
+                    background-color: $border-color;
+                    margin: 6px auto 6px
+                }
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $orange-main-color;
+                }
+
+                &--active {
+                    display: block;
+                }
+            }
+        }
+    
+    }
+
+    .console-button-container {
+        @extend .flex-row, .flex-center;
+        margin: 16px 20px 0 0;
+
+        button:first-child {
+            margin-right: 18px;
+            background: transparent;
+            font-weight: $font-bold;
+            font-size: 0.8rem;
+
+            svg {
+                margin: 0 0 0 8px;
+            }
+        }
+
+        button:nth-child(2) {
+            width: 240px;
+            color: $btn-second-color;
+            background-color: $orange-main-color;
+        }
+    }
+}
+
+
+
+
