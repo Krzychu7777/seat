@@ -1,19 +1,19 @@
-.flex-row, .search-console .console-button-container, .search-console .console-items-container .console-item .selected-option, .search-console .console-items-container, .second-nav-item-desktop, .desktop-nav, .btn {
+.flex-row, .checkbox-container, .form-input, .finded-elements-pagination, .find-element .right-find-panel .footer-find-element, .find-element .right-find-panel .element-category-container, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .find-element, .finded-header .find-sorting .sorting-item, .finded-header .find-sorting, .finded-header, .search-console .console-button-container, .search-console .console-items-container .console-item .selected-option, .search-console .console-items-container, .second-nav-item-desktop, .desktop-nav, .btn, .find-element .right-find-panel .footer-find-element button {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .search-console .console-items-container .console-item, .search-console, .home-container {
+.flex-col, .input-wrapper, .form-container, .contact-form-title, .finded-items-container, .search-console .console-items-container .console-item, .search-console, .home-container {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .search-console .console-button-container, .search-console, .home-container, .btn {
+.flex-center, .contact-form-title, .finded-elements-pagination, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .finded-items-container, .search-console .console-button-container, .search-console, .home-container, .btn, .find-element .right-find-panel .footer-find-element button {
   justify-content: center;
   align-items: center;
 }
 
-.flex-between, .search-console .console-items-container .console-item .selected-option, .desktop-nav {
+.flex-between, .find-element .right-find-panel .footer-find-element, .find-element .right-find-panel .element-category-container, .finded-header .find-sorting .sorting-item, .finded-header, .search-console .console-items-container .console-item .selected-option, .desktop-nav {
   justify-content: space-between;
   align-items: center;
 }
@@ -38,7 +38,7 @@
   margin: 0 auto 0;
 }
 
-.btn {
+.btn, .find-element .right-find-panel .footer-find-element button {
   height: 48px;
   font-weight: 700;
   font-size: 1rem;
@@ -47,11 +47,60 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.btn svg {
+.btn svg, .find-element .right-find-panel .footer-find-element button svg {
   margin-right: 15px;
 }
-.btn:hover {
+.btn:hover, .find-element .right-find-panel .footer-find-element button:hover {
   opacity: 0.8;
+}
+
+.select-style, .finded-header .find-sorting .sorting-item, .search-console .console-items-container .console-item .selected-option {
+  border: 1px solid #E8E8E8;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.select-style p, .finded-header .find-sorting .sorting-item p, .search-console .console-items-container .console-item .selected-option p {
+  color: #190F14;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 30px;
+}
+.select-style svg, .finded-header .find-sorting .sorting-item svg, .search-console .console-items-container .console-item .selected-option svg, .select-style p, .finded-header .find-sorting .sorting-item p, .search-console .console-items-container .console-item .selected-option p {
+  padding: 0 16px;
+}
+
+.input-style, textarea, .form-input input {
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #E8E8E8;
+  padding: 0 20px;
+  outline: none;
+  font-size: 1rem;
+  color: #0F0F0F;
+}
+
+textarea::-moz-placeholder, .form-input input::-moz-placeholder {
+  color: #747468;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 26px;
+}
+
+textarea:-ms-input-placeholder, .form-input input:-ms-input-placeholder {
+  color: #747468;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 26px;
+}
+
+.placeholder-style, textarea::placeholder, .form-input input::placeholder {
+  color: #747468;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 26px;
 }
 
 body {
@@ -68,6 +117,7 @@ header {
   right: 0;
   height: 104px;
   background-color: #438A9C;
+  z-index: 99999;
 }
 
 .desktop-nav {
@@ -177,23 +227,6 @@ header {
   line-height: 28px;
   margin-bottom: 8px;
 }
-.search-console .console-items-container .console-item .selected-option {
-  border: 1px solid #E8E8E8;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.search-console .console-items-container .console-item .selected-option p {
-  color: #190F14;
-  font-weight: 700;
-  font-size: 0.9rem;
-  line-height: 30px;
-}
-.search-console .console-items-container .console-item .selected-option svg, .search-console .console-items-container .console-item .selected-option p {
-  padding: 0 16px;
-}
 .search-console .console-items-container .console-item .selected-option--active {
   border-color: #EA5D1A;
 }
@@ -259,4 +292,319 @@ header {
   width: 240px;
   color: #FFFFFF;
   background-color: #EA5D1A;
+}
+
+.finded-section {
+  min-height: 80vh;
+  margin: 0;
+  padding: 3% 0 3%;
+}
+
+.finded-header {
+  color: #190F14;
+}
+.finded-header h1 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 48px;
+}
+.finded-header h1 span {
+  color: #EA5D1A;
+}
+.finded-header .find-sorting {
+  gap: 24px;
+}
+.finded-header .find-sorting .sorting-item-container {
+  position: relative;
+}
+.finded-header .find-sorting .sorting-item {
+  position: relative;
+  height: 52px;
+  width: 240px;
+}
+.finded-header .find-sorting .selected-option--active {
+  border-color: #EA5D1A;
+}
+.finded-header .find-sorting .selected-option--active svg {
+  transform: rotate(-180deg);
+}
+.finded-header .find-sorting .sort-options {
+  position: absolute;
+  box-sizing: border-box;
+  min-height: 250px;
+  padding: 16px 20px 16px;
+  width: 100%;
+  top: 50px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.finded-header .find-sorting .sort-options li {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #190F14;
+  list-style-type: none;
+  padding: 8px 0;
+  cursor: pointer;
+}
+.finded-header .find-sorting .sort-options li:hover {
+  color: #EA5D1A;
+}
+.finded-header .find-sorting .sort-options .dropdown-border {
+  width: 100%;
+  height: 1px;
+  padding: 0;
+  background-color: #E8E8E8;
+  margin: 6px auto 6px;
+}
+.finded-header .find-sorting .dropdown-list {
+  display: none;
+}
+.finded-header .find-sorting .dropdown-list--active {
+  display: block;
+}
+.finded-header .find-sorting p {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 28px;
+  color: #747468;
+}
+
+.finded-items-container {
+  gap: 24px;
+  margin-top: 5%;
+}
+
+.find-element {
+  width: 100%;
+  height: 310px;
+  border: 1px solid #E8E8E8;
+}
+.find-element .image-find-container {
+  z-index: -1;
+}
+.find-element .image-find-container img {
+  max-height: 310px;
+  min-height: 310px;
+}
+.find-element .right-find-panel {
+  width: 100%;
+  padding: 0 32px;
+}
+.find-element .right-find-panel h1 {
+  margin-bottom: 0;
+  color: #190F14;
+  font-weight: 700;
+  line-height: 25px;
+  font-size: 1.4rem;
+}
+.find-element .right-find-panel .element-description {
+  justify-content: flex-start;
+  margin-top: 13px;
+}
+.find-element .right-find-panel .element-description .new, .find-element .right-find-panel .element-description .used {
+  margin: 0;
+  background-color: black;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.find-element .right-find-panel .element-description .used {
+  color: #190F14;
+  background-color: #F3F3F0;
+}
+.find-element .right-find-panel .element-description p {
+  margin: 0;
+  font-size: 1rem;
+}
+.find-element .right-find-panel .element-description p:nth-child(2) {
+  margin-left: 24px;
+}
+.find-element .right-find-panel .element-description p:nth-child(3) {
+  margin-left: 24px;
+}
+.find-element .right-find-panel .element-description p:nth-child(3) svg {
+  margin-right: 10px;
+}
+.find-element .right-find-panel .element-category-container {
+  margin-top: 24px;
+}
+.find-element .right-find-panel .element-category-container .category-element {
+  color: #190F14;
+  padding-right: 7%;
+}
+.find-element .right-find-panel .element-category-container .category-element h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #747468;
+  line-height: 24px;
+}
+.find-element .right-find-panel .element-category-container .category-element p {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 24px;
+}
+.find-element .right-find-panel .footer-find-element {
+  align-items: center;
+  margin-top: 40px;
+}
+.find-element .right-find-panel .footer-find-element .prize {
+  color: #EA5D1A;
+}
+.find-element .right-find-panel .footer-find-element .prize h3 {
+  margin: 0;
+  color: #190F14;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 28px;
+}
+.find-element .right-find-panel .footer-find-element .prize p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 40px;
+}
+.find-element .right-find-panel .footer-find-element button {
+  width: 170px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #EA5D1A;
+  background: transparent;
+  border: 2px solid #EA5D1A;
+}
+
+.finded-elements-pagination {
+  margin-top: 3%;
+  gap: 13px;
+}
+.finded-elements-pagination button {
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #190F14;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-radius: 3px;
+  border: 1px solid #E8E8E8;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.finded-elements-pagination button:hover {
+  background-color: #F08D5F;
+  color: white;
+}
+.finded-elements-pagination button:hover svg {
+  fill: white;
+}
+.finded-elements-pagination button:active {
+  background-color: #EA5D1A;
+  color: white;
+}
+.finded-elements-pagination .active-btn {
+  background-color: #EA5D1A !important;
+  color: white;
+}
+
+.contact-form-section {
+  min-height: 80vh;
+  margin: 0;
+  background-color: #F3F3F0;
+  padding: 5% 0 5%;
+}
+
+.contact-form-title {
+  font-weight: 700;
+  text-align: center;
+  color: #0F0F0F;
+}
+.contact-form-title h1, .contact-form-title h2, .contact-form-title p {
+  width: 75%;
+}
+.contact-form-title h1 {
+  font-size: 1rem;
+  line-height: 30px;
+}
+.contact-form-title h2 {
+  margin: 16px 0;
+  font-size: 3rem;
+  line-height: 52px;
+}
+.contact-form-title p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.11px;
+}
+
+.form-container {
+  margin-top: 5%;
+}
+
+.input-wrapper {
+  gap: 16px;
+}
+
+.form-input {
+  gap: 16px;
+}
+.form-input input {
+  width: 100%;
+  height: 48px;
+}
+.form-input input:focus {
+  border-color: black;
+}
+textarea {
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
+  min-height: 180px;
+  max-height: 240px;
+  padding: 14px 20px;
+}
+.checkbox-container {
+  gap: 13px;
+  margin-top: 16px;
+}
+.checkbox-container input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 2px;
+  min-width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid #E1E1E1;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.checkbox-container input::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background-color: #EA5D1A;
+  transform: scale(0);
+  transition: 0.1s ease-in-out;
+}
+.checkbox-container input:checked::before {
+  transform: scale(1);
+}
+.checkbox-container label {
+  color: #0F0F0F;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

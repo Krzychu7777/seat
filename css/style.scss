@@ -10,6 +10,7 @@ $border-color: #E8E8E8;
 $orange-main-color: #EA5D1A;
 $btn-hover-color: #F08D5F;
 $btn-second-color: #FFFFFF;
+$form-color-text: #0F0F0F;
 
 $font-light: 300;
 $font-regular: 400;
@@ -76,6 +77,40 @@ $font-bold: 700;
         }
 }
 
+.select-style {
+    border: 1px solid $border-color;
+                cursor: pointer;
+                user-select: none;
+
+                p {
+                    color: $four-color;
+                    font-weight: $font-bold;
+                    font-size: 0.9rem;
+                    line-height: 30px;
+                }
+                
+                svg, p {
+                    padding: 0 16px;
+                }
+}
+
+.input-style {
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid $border-color;
+    padding: 0 20px;
+    outline: none;
+    font-size: 1rem;
+    color: $form-color-text;
+}
+
+.placeholder-style {
+    color: #747468;
+    font-weight: $font-regular;
+    font-size: 1rem;
+    line-height: 26px;
+}
+
 //code
 
 body {
@@ -91,6 +126,7 @@ header {
     right: 0;
     height: 104px;
     background-color: $second-color;
+    z-index: 99999;
 }
 
 .desktop-nav {
@@ -219,21 +255,7 @@ header {
             }
 
             .selected-option {
-                @extend .flex-row, .flex-between;
-                border: 1px solid $border-color;
-                cursor: pointer;
-                user-select: none;
-
-                p {
-                    color: $four-color;
-                    font-weight: $font-bold;
-                    font-size: 0.9rem;
-                    line-height: 30px;
-                }
-                
-                svg, p {
-                    padding: 0 16px;
-                }
+                @extend .flex-row, .flex-between, .select-style;
 
                 &--active {
                     border-color: $orange-main-color;
@@ -317,6 +339,394 @@ header {
     }
 }
 
+.finded-section {
+    min-height: 80vh;
+    margin: 0;
+    padding: 3% 0 3%;
+}
 
+.finded-header {
+    @extend .flex-row, .flex-between;
+    color: $four-color;
 
+    h1 {
+        font-weight: $font-bold;
+        font-size: 1.9rem;
+        line-height: 48px;
+
+        span {
+            color: $orange-main-color;
+        }
+    }
+
+    .find-sorting {
+        @extend .flex-row;
+        gap: 24px;
+
+        .sorting-item-container {
+            position: relative;
+        }
+        
+        .sorting-item {
+            position: relative;
+            @extend .select-style, .flex-row, .flex-between;
+            height: 52px;
+            width: 240px;
+
+        }
+
+        .selected-option {
+            &--active {
+                border-color: $orange-main-color;
+            }
+
+            &--active svg{
+                transform: rotate(-180deg);
+            }
+        }
+
+        .sort-options {
+            position: absolute;
+            box-sizing: border-box;
+            min-height: 250px;
+            padding: 16px 20px 16px;
+            width: 100%;
+            top: 50px;
+            background-color: $main-color;
+            border: 1px  solid $border-color;
+            user-select: none;
+            
+            li {
+                font-size: 0.9rem;
+                font-weight: $font-bold;
+                color: $four-color;
+                list-style-type: none;
+                padding: 8px 0;
+                cursor: pointer;
+        
+                &:hover {
+                    color: $orange-main-color;
+                    }
+                }
+        
+                .dropdown-border {
+                    width: 100%;
+                    height: 1px;
+                    padding: 0;
+                    background-color: $border-color;
+                    margin: 6px auto 6px
+                }
+        }
+
+        .dropdown-list {
+            display: none;
+            &--active {
+                display: block;
+            }
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 28px;
+            color: $text-product-color;
+        }
+
+    }
+}
+
+.finded-items-container {
+    @extend .flex-col, .flex-center;
+    gap: 24px;
+    margin-top: 5%
+}
+
+.find-element {
+    @extend .flex-row;
+    width: 100%;
+    height: 310px;
+    border: 1px solid $border-color;
+
+    .image-find-container {
+        @extend .flex-row, .flex-center;
+        z-index: -1;
+
+        img {
+            max-height: 310px;
+            min-height: 310px;
+        }
+    }
+
+    .right-find-panel {
+        width: 100%;
+        padding: 0 32px;
+
+        h1 {
+            margin-bottom: 0;
+            color: $four-color;
+            font-weight: $font-bold;
+            line-height: 25px;
+            font-size: 1.4rem;
+        }
+
+        .element-description {
+            @extend .flex-row, .flex-center;
+            justify-content: flex-start;
+            margin-top: 13px;
+            
+            .new {
+                margin: 0;
+                background-color: black;
+                color: white;
+                padding: 3px 8px;
+                border-radius: 3px;
+                font-weight: $font-bold;
+                font-size: 0.8rem;
+            }
+
+            .used {
+                @extend .new;
+                color: $four-color;
+                background-color: $form-color;
+            }
+
+            p {
+                margin: 0;
+                font-size: 1rem;
+
+                &:nth-child(2) {
+                    margin-left: 24px;
+                }
+
+                &:nth-child(3) {
+                    margin-left: 24px;
+                    @extend .flex-row, .flex-center;
+
+                    svg {
+                        margin-right: 10px
+                    }
+                }
+            }
+        }
+    
+        .element-category-container {
+            @extend .flex-row, .flex-between;
+            margin-top: 24px;
+
+            .category-element {
+                color: $four-color;
+                padding-right: 7%;
+                
+                h2 {
+                    margin: 0;
+                    font-weight: $font-medium;
+                    font-size: 0.9rem;
+                    color: $text-product-color;
+                    line-height: 24px;
+                }
+
+                p {
+                    margin: 8px 0 0;
+                    font-weight: $font-bold;
+                    font-size: 1.2rem;
+                    line-height: 24px;
+                }
+            }
+        }
+    
+        .footer-find-element {
+            @extend .flex-row, .flex-between;
+            align-items: center;
+            margin-top: 40px;
+
+            .prize {
+                color: $orange-main-color;
+
+                h3 {
+                    margin: 0;
+                    color: $four-color;
+                    font-size: 0.9rem;
+                    font-weight: $font-medium;
+                    line-height: 28px;
+                }
+
+                p {
+                    margin: 0;
+                    font-weight: $font-bold;
+                    font-size: 2rem;
+                    line-height: 40px;
+                }
+            }
+
+            button {
+                @extend .btn;
+                width: 170px;
+                font-weight: $font-bold;
+                font-size: 1rem;
+                color: $orange-main-color;
+                background: transparent;
+                border: 2px solid $orange-main-color;
+            }
+        }
+    
+    }
+}
+
+.finded-elements-pagination {
+    @extend .flex-row, .flex-center;
+    margin-top: 3%;
+    gap: 13px;
+
+    button {
+        font-weight: $font-medium;
+        font-size: 0.8rem;
+        color: $four-color;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+
+        &:hover {
+            background-color: $btn-hover-color;
+            color: white;
+        }
+
+        &:hover svg {
+            fill: white;
+        }
+
+        &:active{
+            background-color: $orange-main-color;
+            color: white;
+        }
+
+    }
+
+    .active-btn {
+        background-color: $orange-main-color !important;
+        color: white;
+    }
+}
+
+.contact-form-section {
+    min-height: 80vh;
+    margin: 0;
+    background-color: $form-color;
+    padding: 5% 0 5%;
+}
+
+.contact-form-title {
+    @extend .flex-col, .flex-center;
+    font-weight: $font-bold;
+    text-align: center;
+    color: $form-color-text;
+
+    h1, h2, p {
+        width: 75%;
+    }
+
+    h1 {
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+    h2 {
+        margin: 16px 0;
+        font-size: 3rem;
+        line-height: 52px;
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-weight: $font-regular;
+        line-height: 32px;
+        letter-spacing: 0.11px;
+    }
+}
+
+.form-container {
+    margin-top: 5%;
+    @extend .flex-col;
+}
+
+.input-wrapper {
+    @extend .flex-col;
+    gap: 16px
+}
+
+.form-input {
+    @extend .flex-row;
+    gap: 16px;
+
+    input {
+        @extend .input-style;
+        width: 100%;
+        height: 48px;
+
+        &:focus {
+            border-color: black;
+        }
+
+        &::placeholder {
+            @extend .placeholder-style;
+        }
+    }
+}
+
+textarea {
+    @extend .input-style;
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+    min-height: 180px;
+    max-height: 240px;
+    padding: 14px 20px;
+
+    &::placeholder {
+       @extend .placeholder-style;
+    }
+}
+
+.checkbox-container {
+    @extend .flex-row;
+    gap: 13px;
+    margin-top: 16px;
+
+    input {
+        appearance: none;
+        border-radius: 2px;
+        min-width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 1px solid #E1E1E1;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: $orange-main-color;
+            transform: scale(0);
+            transition: 0.1s ease-in-out;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+    }
+
+    label {
+        color: $form-color-text;
+        font-weight: $font-regular;
+        font-size: 1rem;
+        line-height: 30px;
+        user-select: none;
+        cursor: pointer;
+    }
+}
 

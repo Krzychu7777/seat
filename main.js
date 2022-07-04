@@ -37,7 +37,7 @@ selectButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
         const selectButton = e.currentTarget;
         const dropDownList = selectButton.parentNode.querySelector('.dropdown-list');
-
+        
         dropDownList.classList.toggle('dropdown-list--active');
         selectButton.classList.toggle('selected-option--active');
         
@@ -50,13 +50,16 @@ itemListChoose.forEach((item) => {
         selectText = curentItem.parentNode.parentNode.querySelector('.text-change');
         const dropDownList = curentItem.parentNode.parentNode.querySelector('.dropdown-list');
         const selectedBtn = curentItem.parentNode.parentNode.querySelector('.selected-option');
+        const sortingItem = curentItem.parentNode;
 
         dropDownList.classList.remove('dropdown-list--active');
         selectedBtn.classList.toggle('selected-option--active');
         
 
         selectText.textContent = curentItem.textContent;
-        selectText.classList.add('changed');
+        if(!sortingItem.classList.contains('sort-options')) {
+            selectText.classList.add('changed');
+        }
     });
 });
 
