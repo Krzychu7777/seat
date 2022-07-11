@@ -7,6 +7,7 @@ const findingItems = document.querySelectorAll('.find-element');
 const btnSearch  = document.querySelector('.button-search');
 const carCount = document.getElementById('car-count');
 const main = document.querySelector('main');
+const sortListItem = document.querySelectorAll('.sort-item');
 let phoneChange = 0;
 let selectText;
 let dropDownFilters;
@@ -82,13 +83,20 @@ function clearCategory() {
 function openDropDownList(e) {
     selectButton = e.currentTarget;
     dropDownFilters = selectButton.parentNode.querySelector('.dropdown-list');
-        
+
     dropDownFilters.classList.toggle('dropdown-list--active');
     selectButton.classList.toggle('selected-option--active');
 }
 
 selectButtons.forEach((item) => {
-    item.addEventListener('click', openDropDownList);
+    item.addEventListener('click', (e) => {
+    selectButton = e.currentTarget;
+    dropDownFilters = selectButton.parentNode.querySelector('.dropdown-list');
+
+    dropDownFilters.classList.toggle('dropdown-list--active');
+    selectButton.classList.toggle('selected-option--active');
+
+    });
 });
 
 itemListChoose.forEach((item) => {
@@ -99,13 +107,17 @@ deleteBtn.addEventListener('click', clearCategory);
 
 main.addEventListener('click', (e) => {
     const mainTarget = e.target;
-    // const dropDownSelect = mainTarget.querySelector('.selected-option');
+    const dropDownSelect = mainTarget.querySelector('.selected-option');
     // const dropDownSelectText = mainTarget.querySelector('.selected-option p');
 
-    // console.log(dropDownSelect);
+    
+
+    if (mainTarget == dropDownSelect) {
+        console.log("siema");
+    }
     // if(mainTarget != dropDownSelect && mainTarget != dropDownSelectText) {
-    //     dropDownFilters.classList.remove('dropdown-list--active');
-    //     selectButton.classList.remove('selected-option--active');
+    //     //dropDownFilters.classList.remove('dropdown-list--active');
+    //     //selectButton.classList.remove('selected-option--active');
     // }
 
 });
@@ -152,17 +164,90 @@ btnSearch.addEventListener('click', () => {
     filterValue();
     carFiltering();
     changeActiveElementNumber();
-    //location.href = "#finded-elements"
+    location.href = "#finded-elements"
 });
 
 // sort
 
-const sortListItem = document.querySelectorAll('.sort-item');
+function sortToLower(array, dataset) {
+    array.sort(function(a, b) {
+        return b.getAttribute(`data-${dataset}`) - a.getAttribute(`data-${dataset}`);
+    });
+}
+
+function sortToUpper(array, dataset) {
+    array.sort(function(a, b) {
+        return a.getAttribute(`data-${dataset}`) - b.getAttribute(`data-${dataset}`);
+    });
+}
+
+function sortItems(e) {
+    const currentSortItem = e.target;
+    const valueSort = document.querySelector('.select-value-sort');
+    const itemsArray = [...findingItems];
+
+    changeFilterValues(currentSortItem, '.select-value-sort', '.default-text-sort');
+
+        if(valueSort.value.toLowerCase() === "") {
+            itemsArray.forEach((item) => {
+                item.style.order = "";
+            });
+        }
+
+        if(valueSort.value.toLowerCase() === "najtańsze") {
+            sortToUpper(itemsArray, 'prize');
+        }
+
+        if(valueSort.value.toLowerCase() === "najdroższe") {
+            sortToLower(itemsArray, 'prize');
+        }
+
+        if(valueSort.value.toLowerCase() === "najmłodszy rocznik") {
+            sortToLower(itemsArray, 'year');
+        }
+
+        if(valueSort.value.toLowerCase() === "najstarszy rocznik") {
+            sortToUpper(itemsArray, 'year');
+        }
+
+        if(valueSort.value.toLowerCase() === "najmniejszy przebieg") {
+            sortToUpper(itemsArray, 'mileage');
+        }
+
+        if(valueSort.value.toLowerCase() === "największy przebieg") {
+            sortToLower(itemsArray, 'mileage');
+        }
+
+        if(valueSort.value.toLowerCase() === "najnowsze ogłoszenie") {
+            sortToLower(itemsArray, 'date');
+        }
+
+        if(valueSort.value.toLowerCase() === "najstarsze ogłoszenie") {
+            sortToUpper(itemsArray, 'date');
+        }
+        
+
+
+    itemsArray.forEach((item, index) => {
+        item.style.order = index;
+
+    });
+}
 
 sortListItem.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        const currentSortItem = e.target;
-        changeFilterValues(currentSortItem, '.select-value-sort', '.default-text-sort');
-    });
+    item.addEventListener('click', sortItems);
 });
 
+
+//scroll arrow
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const scrollArrow = document.querySelector('.scroll-container');
+
+    if(800 < currentScroll) {
+       scrollArrow.classList.add('scroll-container--active');
+    } else {
+        scrollArrow.classList.remove('scroll-container--active');
+    }
+});

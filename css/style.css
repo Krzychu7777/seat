@@ -3,12 +3,12 @@
   flex-direction: row;
 }
 
-.flex-col, footer .top-footer-panel .footer-item, .input-wrapper, .form-container, .contact-form-title, .finded-items-container, .search-console .console-items-container .console-item, .search-console, .home-container {
+.flex-col, .scroll-container .scroll-arrow, footer .top-footer-panel .footer-item, .input-wrapper, .form-container, .contact-form-title, .finded-items-container, .search-console .console-items-container .console-item, .search-console, .home-container {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, footer .middle-footer-panel .social-icons-footer, .contact-form-title, .finded-elements-pagination, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .finded-items-container, .search-console .console-button-container, .search-console, .home-container, .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
+.flex-center, .scroll-container .scroll-arrow, footer .middle-footer-panel .social-icons-footer, .contact-form-title, .finded-elements-pagination, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .finded-items-container, .search-console .console-button-container, .search-console, .home-container, .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
   justify-content: center;
   align-items: center;
 }
@@ -118,11 +118,14 @@ textarea:-ms-input-placeholder, .form-input input:-ms-input-placeholder {
   cursor: pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  background-color: gray;
 }
 
 header {
@@ -167,7 +170,6 @@ header {
   header svg, .desktop-nav svg {
     max-width: 106px;
   }
-
   .second-nav-item-mobile {
     display: block;
   }
@@ -175,7 +177,6 @@ header {
     background: transparent;
     border: none;
   }
-
   .second-nav-item-desktop {
     display: none;
   }
@@ -322,14 +323,12 @@ header {
   .home-section .home-bg-image img {
     width: 100%;
   }
-
   .home-container .home-title h1 {
     font-size: 3.5rem;
   }
   .home-container .home-title h2 {
     font-size: 1.8rem;
   }
-
   .search-console {
     margin: 0 auto 0;
     width: 100%;
@@ -360,7 +359,6 @@ header {
     margin-right: 0;
     position: relative;
   }
-
   .home-container .home-title h1 {
     font-size: 3rem;
     width: 90%;
@@ -374,7 +372,6 @@ header {
     min-height: 115vh;
     padding: 6% 0 15%;
   }
-
   .search-console {
     width: 95%;
     box-sizing: border-box;
@@ -403,7 +400,6 @@ header {
   .search-console .console-button-container button:nth-child(2) {
     width: 100%;
   }
-
   .home-container {
     margin-top: 32px;
   }
@@ -421,7 +417,6 @@ header {
     min-height: 100vh;
     padding: 6% 0 15%;
   }
-
   .home-container .home-title h1 {
     font-size: 1.9rem;
   }
@@ -430,7 +425,6 @@ header {
   min-height: 80vh;
   margin: 0;
   padding: 3% 0 3%;
-  background-color: white;
 }
 
 .finded-header {
@@ -546,7 +540,7 @@ header {
   line-height: 25px;
   font-size: 1.4rem;
 }
-.find-element .right-find-panel h2 {
+.find-element .right-find-panel h3 {
   display: none;
 }
 .find-element .right-find-panel .element-description {
@@ -634,7 +628,6 @@ header {
     flex-wrap: wrap;
     gap: 28px;
   }
-
   .find-element {
     position: relative;
     flex-direction: column;
@@ -674,7 +667,6 @@ header {
   .finded-section {
     padding: 7% 0 7%;
   }
-
   .finded-header {
     flex-direction: column-reverse;
   }
@@ -691,7 +683,6 @@ header {
     background-color: #EA5D1A;
     color: white;
   }
-
   .finded-elements-pagination {
     margin-top: 6% !important;
   }
@@ -745,7 +736,6 @@ header {
   .find-element .right-find-panel .footer-find-element button {
     display: none;
   }
-
   .finded-header h1 {
     font-size: 1.7rem;
   }
@@ -760,7 +750,6 @@ header {
     min-width: 100px;
     width: 100%;
   }
-
   .finded-elements-pagination {
     margin-top: 10% !important;
   }
@@ -856,15 +845,55 @@ header {
 .form-input {
   gap: 16px;
 }
+.form-input .name, .form-input .last-name, .form-input .phone-number, .form-input .email {
+  position: relative;
+  width: 100%;
+  height: 48px;
+}
 .form-input input {
+  box-sizing: border-box;
   width: 100%;
   height: 48px;
 }
 .form-input input:focus {
   border-color: black;
 }
+.form-input .error, .form-input .error-second {
+  display: none;
+  position: absolute;
+  margin-top: -7px;
+  font-size: 0.7rem;
+  color: #EA5D1A;
+}
+.form-input .error--active {
+  display: block;
+}
+.form-input .error-second--active {
+  display: block;
+}
+
+.text-area {
+  position: relative;
+  width: 100%;
+}
+.text-area .error, .text-area .error-second {
+  display: none;
+  position: absolute;
+  margin-top: -10px;
+  font-size: 0.7rem;
+  color: #EA5D1A;
+}
+.text-area .error--active {
+  display: block;
+}
+.text-area .error-second--active {
+  display: block;
+}
+
 textarea {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 100%;
   min-height: 180px;
   max-height: 240px;
@@ -963,7 +992,6 @@ textarea:focus {
   .contact-form-section {
     padding: 10% 0 10%;
   }
-
   .contact-form-title h2 {
     font-size: 2.2rem;
     line-height: 32px;
@@ -972,12 +1000,11 @@ textarea:focus {
     width: 100%;
     font-size: 1.1rem;
   }
-
   .form-input {
     flex-direction: column;
   }
   .form-input input {
-    width: auto;
+    width: 100%;
   }
 }
 @media screen and (max-width: 450px) {
@@ -990,21 +1017,18 @@ textarea:focus {
     font-size: 1rem;
     line-height: 28px;
   }
-
   .form-container p {
     font-size: 0.9rem;
   }
   .form-container p a {
     font-size: 0.9rem;
   }
-
   .checkbox-container, .checkbox-contact {
     margin: 10px 0;
   }
   .checkbox-container label, .checkbox-contact label {
     font-size: 0.9rem;
   }
-
   .checkbox-contact {
     margin-left: 10%;
   }
@@ -1088,11 +1112,9 @@ footer .bottom-footer-panel .footer-links a {
   footer {
     padding: 6% 0 3%;
   }
-
   .footer-desktop {
     display: none;
   }
-
   .footer-mobile {
     display: block;
   }
@@ -1118,5 +1140,34 @@ footer .bottom-footer-panel .footer-links a {
   }
   .footer-mobile .border-footer-mobile:nth-child(6) {
     margin: 31px 0;
+  }
+}
+.scroll-container {
+  position: fixed;
+  bottom: 10%;
+  right: 50px;
+  z-index: 99;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.scroll-container .scroll-arrow {
+  width: 48px;
+  height: 48px;
+  background-color: #EA5D1A;
+  border-radius: 5px;
+}
+.scroll-container .scroll-arrow svg {
+  position: absolute;
+}
+.scroll-container .scroll-arrow:hover {
+  opacity: 0.7;
+}
+.scroll-container--active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 992px) {
+  .scroll-container {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

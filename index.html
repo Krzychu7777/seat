@@ -53,6 +53,13 @@
         </div>
     </header>
 <main>
+    <div class="scroll-container">
+        <a class="scroll-arrow" href="#">
+            <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.52858 8.5L6.49892 3.55641L11.4703 8.5H11.4725L13 6.97881L6.49892 0.5L0 6.97881L1.52641 8.5H1.52858Z" fill="white"/>
+            </svg>
+        </a>
+    </div>
     <section id="home" class="home-section">
         <div class="home-bg-image"><img src="img/Plichta-FB-1 1.jpg" alt="Zdjęcie Seat Ateca"></div>
         <div class="main-container home-container">
@@ -64,7 +71,7 @@
                 <div class="console-items-container">
                     <div class="console-item">
                         <p>Model</p>
-                        <div class="selected-option">
+                        <div id="select-model" class="selected-option">
                             <input class="select-value" type="text" name="model" value="" style="display: none;">
                             <input class="default-text" type="text" value="Dowolny" style="display: none;">
                             <p id="model" class="text-change">Dowolny</p>
@@ -86,7 +93,7 @@
 
                     <div class="console-item">
                         <p>Skrzynia biegów</p>
-                        <div class="selected-option">
+                        <div id="select-gearbox" class="selected-option">
                             <input class="select-value" type="text" name="gearbox" value="" style="display: none;">
                             <input class="default-text" type="text" value="Wszystkie" style="display: none;">
                             <p id="gearbox" class="text-change">Wszystkie</p>
@@ -104,7 +111,7 @@
 
                     <div class="console-item">
                         <p>Rodzaj paliwa</p>
-                        <div class="selected-option">
+                        <div id="select-gasoline" class="selected-option">
                             <input class="select-value" type="text" name="gasoline" value="" style="display: none;">
                             <input class="default-text" type="text" value="Dowolny" style="display: none;">
                             <p id="gasoline" class="text-change" >Dowolny</p>
@@ -124,7 +131,7 @@
                         </ul>
                     </div>
 
-                    <div class="console-item">
+                    <div id="select-location" class="console-item">
                         <p>Lokalizacja</p>
                         <div class="selected-option">
                             <input class="select-value" type="text" name="location" value="" style="display: none;">
@@ -189,14 +196,14 @@
                 </div>
             </div>
             <div class="finded-items-container" >
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="130900">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="130900" data-year="2022" data-mileage="7" data-date="10102022">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
                     <div class="right-find-panel">
                         <div class="title-find-container">
                             <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
-                            <h2>SEAT Leon</h2>
+                            <h3>SEAT Leon</h3>
                         </div>
                         <div class="element-description">
                             <p class="new">Nowy</p>
@@ -240,7 +247,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="Elektryk" data-gearbox="manualna" data-location="Gdynia" data-model="Arona" data-prize="105100">
+                <div class="find-element find-element--active" data-gasoline="Elektryczny" data-gearbox="manualna" data-location="Gdynia" data-model="Arona" data-prize="105100" data-year="2019" data-mileage="100" data-date="01012019">
                     <div class="image-find-container">
                         <img src="img/seat-arona-full.jpg" alt="">
                     </div>
@@ -254,17 +261,17 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Gdynia
                             </p>
                         </div>
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2019</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>100km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -272,11 +279,11 @@
                             </div>
                             <div class="category-element">
                                 <h2>Rodzaj paliwa</h2>
-                                <p>Benzyna</p>
+                                <p>Elektryk</p>
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
-                                <p>Automat</p>
+                                <p>Manualna</p>
                             </div>
                         </div>
                         <div class="footer-find-element category-element">
@@ -288,7 +295,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Ateca">
+                <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Ateca" data-prize="95100" data-year="2021" data-mileage="10" data-date="11102022">
                     <div class="image-find-container">
                         <img src="img/seat-leon-SP-kombi.jpg" alt="">
                     </div>
@@ -308,11 +315,11 @@
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2021</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>10km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -320,7 +327,7 @@
                             </div>
                             <div class="category-element">
                                 <h2>Rodzaj paliwa</h2>
-                                <p>Benzyna</p>
+                                <p>Diesel</p>
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
@@ -330,13 +337,13 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>95 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="manualna" data-location="Toruń" data-model="Leon">
+                <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="manualna" data-location="Toruń" data-model="Leon" data-prize="100100" data-year="2022" data-mileage="7" data-date="01012020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -350,7 +357,7 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Toruń
                             </p>
                         </div>
                         <div class="element-category-container">
@@ -368,23 +375,23 @@
                             </div>
                             <div class="category-element">
                                 <h2>Rodzaj paliwa</h2>
-                                <p>Benzyna</p>
+                                <p>Diesel</p>
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
-                                <p>Automat</p>
+                                <p>Manualna</p>
                             </div>
                         </div>
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>100 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Toruń" data-model="Ibiza">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Toruń" data-model="Ibiza" data-prize="140100" data-year="2022" data-mileage="3" data-date="01012021">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp-150.jpg" alt="">
                     </div>
@@ -398,7 +405,7 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Toruń
                             </p>
                         </div>
                         <div class="element-category-container">
@@ -408,7 +415,7 @@
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>3km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -420,19 +427,19 @@
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
-                                <p>Automat</p>
+                                <p>Manualna</p>
                             </div>
                         </div>
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>140 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="Benzyna+LPG" data-gearbox="manualna" data-location="Gdynia" data-model="Leon">
+                <div class="find-element find-element--active" data-gasoline="Benzyna+LPG" data-gearbox="manualna" data-location="Gdynia" data-model="Leon" data-prize="110100" data-year="2020" data-mileage="1000" data-date="13012020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -446,17 +453,17 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Gdynia
                             </p>
                         </div>
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2020</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>1000km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -464,23 +471,23 @@
                             </div>
                             <div class="category-element">
                                 <h2>Rodzaj paliwa</h2>
-                                <p>Benzyna</p>
+                                <p>Benzyna + LPG</p>
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
-                                <p>Automat</p>
+                                <p>Manualna</p>
                             </div>
                         </div>
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>110 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="Benzyna+CNG" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona">
+                <div class="find-element find-element--active" data-gasoline="Benzyna+CNG" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona" data-prize="110100" data-year="2020" data-mileage="1000" data-date="21012022">
                     <div class="image-find-container">
                         <img src="img/seat-leon-SP-kombi.jpg" alt="">
                     </div>
@@ -494,7 +501,7 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Gdynia
                             </p>
                         </div>
                         <div class="element-category-container">
@@ -512,7 +519,7 @@
                             </div>
                             <div class="category-element">
                                 <h2>Rodzaj paliwa</h2>
-                                <p>Benzyna</p>
+                                <p>Benzyna + CNG</p>
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
@@ -528,7 +535,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Gdańsk" data-model="Arona">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Gdańsk" data-model="Arona" data-prize="80100" data-year="2019" data-mileage="1100" data-date="01042022">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -548,11 +555,11 @@
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2019</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>1100km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -564,19 +571,19 @@
                             </div>
                             <div class="category-element">
                                 <h2>Skrzynia</h2>
-                                <p>Automat</p>
+                                <p>Manualna</p>
                             </div>
                         </div>
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>80 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Toruń" data-model="Mii">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Toruń" data-model="Mii" data-prize="89100" data-year="2019" data-mileage="800" data-date="03012021">
                     <div class="image-find-container">
                         <img src="img/seat-arona-full.jpg" alt="">
                     </div>
@@ -590,7 +597,7 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Toruń
                             </p>
                         </div>
                         <div class="element-category-container">
@@ -624,7 +631,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="100900" data-year="2021" data-mileage="700" data-date="02102020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -644,11 +651,11 @@
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2021</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>700km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -666,13 +673,13 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>100 900 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Alhambra">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Alhambra" data-prize="110900" data-year="2022" data-mileage="1500" data-date="01012020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -696,7 +703,7 @@
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>1500km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -714,13 +721,13 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>110 900 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="90700" data-year="2020" data-mileage="500" data-date="15012020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -740,11 +747,11 @@
                         <div class="element-category-container">
                             <div class="category-element">
                                 <h2>Rok produkcji</h2>
-                                <p>2022</p>
+                                <p>2020</p>
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>500km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -762,13 +769,13 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>90 700 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
                     </div>
                 </div>
-                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona">
+                <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona" data-prize="100700" data-year="2022" data-mileage="300" data-date="16032020">
                     <div class="image-find-container">
                         <img src="img/seat-leon-sp.jpg" alt="">
                     </div>
@@ -782,7 +789,7 @@
                                     <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
                                 </svg>        
-                                Gdańsk
+                                Gdynia
                             </p>
                         </div>
                         <div class="element-category-container">
@@ -792,7 +799,7 @@
                             </div>
                             <div class="category-element">
                                 <h2>Przebieg</h2>
-                                <p>7km</p>
+                                <p>300km</p>
                             </div>
                             <div class="category-element">
                                 <h2>Moc</h2>
@@ -810,7 +817,7 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>130 900 zł</p>
+                                <p>100 700 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
@@ -845,14 +852,34 @@
             <form novalidate action="" class="form-container">
                 <div class="input-wrapper">
                     <div class="form-input">
-                        <input type="text" id="Imie" name="name" placeholder="Imię" required>
-                        <input type="text" id="Last-name" name="Last-name" placeholder="Nazwisko" required>
+                        <div class="name">
+                            <input type="text" id="Imie" name="name" placeholder="Imię" required>
+                            <p class="error error-name">Musisz podać Imie</p>
+                            <p class="error-second">Niepoprawny format</p>
+                        </div>
+                        <div class="last-name">
+                            <input type="text" id="Last-name" name="Last-name" placeholder="Nazwisko" required>
+                            <p class="error error-surname">Musisz podać Imie</p>
+                            <p class="error-second">Niepoprawny format</p>
+                        </div>
                     </div>
                     <div class="form-input">
-                        <input type="text" id="Phone-number" name="Phone-number" placeholder="Numer telefonu" required>
-                        <input type="text" id="Mail" name="Mail" placeholder="Adres e-mail" required>
+                        <div class="phone-number">
+                            <input type="tel" id="Phone-number" name="Phone-number" placeholder="Numer telefonu" required pattern="[0-9]{3}[0-9]{3}[0-9]{3}">
+                            <p class="error error-phone">Musisz podać numer telefonu</p>
+                            <p class="error-second">Prawidłowy format: 111 111 111</p>
+                        </div>
+                        <div class="email">
+                            <input type="email" id="Mail" name="Mail" placeholder="Adres e-mail" required>
+                            <p class="error error-email">Musisz podać e-mail</p>
+                            <p class="error-second">Niepoprawny format</p>
+                        </div>
                     </div>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Twoja wiadomość" required></textarea>
+                    <div class="text-area">
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Twoja wiadomość" required minlength="10"></textarea>
+                        <p class="error error-textarea">Musisz wypełnić to pole</p>
+                        <p class="error-second">Zbyt mała liczba znaków</p>
+                    </div>
     
                     <div class="checkbox-container">
                         <input type="checkbox" id="send-agree" name="send_agree" required>

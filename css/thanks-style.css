@@ -1,0 +1,55 @@
+header {
+  background-color: white;
+}
+
+.second-nav-item-desktop button:first-child {
+  border: 2px solid #190F14;
+  color: #190F14;
+}
+.second-nav-item-desktop button:nth-child(2) {
+  background-color: #190F14;
+  color: white;
+}
+
+.thanks-section {
+  min-height: 90vh;
+  background-color: #FAFAF9;
+}
+
+.thanks-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.thanks-container h1 {
+  font-weight: 700;
+  font-size: 3.1rem;
+}
+.thanks-container p {
+  margin-top: 1px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #747468;
+}
+.thanks-container a {
+  text-decoration: none;
+  color: white;
+  background-color: #EA5D1A;
+  margin-top: 24px;
+  width: 260px;
+}
+
+@media screen and (max-width: 450px) {
+  .thanks-container h1 {
+    font-size: 2rem;
+  }
+  .thanks-container p {
+    font-size: 1rem;
+  }
+  .thanks-container a {
+    width: 240px;
+  }
+}/*# sourceMappingURL=thanks-style.css.map */

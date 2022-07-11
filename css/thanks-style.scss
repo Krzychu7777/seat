@@ -1,0 +1,85 @@
+$color-white: white;
+$color-dark: #190F14;
+$thanks-section-color: #FAFAF9;
+$text-second-color: #747468;
+$orange-ain-color: #EA5D1A;
+
+
+$font-bold: 700;
+$font-medium: 500;
+$font-regular: 400;
+
+//breakpoints
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$min-phone: 450px;
+
+header {
+    background-color: white;
+}
+
+.second-nav-item-desktop {
+    button:first-child {
+        border: 2px solid $color-dark;
+        color: $color-dark;
+    }
+
+    button:nth-child(2) {
+        background-color: $color-dark;
+        color: $color-white;
+    }
+}
+
+.thanks-section {
+    min-height: 90vh;
+    background-color: $thanks-section-color;
+}
+
+.thanks-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+        font-weight: $font-bold;
+        font-size: 3.1rem;
+    }
+
+    p {
+        margin-top: 1px;
+        font-weight: $font-regular;
+        font-size: 1.3rem;
+        color: $text-second-color;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        background-color: $orange-ain-color;
+        margin-top: 24px;
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: $min-phone){
+    .thanks-container {
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        a{
+            width: 240px;
+        }
+    }
+}

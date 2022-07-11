@@ -136,14 +136,13 @@ $min-phone: 450px;
 
 //code
 html {
-    //scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: gray;
 }
 
 header {
@@ -524,7 +523,6 @@ header {
     min-height: 80vh;
     margin: 0;
     padding: 3% 0 3%;
-    background-color: white
 }
 
 .finded-header {
@@ -667,7 +665,7 @@ header {
             font-size: 1.4rem;
         }
 
-        h2 {
+        h3 {
             display: none;
         }
 
@@ -1059,8 +1057,15 @@ header {
     @extend .flex-row;
     gap: 16px;
 
+    .name, .last-name, .phone-number, .email {
+        position: relative;
+        width: 100%;
+        height: 48px;
+    }
+
     input {
         @extend .input-style;
+        box-sizing: border-box;
         width: 100%;
         height: 48px;
 
@@ -1072,11 +1077,58 @@ header {
             @extend .placeholder-style;
         }
     }
+
+    .error {
+        display: none;
+        position: absolute;
+        margin-top: -7px;
+        font-size: 0.7rem;
+        color: $orange-main-color;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    .error-second {
+        @extend .error;
+
+        &--active {
+            display: block;
+        }
+    }
+}
+
+.text-area {
+    position: relative;
+    width: 100%;
+
+    .error {
+        display: none;
+        position: absolute;
+        margin-top: -10px;
+        font-size: 0.7rem;
+        color: $orange-main-color;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    .error-second {
+        @extend .error;
+
+        &--active {
+            display: block;
+        }
+    }
 }
 
 textarea {
     @extend .input-style;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    width: 100%;
     max-width: 100%;
     min-height: 180px;
     max-height: 240px;
@@ -1213,7 +1265,7 @@ textarea {
         flex-direction: column;
         
         input {
-            width: auto;
+            width: 100%;
         }
     }
 }
@@ -1396,5 +1448,42 @@ footer {
                 margin: 31px 0;
             }
         }
+    }
+}
+
+.scroll-container {
+    position: fixed;
+    bottom: 10%;
+    right: 50px;
+    z-index: 99;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+    .scroll-arrow {
+        @extend .flex-col, .flex-center;
+        width: 48px;
+        height: 48px;
+        background-color: $orange-main-color;
+        border-radius: 5px;
+
+        svg {
+            position: absolute;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &--active {
+        opacity: 1;
+    }
+
+}
+
+
+@media screen and (max-width: $lg) {
+    .scroll-container {
+        display: none;
     }
 }
