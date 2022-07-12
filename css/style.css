@@ -39,6 +39,7 @@
   }
 }
 .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
+  font-family: "SEAT BCN", sans-serif, Tahoma;
   height: 48px;
   font-weight: 700;
   font-size: 1rem;
@@ -125,7 +126,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "SEAT BCN";
+  font-family: "SEAT BCN", sans-serif, Tahoma;
 }
 
 header {
@@ -144,6 +145,7 @@ header {
 }
 
 .second-nav-item-desktop button:first-child {
+  font-family: "SEAT BCN", sans-serif, Tahoma;
   position: relative;
   width: 141px;
   margin-right: 15px;
@@ -155,6 +157,7 @@ header {
   position: absolute;
 }
 .second-nav-item-desktop button:nth-child(2) {
+  font-family: "SEAT BCN", sans-serif, Tahoma;
   color: #190F14;
   width: 200px;
 }
@@ -547,7 +550,7 @@ header {
   line-height: 25px;
   font-size: 1.4rem;
 }
-.find-element .right-find-panel h3 {
+.find-element .right-find-panel h6 {
   display: none;
 }
 .find-element .right-find-panel .element-description {
@@ -698,6 +701,9 @@ header {
   }
   .finded-elements-pagination {
     margin-top: 6% !important;
+  }
+  .finded-elements-pagination button {
+    font-family: "SEAT BCN", sans-serif, Tahoma;
   }
 }
 @media screen and (max-width: 576px) {
@@ -1075,6 +1081,7 @@ footer .top-footer-panel .footer-item p {
   font-size: 1rem;
 }
 footer .top-footer-panel .footer-item button {
+  font-family: "SEAT BCN", sans-serif, Tahoma;
   margin-top: 13px;
   width: 130px;
   text-align: start;
@@ -1089,7 +1096,7 @@ footer .top-footer-panel .footer-item button {
   cursor: pointer;
 }
 footer .top-footer-panel .footer-item button svg {
-  margin-left: 11px;
+  margin-left: 7px;
 }
 footer .top-footer-panel .footer-item .opening-hours-container {
   gap: 70px;

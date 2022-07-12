@@ -83,6 +83,11 @@ function clearCategory(e) {
             item.classList.remove('changed');
         }
     });
+
+    findingItems.forEach((item) => {
+        item.classList.add('find-element--active');
+    });
+    location.href = "#finded-elements"
 }
 
 function openDropDownList(e) {
@@ -126,7 +131,11 @@ itemListChoose.forEach((item) => {
 });
 
 deleteBtn.forEach((button) => {
-    button.addEventListener('click', clearCategory);
+    button.addEventListener('click', (e) => {
+        clearCategory(e);
+        countActiveElement();
+        location.href = "#finded-elements";
+    });
 });
 
 main.addEventListener('click', closeByMain);
@@ -143,8 +152,6 @@ function filterValue(e) {
 }
 
 function carFiltering() {
-    const findingItems = document.querySelectorAll('.find-element');
-
     findingItems.forEach((item) => {
         item.classList.add('find-element--active');
 
@@ -164,17 +171,21 @@ function carFiltering() {
     });
 }
 
-function changeActiveElementNumber() {
+function countActiveElement() {
+    const elementsPagination = document.querySelector('.finded-elements-pagination');
+
     const activeItems = [...findingItems].filter((item) => item.classList.contains('find-element--active'));
     carCount.innerHTML = activeItems.length;
+
+    activeItems.length == 0 ? elementsPagination.style.display ="none" : elementsPagination.style.display ="flex";
 }
 
 btnSearch.forEach((button) => {
     button.addEventListener('click', (e) => {
         filterValue(e);
         carFiltering();
-        changeActiveElementNumber();
-        location.href = "#finded-elements"
+        countActiveElement();
+        location.href = "#finded-elements";
     });
 });
 

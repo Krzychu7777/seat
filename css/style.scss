@@ -17,6 +17,8 @@ $font-regular: 400;
 $font-medium: 500;
 $font-bold: 700;
 
+$font-style: "SEAT BCN", sans-serif, Tahoma;
+
 
 //breakpoints
 
@@ -71,6 +73,7 @@ $min-phone: 450px;
 }
 
 .btn {
+    font-family: $font-style;
     @extend .flex-row, .flex-center;
     height: 48px;
     font-weight: $font-bold;
@@ -142,7 +145,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: "SEAT BCN";
+    font-family: "SEAT BCN", sans-serif, Tahoma;
 }
 
 header {
@@ -164,6 +167,7 @@ header {
     @extend .flex-row;
 
     button:first-child {
+        font-family: "SEAT BCN", sans-serif, Tahoma;
         position: relative;
         width: 141px;
         margin-right: 15px;
@@ -177,6 +181,7 @@ header {
     }
 
     button:nth-child(2) {
+        font-family: "SEAT BCN", sans-serif, Tahoma;
         color: $four-color;
         width: 200px;
     }
@@ -671,7 +676,7 @@ header {
             font-size: 1.4rem;
         }
 
-        h3 {
+        h6 {
             display: none;
         }
 
@@ -861,6 +866,10 @@ header {
     }
     .finded-elements-pagination {
         margin-top: 6% !important;
+
+        button {
+            font-family: "SEAT BCN", sans-serif, Tahoma;
+        }
     }
 }
 
@@ -1351,6 +1360,7 @@ footer {
             }
 
             button {
+                font-family: "SEAT BCN", sans-serif, Tahoma;
                 margin-top: 13px;
                 width: 130px;
                 text-align: start;
@@ -1365,7 +1375,7 @@ footer {
                 cursor: pointer;
 
                 svg {
-                    margin-left: 11px;
+                    margin-left: 7px;
                 }
             }
 

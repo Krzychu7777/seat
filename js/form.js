@@ -68,6 +68,34 @@ const checkBoxContactValid = (checkBoxes) => {
     return true;
 };
 
+const emailCheck = (email) => {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+};
+
+const advancedEmailValid = (input, error) => {
+    if(!emailCheck(input.value)) {
+        input.style.borderColor = "#EA5D1A";
+        error.classList.add('error--active');
+        return false;
+    } else {
+        input.style.borderColor = "";
+        error.classList.remove('error--active');
+        return true;
+    }
+}
+
+const emailAlert = (input, errorMismatch) => {
+    if(input.value == '') {
+        errorMismatch.classList.remove('error-second--active');
+    } else if(!emailCheck(input.value)) {
+        input.style.borderColor = "#EA5D1A";
+        errorMismatch.classList.add('error-second--active');
+    } else {
+        input.style.borderColor = "#a1d417";
+        errorMismatch.classList.remove('error-second--active');
+    }
+}
+
 const formSend = (e) => {
     e.preventDefault();
 
@@ -82,7 +110,7 @@ const formSend = (e) => {
     const name = inputValid(formObjects.name, formErrors.name),
         surname = inputValid(formObjects.surname, formErrors.surname),
         phoneNumber = inputValid(formObjects.phoneNumber, formErrors.phoneNuber),
-        email =  inputValid(formObjects.email, formErrors.email),
+        email =  advancedEmailValid(formObjects.email, formErrors.email),
         content = inputValid(formObjects.textArea, formErrors.textArea),
         checkboxAgree = checkBoxValid(formObjects.agreeCheck),
         checkBoxPrivacy = checkBoxValid(formObjects.privacy),
@@ -139,6 +167,7 @@ inputs.forEach((input) => {
 
         if(currentInput.name == "Mail") {
             inputAlerts(currentInput, currentError, errorMismatch);
+            emailAlert(currentInput, errorMismatch);
         };
     });
 
