@@ -448,7 +448,6 @@ header {
 }
 .finded-header .find-sorting {
   gap: 24px;
-  width: 100%;
 }
 .finded-header .find-sorting button {
   display: none;
@@ -677,6 +676,9 @@ header {
   }
   .finded-header {
     flex-direction: column-reverse;
+  }
+  .finded-header .find-sorting {
+    width: 100%;
   }
   .finded-header .find-sorting .sorting-item {
     width: 100%;

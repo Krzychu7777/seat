@@ -551,7 +551,6 @@ header {
     .find-sorting {
         @extend .flex-row;
         gap: 24px;
-        width: 100%;
 
         button {
             display: none       
@@ -841,6 +840,7 @@ header {
     .finded-header {
         flex-direction: column-reverse;
         .find-sorting {
+            width: 100%;
             .sorting-item {
                 width: 100%;
                 height: 48px;
