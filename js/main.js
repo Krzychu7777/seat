@@ -1,24 +1,26 @@
-const phoneBtn = document.querySelectorAll('.phone-button');
-const selectButtons = document.querySelectorAll('.selected-option');
-const itemListChoose = document.querySelectorAll('.dropdown-list-item');
-const deleteBtn = document.querySelector('.delete-btn');
-const selectedTexts = document.querySelectorAll('.text-change');
-const findingItems = document.querySelectorAll('.find-element');
-const btnSearch  = document.querySelector('.button-search');
-const carCount = document.getElementById('car-count');
-const main = document.querySelector('main');
-const sortListItem = document.querySelectorAll('.sort-item');
+const phoneBtn = document.querySelectorAll('.phone-button'),
+    selectButtons = document.querySelectorAll('.selected-option'),
+    itemListChoose = document.querySelectorAll('.dropdown-list-item'),
+    deleteBtn = document.querySelectorAll('.delete-btn'),
+    findingItems = document.querySelectorAll('.find-element'),
+    btnSearch  = document.querySelectorAll('.button-search'),
+    carCount = document.getElementById('car-count'),
+    main = document.querySelector('main'),
+    sortListItem = document.querySelectorAll('.sort-item'),
+    mobileFiltersBtn = document.getElementById('mobile-filters'),
+    mobileSearchConsole = document.querySelector('.mobile-search-console'),
+    mobileCloseBg = document.querySelector('.mobile-filter-bg');
 let phoneChange = 0;
 let selectText;
 let dropDownFilters;
 let selectButton;
+let isOpenMobileFilter = false;
 let filters = {
     model: "",
     gearbox: "",
     gasoline: "",
     location: ""
 };
-
 
 //phone button change
 
@@ -36,6 +38,7 @@ phoneBtn.forEach((item) => {
 });
 
 //select options
+
 
 function changeFilterValues(currentItem, selectClass, defaultClass) {
     const dropDownList = currentItem.parentNode.parentNode.querySelector('.dropdown-list');
@@ -65,7 +68,9 @@ function chooseFilterValue(e) {
         }
 }
 
-function clearCategory() {
+function clearCategory(e) {
+    const currentClearInput = e.target.parentNode.parentNode;
+    const selectedTexts = currentClearInput.querySelectorAll('.text-change');
     const changedText = [...selectedTexts].filter((item) => item.classList.contains('changed'));
 
     changedText.forEach((item) => {
@@ -81,54 +86,58 @@ function clearCategory() {
 }
 
 function openDropDownList(e) {
+    const dropDownLists = document.querySelectorAll('.dropdown-list');
     selectButton = e.currentTarget;
     dropDownFilters = selectButton.parentNode.querySelector('.dropdown-list');
 
+    selectButtons.forEach((item, index) => {
+        if(item != selectButton) {
+        item.classList.remove('selected-option--active');
+        dropDownLists[index].classList.remove('dropdown-list--active');
+    }
+    });
+
     dropDownFilters.classList.toggle('dropdown-list--active');
     selectButton.classList.toggle('selected-option--active');
+    
+}
+
+function closeByMain(e) {
+    const mainTarget = e.target,
+        dropDownSelects = mainTarget.parentNode.querySelector('.selected-option'),
+        selectedText = mainTarget.parentNode.querySelector('.selected-option p'),
+        selectedArrow = mainTarget.parentNode.querySelector('.selected-option svg');
+
+   if(mainTarget != dropDownSelects && mainTarget != selectedText && mainTarget != selectedArrow) {
+    if(dropDownFilters) {
+    dropDownFilters.classList.remove('dropdown-list--active');}
+
+    if(selectButton) {
+    selectButton.classList.remove('selected-option--active'); }
+   }
 }
 
 selectButtons.forEach((item) => {
-    item.addEventListener('click', (e) => {
-    selectButton = e.currentTarget;
-    dropDownFilters = selectButton.parentNode.querySelector('.dropdown-list');
-
-    dropDownFilters.classList.toggle('dropdown-list--active');
-    selectButton.classList.toggle('selected-option--active');
-
-    });
+    item.addEventListener('click', openDropDownList);
 });
 
 itemListChoose.forEach((item) => {
     item.addEventListener('click', chooseFilterValue);
 });
 
-deleteBtn.addEventListener('click', clearCategory);
-
-main.addEventListener('click', (e) => {
-    const mainTarget = e.target;
-    const dropDownSelect = mainTarget.querySelector('.selected-option');
-    // const dropDownSelectText = mainTarget.querySelector('.selected-option p');
-
-    
-
-    if (mainTarget == dropDownSelect) {
-        console.log("siema");
-    }
-    // if(mainTarget != dropDownSelect && mainTarget != dropDownSelectText) {
-    //     //dropDownFilters.classList.remove('dropdown-list--active');
-    //     //selectButton.classList.remove('selected-option--active');
-    // }
-
+deleteBtn.forEach((button) => {
+    button.addEventListener('click', clearCategory);
 });
+
+main.addEventListener('click', closeByMain);
 
 
 //filters
 
-function filterValue() {
-    const selectValues = document.querySelectorAll('.select-value');
+function filterValue(e) {
+    const curInput = e.currentTarget.parentNode.parentNode.querySelectorAll('.select-value');
 
-    selectValues.forEach((input) => {
+    curInput.forEach((input) => {
         filters[input.name] = input.value;
     });
 }
@@ -160,11 +169,13 @@ function changeActiveElementNumber() {
     carCount.innerHTML = activeItems.length;
 }
 
-btnSearch.addEventListener('click', () => {
-    filterValue();
-    carFiltering();
-    changeActiveElementNumber();
-    location.href = "#finded-elements"
+btnSearch.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        filterValue(e);
+        carFiltering();
+        changeActiveElementNumber();
+        location.href = "#finded-elements"
+    });
 });
 
 // sort
@@ -250,4 +261,25 @@ window.addEventListener('scroll', () => {
     } else {
         scrollArrow.classList.remove('scroll-container--active');
     }
+});
+
+
+//open mobile search console and close
+
+mobileFiltersBtn.addEventListener('click', (e) => {
+    mobileSearchConsole.classList.add('mobile-search-console--active');
+    isOpenMobileFilter = true;
+});
+
+mobileSearchConsole.addEventListener('click', (e) => {
+    const siema = e.target,
+        searchMobileButton = siema.parentNode.querySelector('.button-search');
+
+    if(siema === searchMobileButton) {
+        mobileSearchConsole.classList.remove('mobile-search-console--active');
+    }
+});
+
+mobileCloseBg.addEventListener('click', () => {
+    mobileSearchConsole.classList.remove('mobile-search-console--active');
 });

@@ -209,6 +209,11 @@ header {
     }
 }
 
+.image-responsive {
+    width: 100%;
+    height: auto;
+}
+
 .home-section {
     position: relative;
     min-height: 80vh;
@@ -546,6 +551,7 @@ header {
     .find-sorting {
         @extend .flex-row;
         gap: 24px;
+        width: 100%;
 
         button {
             display: none       
@@ -553,6 +559,7 @@ header {
 
         .sorting-item-container {
             position: relative;
+            flex-basis: 70%;
         }
         
         .sorting-item {
@@ -560,7 +567,6 @@ header {
             @extend .select-style, .flex-row, .flex-between;
             height: 52px;
             width: 240px;
-
         }
 
         .selected-option {
@@ -644,6 +650,7 @@ header {
     }
 
     .image-find-container {
+        min-width: 463.5px;
         @extend .flex-row, .flex-center;
         z-index: 1;
 
@@ -857,6 +864,7 @@ header {
 @media screen and (max-width: $sm) {
     .find-element {
         .image-find-container {
+            min-width: 100%;
             img {
                 width: 100%;
                 min-height: 210px;
@@ -939,6 +947,7 @@ header {
             button {
                 min-width: 100px;
                 width: 100%;
+                flex-basis: 30%;
             }
         }
     }
@@ -1485,5 +1494,45 @@ footer {
 @media screen and (max-width: $lg) {
     .scroll-container {
         display: none;
+    }
+}
+
+.mobile-search-console {
+    position: relative;
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+
+    .mobile-filter-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+    }
+
+    .console-mobile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto 0;
+        max-width: 380px;
+    }
+    .mobile-buttons-container {
+        @extend .flex-col, .flex-center;
+        flex-direction: column-reverse;
+        margin: 24px auto 0;
+    }
+
+    &--active {
+        display: block;
     }
 }

@@ -53,6 +53,102 @@
         </div>
     </header>
 <main>
+    <section id="mobile-filter" class="mobile-search-console">
+        <div class="mobile-filter-bg"></div>
+        <div class="search-console console-mobile">
+            <div class="console-items-container">
+                <div class="console-item">
+                    <p>Model</p>
+                    <div id="select-model" class="selected-option">
+                        <input class="select-value" type="text" name="model" value="" style="display: none;">
+                        <input class="default-text" type="text" value="Dowolny" style="display: none;">
+                        <p id="model" class="text-change">Dowolny</p>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
+                        </svg>
+                    </div>
+                        <ul class="dropdown-list">
+                            <li class="dropdown-list-item">Dowolny</li>
+                            <li class="dropdown-border"></li>
+                            <li class="dropdown-list-item">Alhambra</li>
+                            <li class="dropdown-list-item">Arona</li>
+                            <li class="dropdown-list-item">Ateca</li>
+                            <li class="dropdown-list-item">Ibiza</li>
+                            <li class="dropdown-list-item">Leon</li>
+                            <li class="dropdown-list-item">Mii</li>
+                        </ul>
+                </div>
+
+                <div class="console-item">
+                    <p>Skrzynia biegów</p>
+                    <div id="select-gearbox" class="selected-option">
+                        <input class="select-value" type="text" name="gearbox" value="" style="display: none;">
+                        <input class="default-text" type="text" value="Wszystkie" style="display: none;">
+                        <p id="gearbox" class="text-change">Wszystkie</p>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
+                        </svg>
+                    </div>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-list-item">Wszystkie</li>
+                        <li class="dropdown-border"></li>
+                        <li class="dropdown-list-item">Automatyczna</li>
+                        <li class="dropdown-list-item">Manualna</li>
+                    </ul>
+                </div>
+
+                <div class="console-item">
+                    <p>Rodzaj paliwa</p>
+                    <div id="select-gasoline" class="selected-option">
+                        <input class="select-value" type="text" name="gasoline" value="" style="display: none;">
+                        <input class="default-text" type="text" value="Dowolny" style="display: none;">
+                        <p id="gasoline" class="text-change" >Dowolny</p>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
+                        </svg>
+                    </div>
+                    <ul class="dropdown-list">
+                        <li class="dropdown-list-item">Dowolny</li>
+                        <li class="dropdown-border"></li>
+                        <li class="dropdown-list-item">Benzyna</li>
+                        <li class="dropdown-list-item">Diesel</li>
+                        <li class="dropdown-list-item">Benzyna+LPG</li>
+                        <li class="dropdown-list-item">Benzyna+CNG</li>
+                        <li class="dropdown-list-item">Elektryczny</li>
+                        <li class="dropdown-list-item">Etanol</li>
+                    </ul>
+                </div>
+
+                <div id="select-location" class="console-item">
+                    <p>Lokalizacja</p>
+                    <div class="selected-option">
+                        <input class="select-value" type="text" name="location" value="" style="display: none;">
+                        <input class="default-text" type="text" value="Dowolna" style="display: none;">
+                        <p id="location" class="text-change">Dowolna</p>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
+                        </svg>
+                    </div>
+                        <ul class="dropdown-list">
+                            <li class="dropdown-list-item">Dowolna</li>
+                            <li class="dropdown-border"></li>
+                            <li class="dropdown-list-item">Gdańsk</li>
+                            <li class="dropdown-list-item">Gdynia</li>
+                            <li class="dropdown-list-item">Toruń</li>
+                        </ul>
+                    </div>
+                </div>
+            <div class="console-button-container mobile-buttons-container">
+                <button class="btn delete-btn">
+                    Wyczyść filtry
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.17156 0.757568L0.757347 2.17178L3.58584 5.00027L0.757324 7.82879L2.17154 9.243L5.00005 6.41449L7.82841 9.24285L9.24263 7.82864L6.41427 5.00027L9.24261 2.17193L7.82839 0.757719L5.00005 3.58606L2.17156 0.757568Z" fill="#190F14"/>
+                    </svg>
+                </button>
+                <button class="btn button-search">Szukaj</button>
+            </div>
+        </div>
+    </section>
     <div class="scroll-container">
         <a class="scroll-arrow" href="#">
             <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +247,7 @@
                         </div>
                     </div>
                 <div class="console-button-container">
-                    <button class="btn delete-btn">
+                    <button id="main-clear" class="btn delete-btn">
                         Wyczyść filtry
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.17156 0.757568L0.757347 2.17178L3.58584 5.00027L0.757324 7.82879L2.17154 9.243L5.00005 6.41449L7.82841 9.24285L9.24263 7.82864L6.41427 5.00027L9.24261 2.17193L7.82839 0.757719L5.00005 3.58606L2.17156 0.757568Z" fill="#190F14"/>
@@ -192,13 +288,13 @@
                                 <li class="sort-item">Najstarsze ogłoszenie</li>
                             </ul>
                     </div>
-                    <button class="btn">Filtry</button>
+                    <button id="mobile-filters"class="btn">Filtry</button>
                 </div>
             </div>
             <div class="finded-items-container" >
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="130900" data-year="2022" data-mileage="7" data-date="10102022">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <div class="title-find-container">
@@ -249,7 +345,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="Elektryczny" data-gearbox="manualna" data-location="Gdynia" data-model="Arona" data-prize="105100" data-year="2019" data-mileage="100" data-date="01012019">
                     <div class="image-find-container">
-                        <img src="img/seat-arona-full.jpg" alt="">
+                        <img src="img/seat-arona-full.jpg" class="image-responsive" alt="Seat Arona" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Arona Full LED 1.0 TSI 110 KM Automat/ Czujniki parkowania z tyłu...</h1>
@@ -297,7 +393,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Ateca" data-prize="95100" data-year="2021" data-mileage="10" data-date="11102022">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-SP-kombi.jpg" alt="">
+                        <img src="img/seat-leon-SP-kombi.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -345,7 +441,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="Diesel" data-gearbox="manualna" data-location="Toruń" data-model="Leon" data-prize="100100" data-year="2022" data-mileage="7" data-date="01012020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -393,7 +489,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Toruń" data-model="Ibiza" data-prize="140100" data-year="2022" data-mileage="3" data-date="01012021">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp-150.jpg" alt="">
+                        <img src="img/seat-leon-sp-150.jpg" class="image-responsive" alt="Seat Leon" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -441,7 +537,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="Benzyna+LPG" data-gearbox="manualna" data-location="Gdynia" data-model="Leon" data-prize="110100" data-year="2020" data-mileage="1000" data-date="13012020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -489,7 +585,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="Benzyna+CNG" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona" data-prize="110100" data-year="2020" data-mileage="1000" data-date="21012022">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-SP-kombi.jpg" alt="">
+                        <img src="img/seat-leon-SP-kombi.jpg" aclass="image-responsive" alt="Seat Leon SP kombi" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -537,7 +633,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="manualna" data-location="Gdańsk" data-model="Arona" data-prize="80100" data-year="2019" data-mileage="1100" data-date="01042022">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Arona Full LED 1.0 TSI 110 KM Automat/ Czujniki parkowania z tyłu...</h1>
@@ -585,7 +681,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Toruń" data-model="Mii" data-prize="89100" data-year="2019" data-mileage="800" data-date="03012021">
                     <div class="image-find-container">
-                        <img src="img/seat-arona-full.jpg" alt="">
+                        <img src="img/seat-arona-full.jpg" class="image-responsive" alt="Seat Arona Ful" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -625,7 +721,7 @@
                         <div class="footer-find-element category-element">
                             <div class="prize">
                                 <h3>Cena brutto</h3>
-                                <p>105 100 zł</p>
+                                <p>89 100 zł</p>
                             </div>
                             <button>Sprawdź ofertę</button>
                         </div>
@@ -633,7 +729,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="100900" data-year="2021" data-mileage="700" data-date="02102020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -681,7 +777,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Alhambra" data-prize="110900" data-year="2022" data-mileage="1500" data-date="01012020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -729,7 +825,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdańsk" data-model="Leon" data-prize="90700" data-year="2020" data-mileage="500" data-date="15012020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -777,7 +873,7 @@
                 </div>
                 <div class="find-element find-element--active" data-gasoline="benzyna" data-gearbox="automatyczna" data-location="Gdynia" data-model="Arona" data-prize="100700" data-year="2022" data-mileage="300" data-date="16032020">
                     <div class="image-find-container">
-                        <img src="img/seat-leon-sp.jpg" alt="">
+                        <img src="img/seat-leon-sp.jpg" class="image-responsive" alt="Seat Leon SP" width="463.5" height="310">
                     </div>
                     <div class="right-find-panel">
                         <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
@@ -1021,7 +1117,7 @@
 </div>
 </footer>
 
-<script src="form.js"></script>
-<script src="main.js"></script>
+<script src="js/form.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
