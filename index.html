@@ -11,26 +11,26 @@
     <title>Seat</title>
     <style>
         @font-face {
-            font-family: "SEAT BCN";
+            font-family: SeatBNC;
             font-weight: 300;
             font-display: swap;
             src: url('font/SEATBCN-Light.woff') format('woff');
         }
         @font-face {
-            font-family: "SEAT BCN";
+            font-family: SeatBNC;
             font-weight: 400;
             font-display: swap;
             src: url('font/SEATBCN-Regular.woff') format('woff');
         }
         @font-face {
-            font-family: "SEAT BCN";
+            font-family: SeatBNC;
             font-weight: 500;
             font-display: swap;
             src: url('font/SEATBCN-Medium.woff') format('woff');
         }
         @font-face {
-            font-family: "SEAT BCN";
-            font-weight: 700;
+            font-family: SeatBNC;
+            font-weight: 750;
             font-display: swap;
             src: url('font/SEATBCN-Bold.woff') format('woff');
         }
@@ -90,7 +90,7 @@
     <section id="mobile-filter" class="mobile-search-console">
         <div class="mobile-filter-bg"></div>
         <div class="search-console console-mobile">
-            <div class="console-items-container">
+            <div class="console-items-container console-mobile-container">
                 <div class="console-item">
                     <p>Model</p>
                     <div id="select-model" class="selected-option">
@@ -173,7 +173,7 @@
                     </div>
                 </div>
             <div class="console-button-container mobile-buttons-container">
-                <button class="btn delete-btn">
+                <button class="btn delete-btn" style="display: none;">
                     Wyczyść filtry
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.17156 0.757568L0.757347 2.17178L3.58584 5.00027L0.757324 7.82879L2.17154 9.243L5.00005 6.41449L7.82841 9.24285L9.24263 7.82864L6.41427 5.00027L9.24261 2.17193L7.82839 0.757719L5.00005 3.58606L2.17156 0.757568Z" fill="#190F14"/>
@@ -281,7 +281,7 @@
                         </div>
                     </div>
                 <div class="console-button-container">
-                    <button id="main-clear" class="btn delete-btn">
+                    <button id="main-clear" class="btn delete-btn" style="display: none;">
                         Wyczyść filtry
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.17156 0.757568L0.757347 2.17178L3.58584 5.00027L0.757324 7.82879L2.17154 9.243L5.00005 6.41449L7.82841 9.24285L9.24263 7.82864L6.41427 5.00027L9.24261 2.17193L7.82839 0.757719L5.00005 3.58606L2.17156 0.757568Z" fill="#190F14"/>
@@ -296,10 +296,10 @@
     <section id="finded-elements" class="finded-section">
         <div class="main-container">
             <div class="finded-header">
-                <h1>znaleziono <span id="car-count">13</span> pojazdów</h1>
+                <h1>Znaleziono <span id="car-count">13</span> pojazdów</h1>
                 <div class="border-mobile"></div>
                 <div class="find-sorting">
-                    <p class="sort-text">sortowanie</p>
+                    <p class="sort-text">Sortowanie</p>
                    <div class="sorting-item-container">
                         <div class="selected-option sorting-item">
                             <input class="select-value-sort" type="text" name="sort" value="" style="display: none;">
@@ -333,7 +333,6 @@
                     <div class="right-find-panel">
                         <div class="title-find-container">
                             <h1>SEAT Leon SP Style 1.5 150KM Automat Kombi</h1>
-                            <h6>SEAT Leon</h6>
                         </div>
                         <div class="element-description">
                             <p class="new">Nowy</p>
@@ -953,6 +952,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="null-offer-text" style="display: none;">
+                <p><span>Brak</span> ogłoszeń dostosowanych do aktualnych filtrów.</p>
             </div>
             <div class="finded-elements-pagination">
                 <button>

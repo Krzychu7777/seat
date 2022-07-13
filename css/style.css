@@ -3,7 +3,7 @@
   flex-direction: row;
 }
 
-.flex-col, .mobile-search-console .mobile-buttons-container, .scroll-container .scroll-arrow, footer .top-footer-panel .footer-item, .input-wrapper, .form-container, .contact-form-title, .finded-items-container, .search-console .console-items-container .console-item, .search-console, .home-container {
+.flex-col, .mobile-search-console .mobile-buttons-container, .scroll-container .scroll-arrow, footer .top-footer-panel .footer-item, .input-wrapper, .form-container, .contact-form-title, .find-element .right-find-panel, .finded-items-container, .search-console .console-items-container .console-item, .search-console, .home-container {
   display: flex;
   flex-direction: column;
 }
@@ -39,9 +39,9 @@
   }
 }
 .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
-  font-family: "SEAT BCN", sans-serif, Tahoma;
+  font-family: "SeatBNC", sans-serif, Tahoma;
   height: 48px;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 1rem;
   line-height: 48px;
   border: none;
@@ -65,7 +65,7 @@
 }
 .select-style p, .finded-header .find-sorting .sorting-item p, .search-console .console-items-container .console-item .selected-option p {
   color: #190F14;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 0.9rem;
   line-height: 30px;
 }
@@ -74,6 +74,7 @@
 }
 
 .input-style, textarea, .form-input input {
+  font-family: "SeatBNC", sans-serif, Tahoma;
   background-color: white;
   border-radius: 3px;
   border: 1px solid #E8E8E8;
@@ -121,12 +122,14 @@ textarea:-ms-input-placeholder, .form-input input:-ms-input-placeholder {
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "SEAT BCN", sans-serif, Tahoma;
+  font-family: "SeatBNC", sans-serif, Tahoma;
+  overflow-x: hidden;
 }
 
 header {
@@ -145,7 +148,7 @@ header {
 }
 
 .second-nav-item-desktop button:first-child {
-  font-family: "SEAT BCN", sans-serif, Tahoma;
+  font-family: "SeatBNC", sans-serif, Tahoma;
   position: relative;
   width: 141px;
   margin-right: 15px;
@@ -157,7 +160,7 @@ header {
   position: absolute;
 }
 .second-nav-item-desktop button:nth-child(2) {
-  font-family: "SEAT BCN", sans-serif, Tahoma;
+  font-family: "SeatBNC", sans-serif, Tahoma;
   color: #190F14;
   width: 200px;
 }
@@ -191,7 +194,8 @@ header {
 
 .home-section {
   position: relative;
-  min-height: 80vh;
+  min-height: 52vh;
+  padding: 113px 0 64px;
   background-color: #438A9C;
 }
 .home-section .home-bg-image {
@@ -209,7 +213,7 @@ header {
 .home-container {
   align-items: flex-start;
   position: relative;
-  min-height: 80vh;
+  min-height: 52vh;
   z-index: 10;
 }
 .home-container .home-title {
@@ -217,40 +221,50 @@ header {
 }
 .home-container .home-title h1 {
   margin-top: 0;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 4rem;
   line-height: 72px;
   width: 70%;
+  margin-bottom: 24px;
 }
 .home-container .home-title h2 {
   font-size: 2rem;
   font-weight: 300;
   line-height: 42px;
+  margin: 0;
 }
 .home-container .home-title h2 span {
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .search-console {
-  margin-top: 5%;
+  margin-top: 110px;
   align-items: flex-end;
   width: 1070px;
   height: 200px;
+  padding: 24px;
+  box-sizing: border-box;
   background-color: #FFFFFF;
 }
 .search-console .console-items-container {
   width: 100%;
+  gap: 16px;
+  box-sizing: border-box;
 }
 .search-console .console-items-container .console-item {
   position: relative;
-  width: 244px;
+  width: 25%;
 }
 .search-console .console-items-container .console-item p {
   color: #747468;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.9rem;
   line-height: 28px;
-  margin-bottom: 8px;
+  margin: 0;
+  padding: 0 0 8px 0;
+}
+.search-console .console-items-container .console-item .selected-option p {
+  padding: 11px 16px;
 }
 .search-console .console-items-container .console-item .selected-option--active {
   border-color: #EA5D1A;
@@ -262,11 +276,12 @@ header {
   position: absolute;
   display: none;
   box-sizing: border-box;
-  width: 244px;
+  width: 100%;
   max-height: 250px;
   overflow-y: scroll;
   padding: 16px 20px 16px;
-  top: 100px;
+  top: 100%;
+  margin: 11px 0 0;
   background-color: #FFFFFF;
   border: 1px solid #E8E8E8;
   -webkit-user-select: none;
@@ -274,10 +289,12 @@ header {
       -ms-user-select: none;
           user-select: none;
   z-index: 99;
+  scrollbar-color: #EA5D1A transparent;
+  scrollbar-width: thin !important;
 }
 .search-console .console-items-container .console-item .dropdown-list li {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 750;
   color: #190F14;
   list-style-type: none;
   padding: 8px 0;
@@ -303,12 +320,12 @@ header {
   display: block;
 }
 .search-console .console-button-container {
-  margin: 16px 20px 0 0;
+  margin: 16px 0 0 0;
 }
 .search-console .console-button-container button:first-child {
   margin-right: 18px;
   background: transparent;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 0.8rem;
 }
 .search-console .console-button-container button:first-child svg {
@@ -321,11 +338,8 @@ header {
 }
 
 @media screen and (max-width: 1200px) {
-  .home-section {
-    padding: 5% 0 3%;
-  }
   .home-section .home-bg-image {
-    width: 95%;
+    width: 87%;
     height: auto;
   }
   .home-section .home-bg-image img {
@@ -333,25 +347,36 @@ header {
   }
   .home-container .home-title h1 {
     font-size: 3.5rem;
+    width: 80%;
   }
   .home-container .home-title h2 {
     font-size: 1.8rem;
   }
   .search-console {
-    margin: 0 auto 0;
-    width: 100%;
+    width: 90%;
     height: auto;
-    padding: 20px 0;
+    padding: 24px;
   }
   .search-console .console-items-container {
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+  }
+  .search-console .console-items-container .console-item {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .home-container .home-title h1 {
+    font-size: 3.5rem;
+    width: 85%;
   }
 }
 @media screen and (max-width: 768px) {
   .home-container .home-title h1 {
     font-size: 3rem;
-    width: 90%;
+    width: 100%;
   }
   .home-container .home-title h2 {
     font-size: 1.5rem;
@@ -359,38 +384,38 @@ header {
 }
 @media screen and (max-width: 576px) {
   .home-section {
-    min-height: 110vh;
-    padding: 6% 0 10%;
+    padding: 0 0 32px;
   }
   .home-section .home-bg-image {
     margin: auto;
     margin-right: 0;
     position: relative;
   }
+  .search-console {
+    margin-top: 32px;
+  }
   .home-container .home-title h1 {
-    font-size: 3rem;
-    width: 90%;
+    font-size: 2.5rem;
+    width: 100%;
+    line-height: 46px;
+    margin-bottom: 8px;
   }
   .home-container .home-title h2 {
     font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 524px) {
-  .home-section {
-    min-height: 115vh;
-    padding: 6% 0 15%;
-  }
   .search-console {
-    width: 95%;
+    width: 100%;
     box-sizing: border-box;
-    height: 550px;
-    margin: 0 auto 0;
+    margin: 32px auto 0;
   }
   .search-console .console-items-container {
     justify-content: center;
+    grid-template-columns: 1fr;
   }
   .search-console .console-items-container .console-item {
-    width: 80%;
+    width: 100%;
   }
   .search-console .console-items-container .console-item p {
     font-weight: 500;
@@ -421,18 +446,22 @@ header {
   }
 }
 @media screen and (max-width: 450px) {
-  .home-section {
-    min-height: 100vh;
-    padding: 6% 0 15%;
-  }
   .home-container .home-title h1 {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
+    line-height: 38px;
+  }
+  .home-container .home-title h2 {
+    font-size: 1.125rem;
+    line-height: 32px;
+  }
+  .search-console {
+    width: 100%;
   }
 }
 .finded-section {
   min-height: 80vh;
   margin: 0;
-  padding: 3% 0 3%;
+  padding: 64px 0;
 }
 
 .finded-header {
@@ -442,9 +471,10 @@ header {
   display: none;
 }
 .finded-header h1 {
-  font-weight: 700;
+  font-weight: 750;
   font-size: 1.9rem;
   line-height: 48px;
+  margin: 0;
 }
 .finded-header h1 span {
   color: #EA5D1A;
@@ -487,7 +517,7 @@ header {
 }
 .finded-header .find-sorting .sort-options li {
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 750;
   color: #190F14;
   list-style-type: none;
   padding: 8px 0;
@@ -518,7 +548,7 @@ header {
 
 .finded-items-container {
   gap: 24px;
-  margin-top: 5%;
+  margin-top: 52px;
 }
 
 .find-element {
@@ -540,13 +570,14 @@ header {
   min-height: 310px;
 }
 .find-element .right-find-panel {
+  justify-content: space-between;
   width: 100%;
-  padding: 0 32px;
+  padding: 32px;
 }
 .find-element .right-find-panel h1 {
-  margin-bottom: 0;
+  margin: 0;
   color: #190F14;
-  font-weight: 700;
+  font-weight: 750;
   line-height: 25px;
   font-size: 1.4rem;
 }
@@ -556,6 +587,7 @@ header {
 .find-element .right-find-panel .element-description {
   justify-content: flex-start;
   margin-top: 13px;
+  gap: 24px;
 }
 .find-element .right-find-panel .element-description .new, .find-element .right-find-panel .element-description .used {
   margin: 0;
@@ -563,7 +595,7 @@ header {
   color: white;
   padding: 3px 8px;
   border-radius: 3px;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 0.8rem;
 }
 .find-element .right-find-panel .element-description .used {
@@ -574,21 +606,16 @@ header {
   margin: 0;
   font-size: 1rem;
 }
-.find-element .right-find-panel .element-description p:nth-child(2) {
-  margin-left: 24px;
-}
-.find-element .right-find-panel .element-description p:nth-child(3) {
-  margin-left: 24px;
-}
 .find-element .right-find-panel .element-description p:nth-child(3) svg {
   margin-right: 10px;
 }
 .find-element .right-find-panel .element-category-container {
   margin-top: 24px;
+  gap: 16px;
 }
 .find-element .right-find-panel .element-category-container .category-element {
   color: #190F14;
-  padding-right: 7%;
+  width: 20%;
 }
 .find-element .right-find-panel .element-category-container .category-element h2 {
   margin: 0;
@@ -599,13 +626,13 @@ header {
 }
 .find-element .right-find-panel .element-category-container .category-element p {
   margin: 8px 0 0;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 1.2rem;
   line-height: 24px;
 }
 .find-element .right-find-panel .footer-find-element {
-  align-items: center;
-  margin-top: 40px;
+  align-items: flex-end;
+  margin-top: 41px;
 }
 .find-element .right-find-panel .footer-find-element .prize {
   color: #EA5D1A;
@@ -619,13 +646,13 @@ header {
 }
 .find-element .right-find-panel .footer-find-element .prize p {
   margin: 0;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 2rem;
   line-height: 40px;
 }
 .find-element .right-find-panel .footer-find-element button {
   width: 170px;
-  font-weight: 700;
+  font-weight: 750;
   font-size: 1rem;
   color: #EA5D1A;
   background: transparent;
@@ -634,51 +661,49 @@ header {
 
 @media screen and (max-width: 1200px) {
   .finded-items-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 52px auto 0;
   }
   .find-element {
     position: relative;
     flex-direction: column;
-    width: 465px;
-    padding: 0 0 10px;
+    width: 100%;
     height: auto;
-    padding: 0 0 10px;
   }
   .find-element .image-find-container img {
+    max-height: 100%;
     width: 100%;
+    height: auto;
   }
   .find-element .right-find-panel {
-    padding: 0;
     width: 95%;
     margin: 0 auto 0;
+    padding: 10px 0;
   }
   .find-element .right-find-panel .element-category-container {
-    margin: 50px 0;
-    flex-wrap: wrap;
-    gap: 10px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow: auto;
+    padding: 13px 0;
   }
   .find-element .right-find-panel .element-category-container .category-element {
     padding: 0;
     text-align: center;
+    width: 50%;
   }
-  .find-element .right-find-panel .footer-find-element::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    margin: -12.1px;
-    background-color: #E8E8E8;
-    margin-top: -100px;
+}
+@media screen and (max-width: 992px) {
+  .finded-items-container {
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 768px) {
-  .finded-section {
-    padding: 7% 0 7%;
-  }
   .finded-header {
     flex-direction: column-reverse;
+    align-items: flex-start;
   }
   .finded-header .find-sorting {
     display: flex;
@@ -703,7 +728,14 @@ header {
     margin-top: 6% !important;
   }
   .finded-elements-pagination button {
-    font-family: "SEAT BCN", sans-serif, Tahoma;
+    font-family: "SeatBNC", sans-serif, Tahoma;
+  }
+  .finded-header .border-mobile {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #E8E8E8;
+    margin: 19px 0;
   }
 }
 @media screen and (max-width: 576px) {
@@ -723,9 +755,6 @@ header {
   }
   .find-element .right-find-panel .title-find-container h1, .find-element .right-find-panel .title-find-container h2 {
     position: absolute;
-  }
-  .find-element .right-find-panel .title-find-container h1 {
-    display: none;
   }
   .find-element .right-find-panel .element-description .new, .find-element .right-find-panel .element-description .used {
     position: absolute;
@@ -761,20 +790,31 @@ header {
   .finded-header h1 {
     font-size: 1.7rem;
   }
-  .finded-header .border-mobile {
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: #E8E8E8;
-    margin: 19px 0;
-  }
   .finded-header .find-sorting button {
-    min-width: 100px;
     width: 100%;
     flex-basis: 30%;
   }
   .finded-elements-pagination {
     margin-top: 10% !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .finded-section {
+    padding: 16px 0 38px;
+  }
+  .finded-items-container {
+    margin-top: 24px;
+  }
+  .finded-header h1 {
+    font-size: 1.125rem;
+    line-height: 32px;
+  }
+  .find-element .right-find-panel .element-category-container {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .find-element .right-find-panel .element-category-container .category-element {
+    width: 20%;
   }
 }
 .finded-elements-pagination {
@@ -813,11 +853,11 @@ header {
   min-height: 80vh;
   margin: 0;
   background-color: #F3F3F0;
-  padding: 5% 0 5%;
+  padding: 88px 0;
 }
 
 .contact-form-title {
-  font-weight: 700;
+  font-weight: 750;
   text-align: center;
   color: #0F0F0F;
 }
@@ -825,6 +865,7 @@ header {
   width: 75%;
 }
 .contact-form-title h1 {
+  margin: 0;
   font-size: 1rem;
   line-height: 30px;
 }
@@ -838,10 +879,11 @@ header {
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.11px;
+  margin: 0;
 }
 
 .form-container {
-  margin-top: 5%;
+  margin-top: 64px;
 }
 .form-container p {
   color: #190F14;
@@ -914,7 +956,7 @@ header {
 }
 
 textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: "SeatBNC", sans-serif, Tahoma;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -1012,9 +1054,6 @@ textarea:focus {
   }
 }
 @media screen and (max-width: 576px) {
-  .contact-form-section {
-    padding: 10% 0 10%;
-  }
   .contact-form-title h2 {
     font-size: 2.2rem;
     line-height: 32px;
@@ -1031,6 +1070,9 @@ textarea:focus {
   }
 }
 @media screen and (max-width: 450px) {
+  .contact-form-section {
+    padding: 48px 0;
+  }
   .contact-form-title h2 {
     font-size: 1.7rem;
     line-height: 30px;
@@ -1039,6 +1081,9 @@ textarea:focus {
     width: 100%;
     font-size: 1rem;
     line-height: 28px;
+  }
+  .form-container {
+    margin-top: 48px;
   }
   .form-container p {
     font-size: 0.9rem;
@@ -1067,7 +1112,7 @@ footer .top-footer-panel {
   gap: 7%;
 }
 footer .top-footer-panel .footer-item h1, footer .top-footer-panel .footer-item h2 {
-  font-weight: 700;
+  font-weight: 750;
   font-size: 1rem;
   line-height: 19px;
   margin: 0;
@@ -1081,7 +1126,7 @@ footer .top-footer-panel .footer-item p {
   font-size: 1rem;
 }
 footer .top-footer-panel .footer-item button {
-  font-family: "SEAT BCN", sans-serif, Tahoma;
+  font-family: "SeatBNC", sans-serif, Tahoma;
   margin-top: 13px;
   width: 130px;
   text-align: start;
@@ -1221,8 +1266,11 @@ footer .bottom-footer-panel .footer-links a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto 0;
-  max-width: 380px;
+  width: 90%;
+}
+.mobile-search-console .console-mobile-container {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .mobile-search-console .mobile-buttons-container {
   flex-direction: column-reverse;
@@ -1250,4 +1298,13 @@ footer .bottom-footer-panel .footer-links a {
 .page-laoding .loading-container svg {
   width: 70px;
   height: auto;
+}
+
+.null-offer-text {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-align: center;
+}
+.null-offer-text span {
+  color: #EA5D1A;
 }/*# sourceMappingURL=style.css.map */
