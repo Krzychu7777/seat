@@ -96,6 +96,19 @@ const emailAlert = (input, errorMismatch) => {
     }
 }
 
+const clearInputs = () => {
+    formObjects.name.value = "";
+    formObjects.surname.value = "";
+    formObjects.phoneNumber.value ="";
+    formObjects.email.value = "";
+    formObjects.textArea.value = "";
+    formObjects.agreeCheck.checked = false;
+    formObjects.privacy.checked = false;
+    formObjects.contactCheck.forEach((item) => {
+            item.checked = false;
+    });
+};
+
 const formSend = (e) => {
     e.preventDefault();
 
@@ -136,6 +149,7 @@ const formSend = (e) => {
             .then((response) => response.json())
             .then((json) => {
                 location.href = "thanks.html";
+                clearInputs();
             });
 
     } else {

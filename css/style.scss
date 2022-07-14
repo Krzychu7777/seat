@@ -57,7 +57,7 @@ $min-phone: 450px;
 }
 
 .main-container {
-    width: 1436px;
+    max-width: 1436px;
     margin: 0 auto 0;
 }
 
@@ -175,11 +175,15 @@ header {
         width: 141px;
         margin-right: 15px;
         background: transparent;
-        border: 2px solid $btn-second-color;
+        border: 3px solid $btn-second-color;
         color: $btn-second-color;
         
         .phone-button {
             position: absolute;
+        }
+
+        .phone-btn-style {
+            font-size: 0.8rem;
         }
     }
 
@@ -585,7 +589,7 @@ header {
         display: none;
     }
 
-    h1 {
+    h2 {
         font-weight: $font-bold;
         font-size: 1.9rem;
         line-height: 48px;
@@ -713,7 +717,7 @@ header {
         width: 100%;
         padding: 32px;
 
-        h1 {
+        h2 {
             margin: 0;
             color: $four-color;
             font-weight: $font-bold;
@@ -770,7 +774,7 @@ header {
                 color: $four-color;
                 width: 20%;
                 
-                h2 {
+                h3 {
                     margin: 0;
                     font-weight: $font-medium;
                     font-size: 0.9rem;
@@ -792,10 +796,14 @@ header {
             align-items: flex-end;
             margin-top: 41px;
 
+            .finded-border {
+                display: none;
+            }
+
             .prize {
                 color: $orange-main-color;
 
-                h3 {
+                h4 {
                     margin: 0;
                     color: $four-color;
                     font-size: 0.9rem;
@@ -851,7 +859,7 @@ header {
         .right-find-panel {
             width: 95%;
             margin: 0 auto 0;
-            padding: 10px 0;
+            padding: 14px 0;
 
             .element-category-container {
                 white-space: nowrap;
@@ -866,6 +874,18 @@ header {
                     width: 50%;
                 }
             }
+        }
+    }
+    .footer-find-element {
+        position: relative;
+        .finded-border {
+            display: block !important;
+            position: absolute;
+            top: -13px;
+            right: -10%;
+            left: -10%;
+            height: 1px;
+            background-color: $border-color;
         }
     }
 }
@@ -928,16 +948,9 @@ header {
             }       
         }
         .right-find-panel {
+            padding: 20px 0 12px;
             h2 {
                 display: flex;
-            }
-
-            .title-find-container {
-                position: relative;
-                height: 64px;
-                h1, h2 {
-                    position: absolute;
-                }
             }
 
             .element-description {
@@ -955,12 +968,14 @@ header {
                 }
             }
             .element-category-container {
-                margin: 10px 0;
+                margin: 10px 0 0;
                 justify-content: flex-start;
                 gap: 13px;
+                padding: 0;
 
                 .category-element {
-                    h2 {
+                    width: auto;
+                    h3 {
                         display: none;
                     }
                     p {
@@ -972,6 +987,7 @@ header {
             }
 
             .footer-find-element {
+                margin-top: 28px;
                 .prize {
                     p {
                         font-size: 1.5rem;
@@ -984,7 +1000,7 @@ header {
         }
     }
     .finded-header {
-        h1 {
+        h2 {
             font-size: 1.7rem;
         
         }
@@ -1009,20 +1025,61 @@ header {
         margin-top: 24px
     }
     .finded-header {
-        h1 {
+        h2 {
             font-size: 1.125rem;
             line-height: 32px;
         }
     }
     .find-element {
         .right-find-panel {
+            h6 {
+                position: relative;
+                display: block;
+                font-size: 1.3rem;
+                margin: 0 0 4px;
+                line-height: 28px;
+            }
+            h2 {
+                font-size: 0.8rem;
+                color: $text-product-color;
+                line-height: 21px;
+            }
             .element-category-container {
                 flex-wrap: wrap;
                 overflow: hidden;
+                padding: 0;
+                margin: 8px 0 0;
                 .category-element {
-                    width: 20%;
+                    width: auto;
+                    p {
+                        font-size: 0.8rem;
+                        line-height: 18px;
+                        margin: 0;
+                    }
                 }
             }
+            .footer-find-element {
+                margin-top: 28px !important;
+        
+                .prize {
+                    h4 {
+                        line-height: 24px;
+                    }
+                    p {
+                        line-height: 36px;
+                    }
+                }
+            }
+        }
+    }
+
+    .element-description {
+        margin: 0 !important;
+        p {
+            display: none !important;
+        }
+        .used, .new {
+            display: block !important;
         }
     }
 }
@@ -1079,17 +1136,17 @@ header {
     text-align: center;
     color: $form-color-text;
 
-    h1, h2, p {
+    h2, h3, p {
         width: 75%;
     }
 
-    h1 {
+    h2 {
         margin: 0;
         font-size: 1rem;
         line-height: 30px;
     }
 
-    h2 {
+    h3 {
         margin: 16px 0;
         font-size: 3rem;
         line-height: 52px;
@@ -1132,12 +1189,12 @@ header {
 
 .input-wrapper {
     @extend .flex-col;
-    gap: 16px
+    gap: 30px
 }
 
 .form-input {
     @extend .flex-row;
-    gap: 16px;
+    gap: 30px;
 
     .name, .last-name, .phone-number, .email {
         position: relative;
@@ -1163,9 +1220,11 @@ header {
     .error {
         display: none;
         position: absolute;
-        margin-top: -7px;
+        margin: 8px 0 0;
         font-size: 0.7rem;
         color: $orange-main-color;
+        line-height: 18px;
+        letter-spacing: 0.9px;
 
         &--active {
             display: block;
@@ -1188,9 +1247,11 @@ header {
     .error {
         display: none;
         position: absolute;
-        margin-top: -10px;
+        margin: 8px 0 0;
         font-size: 0.7rem;
         color: $orange-main-color;
+        line-height: 18px;
+        letter-spacing: 0.9px;
 
         &--active {
             display: block;
@@ -1283,6 +1344,9 @@ textarea {
 
         input {
             @extend .input-checkbox-style;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &::before {
                 content: "";
@@ -1298,10 +1362,7 @@ textarea {
                 content: "";
                 position: absolute;
                 width: 10px;
-                height: 10px;
-                left: 30%;
-                top: 30%;
-                transform: translate(-30%, -30%);
+                height: 10px;  
                 background-image: url('../img/check-vector.svg');
                 background-repeat: no-repeat;
                 background-position: center;
@@ -1317,7 +1378,7 @@ textarea {
 
 @media screen and (max-width: $lg) {
     .contact-form-title {
-        h2 {
+        h3 {
             font-size: 2.5rem;
             line-height: 40px;
         }
@@ -1329,7 +1390,7 @@ textarea {
 
 @media screen and (max-width: $sm) {
     .contact-form-title {
-        h2 {
+        h3 {
             font-size: 2.2rem;
             line-height: 32px;
         }
@@ -1354,7 +1415,7 @@ textarea {
     }
 
     .contact-form-title {
-        h2 {
+        h3 {
             font-size: 1.7rem;
             line-height: 30px;
         }
@@ -1395,7 +1456,7 @@ footer {
     background-color: $three-color;
     margin: 0;
     color: white;
-    padding: 3% 0 3%;
+    padding: 64px 0 54px;
 
     .top-footer-panel {
         @extend .flex-row;
@@ -1404,30 +1465,29 @@ footer {
         .footer-item {
             @extend .flex-col;
 
-            h1, h2 {
+            h2, h3 {
                 font-weight: $font-bold;
                 font-size: 1rem;
                 line-height: 19px;
-                margin: 0;
+                margin: 16px 0 0;
             }
 
             h2 {
-                margin-top: 16px;
+                margin-top: 0;
             }
 
             p {
-                margin-top: 16px;
+                margin: 16px 0 0;
                 font-weight: $font-medium;
                 font-size: 1rem
             }
 
             button {
                 font-family: $font-style;
-                margin-top: 13px;
+                margin: 19px 0 0;
                 width: 130px;
                 text-align: start;
                 padding: 0;
-                height: 32px;
                 color: white;
                 background-color: transparent;
                 border: none;
@@ -1444,12 +1504,24 @@ footer {
             .opening-hours-container {
                 @extend .flex-row;
                 gap: 70px;
+
+                h3 {
+                    margin: 16px 0 0;
+                }
+
+                p {
+                    margin: 4px 0 0;
+                    font-size: 1rem;
+                    line-height: 26px;
+                }
             }
+
+            .left {}
         }
     }
 
     .footer-border {
-        margin: 60px 0 24px;
+        margin: 54px 0 24px;
         width: 100%;
         height: 1px;
         background-color: #82807F;
@@ -1468,7 +1540,11 @@ footer {
     }
 
     .bottom-footer-panel {
-        margin-top: 2%;
+        margin: 30px 0 0;
+
+        p {
+            margin: 0;
+        }
 
         .footer-links {
             @extend .flex-row;
@@ -1477,6 +1553,10 @@ footer {
             a {
                 color: white;
                 text-decoration: none;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
         }
     }
@@ -1613,28 +1693,6 @@ footer {
 
     &--active {
         display: block;
-    }
-}
-
-.page-laoding {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #E1E1E1;
-    z-index: 99999;
-
-    .loading-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        svg {
-            width: 70px;
-            height: auto;
-        }
     }
 }
 

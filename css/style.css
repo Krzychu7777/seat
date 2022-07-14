@@ -24,7 +24,7 @@
 }
 
 .main-container {
-  width: 1436px;
+  max-width: 1436px;
   margin: 0 auto 0;
 }
 
@@ -153,11 +153,14 @@ header {
   width: 141px;
   margin-right: 15px;
   background: transparent;
-  border: 2px solid #FFFFFF;
+  border: 3px solid #FFFFFF;
   color: #FFFFFF;
 }
 .second-nav-item-desktop button:first-child .phone-button {
   position: absolute;
+}
+.second-nav-item-desktop button:first-child .phone-btn-style {
+  font-size: 0.8rem;
 }
 .second-nav-item-desktop button:nth-child(2) {
   font-family: "SeatBNC", sans-serif, Tahoma;
@@ -470,13 +473,13 @@ header {
 .finded-header .border-mobile {
   display: none;
 }
-.finded-header h1 {
+.finded-header h2 {
   font-weight: 750;
   font-size: 1.9rem;
   line-height: 48px;
   margin: 0;
 }
-.finded-header h1 span {
+.finded-header h2 span {
   color: #EA5D1A;
 }
 .finded-header .find-sorting {
@@ -574,7 +577,7 @@ header {
   width: 100%;
   padding: 32px;
 }
-.find-element .right-find-panel h1 {
+.find-element .right-find-panel h2 {
   margin: 0;
   color: #190F14;
   font-weight: 750;
@@ -617,7 +620,7 @@ header {
   color: #190F14;
   width: 20%;
 }
-.find-element .right-find-panel .element-category-container .category-element h2 {
+.find-element .right-find-panel .element-category-container .category-element h3 {
   margin: 0;
   font-weight: 500;
   font-size: 0.9rem;
@@ -634,10 +637,13 @@ header {
   align-items: flex-end;
   margin-top: 41px;
 }
+.find-element .right-find-panel .footer-find-element .finded-border {
+  display: none;
+}
 .find-element .right-find-panel .footer-find-element .prize {
   color: #EA5D1A;
 }
-.find-element .right-find-panel .footer-find-element .prize h3 {
+.find-element .right-find-panel .footer-find-element .prize h4 {
   margin: 0;
   color: #190F14;
   font-size: 0.9rem;
@@ -680,7 +686,7 @@ header {
   .find-element .right-find-panel {
     width: 95%;
     margin: 0 auto 0;
-    padding: 10px 0;
+    padding: 14px 0;
   }
   .find-element .right-find-panel .element-category-container {
     white-space: nowrap;
@@ -693,6 +699,18 @@ header {
     padding: 0;
     text-align: center;
     width: 50%;
+  }
+  .footer-find-element {
+    position: relative;
+  }
+  .footer-find-element .finded-border {
+    display: block !important;
+    position: absolute;
+    top: -13px;
+    right: -10%;
+    left: -10%;
+    height: 1px;
+    background-color: #E8E8E8;
   }
 }
 @media screen and (max-width: 992px) {
@@ -746,15 +764,11 @@ header {
     width: 100%;
     min-height: 210px;
   }
+  .find-element .right-find-panel {
+    padding: 20px 0 12px;
+  }
   .find-element .right-find-panel h2 {
     display: flex;
-  }
-  .find-element .right-find-panel .title-find-container {
-    position: relative;
-    height: 64px;
-  }
-  .find-element .right-find-panel .title-find-container h1, .find-element .right-find-panel .title-find-container h2 {
-    position: absolute;
   }
   .find-element .right-find-panel .element-description .new, .find-element .right-find-panel .element-description .used {
     position: absolute;
@@ -769,11 +783,15 @@ header {
     margin-left: 0 !important;
   }
   .find-element .right-find-panel .element-category-container {
-    margin: 10px 0;
+    margin: 10px 0 0;
     justify-content: flex-start;
     gap: 13px;
+    padding: 0;
   }
-  .find-element .right-find-panel .element-category-container .category-element h2 {
+  .find-element .right-find-panel .element-category-container .category-element {
+    width: auto;
+  }
+  .find-element .right-find-panel .element-category-container .category-element h3 {
     display: none;
   }
   .find-element .right-find-panel .element-category-container .category-element p {
@@ -781,13 +799,16 @@ header {
     font-size: 1rem;
     color: #747468;
   }
+  .find-element .right-find-panel .footer-find-element {
+    margin-top: 28px;
+  }
   .find-element .right-find-panel .footer-find-element .prize p {
     font-size: 1.5rem;
   }
   .find-element .right-find-panel .footer-find-element button {
     display: none;
   }
-  .finded-header h1 {
+  .finded-header h2 {
     font-size: 1.7rem;
   }
   .finded-header .find-sorting button {
@@ -805,16 +826,53 @@ header {
   .finded-items-container {
     margin-top: 24px;
   }
-  .finded-header h1 {
+  .finded-header h2 {
     font-size: 1.125rem;
     line-height: 32px;
+  }
+  .find-element .right-find-panel h6 {
+    position: relative;
+    display: block;
+    font-size: 1.3rem;
+    margin: 0 0 4px;
+    line-height: 28px;
+  }
+  .find-element .right-find-panel h2 {
+    font-size: 0.8rem;
+    color: #747468;
+    line-height: 21px;
   }
   .find-element .right-find-panel .element-category-container {
     flex-wrap: wrap;
     overflow: hidden;
+    padding: 0;
+    margin: 8px 0 0;
   }
   .find-element .right-find-panel .element-category-container .category-element {
-    width: 20%;
+    width: auto;
+  }
+  .find-element .right-find-panel .element-category-container .category-element p {
+    font-size: 0.8rem;
+    line-height: 18px;
+    margin: 0;
+  }
+  .find-element .right-find-panel .footer-find-element {
+    margin-top: 28px !important;
+  }
+  .find-element .right-find-panel .footer-find-element .prize h4 {
+    line-height: 24px;
+  }
+  .find-element .right-find-panel .footer-find-element .prize p {
+    line-height: 36px;
+  }
+  .element-description {
+    margin: 0 !important;
+  }
+  .element-description p {
+    display: none !important;
+  }
+  .element-description .used, .element-description .new, .find-element .right-find-panel .element-description .used {
+    display: block !important;
   }
 }
 .finded-elements-pagination {
@@ -861,15 +919,15 @@ header {
   text-align: center;
   color: #0F0F0F;
 }
-.contact-form-title h1, .contact-form-title h2, .contact-form-title p {
+.contact-form-title h2, .contact-form-title h3, .contact-form-title p {
   width: 75%;
 }
-.contact-form-title h1 {
+.contact-form-title h2 {
   margin: 0;
   font-size: 1rem;
   line-height: 30px;
 }
-.contact-form-title h2 {
+.contact-form-title h3 {
   margin: 16px 0;
   font-size: 3rem;
   line-height: 52px;
@@ -904,11 +962,11 @@ header {
 }
 
 .input-wrapper {
-  gap: 16px;
+  gap: 30px;
 }
 
 .form-input {
-  gap: 16px;
+  gap: 30px;
 }
 .form-input .name, .form-input .last-name, .form-input .phone-number, .form-input .email {
   position: relative;
@@ -926,9 +984,11 @@ header {
 .form-input .error, .form-input .error-second {
   display: none;
   position: absolute;
-  margin-top: -7px;
+  margin: 8px 0 0;
   font-size: 0.7rem;
   color: #EA5D1A;
+  line-height: 18px;
+  letter-spacing: 0.9px;
 }
 .form-input .error--active {
   display: block;
@@ -944,9 +1004,11 @@ header {
 .text-area .error, .text-area .error-second {
   display: none;
   position: absolute;
-  margin-top: -10px;
+  margin: 8px 0 0;
   font-size: 0.7rem;
   color: #EA5D1A;
+  line-height: 18px;
+  letter-spacing: 0.9px;
 }
 .text-area .error--active {
   display: block;
@@ -1017,6 +1079,11 @@ textarea:focus {
   gap: 13px;
   margin: 13px 0 0 7%;
 }
+.checkbox-contact input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .checkbox-contact input::before {
   content: "";
   width: 20px;
@@ -1031,9 +1098,6 @@ textarea:focus {
   position: absolute;
   width: 10px;
   height: 10px;
-  left: 30%;
-  top: 30%;
-  transform: translate(-30%, -30%);
   background-image: url("../img/check-vector.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1045,7 +1109,7 @@ textarea:focus {
 }
 
 @media screen and (max-width: 992px) {
-  .contact-form-title h2 {
+  .contact-form-title h3 {
     font-size: 2.5rem;
     line-height: 40px;
   }
@@ -1054,7 +1118,7 @@ textarea:focus {
   }
 }
 @media screen and (max-width: 576px) {
-  .contact-form-title h2 {
+  .contact-form-title h3 {
     font-size: 2.2rem;
     line-height: 32px;
   }
@@ -1073,7 +1137,7 @@ textarea:focus {
   .contact-form-section {
     padding: 48px 0;
   }
-  .contact-form-title h2 {
+  .contact-form-title h3 {
     font-size: 1.7rem;
     line-height: 30px;
   }
@@ -1106,32 +1170,31 @@ footer {
   background-color: #33302E;
   margin: 0;
   color: white;
-  padding: 3% 0 3%;
+  padding: 64px 0 54px;
 }
 footer .top-footer-panel {
   gap: 7%;
 }
-footer .top-footer-panel .footer-item h1, footer .top-footer-panel .footer-item h2 {
+footer .top-footer-panel .footer-item h2, footer .top-footer-panel .footer-item h3 {
   font-weight: 750;
   font-size: 1rem;
   line-height: 19px;
-  margin: 0;
+  margin: 16px 0 0;
 }
 footer .top-footer-panel .footer-item h2 {
-  margin-top: 16px;
+  margin-top: 0;
 }
 footer .top-footer-panel .footer-item p {
-  margin-top: 16px;
+  margin: 16px 0 0;
   font-weight: 500;
   font-size: 1rem;
 }
 footer .top-footer-panel .footer-item button {
   font-family: "SeatBNC", sans-serif, Tahoma;
-  margin-top: 13px;
+  margin: 19px 0 0;
   width: 130px;
   text-align: start;
   padding: 0;
-  height: 32px;
   color: white;
   background-color: transparent;
   border: none;
@@ -1146,8 +1209,16 @@ footer .top-footer-panel .footer-item button svg {
 footer .top-footer-panel .footer-item .opening-hours-container {
   gap: 70px;
 }
+footer .top-footer-panel .footer-item .opening-hours-container h3 {
+  margin: 16px 0 0;
+}
+footer .top-footer-panel .footer-item .opening-hours-container p {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  line-height: 26px;
+}
 footer .footer-border {
-  margin: 60px 0 24px;
+  margin: 54px 0 24px;
   width: 100%;
   height: 1px;
   background-color: #82807F;
@@ -1157,7 +1228,10 @@ footer .middle-footer-panel .social-icons-footer {
   gap: 24px;
 }
 footer .bottom-footer-panel {
-  margin-top: 2%;
+  margin: 30px 0 0;
+}
+footer .bottom-footer-panel p {
+  margin: 0;
 }
 footer .bottom-footer-panel .footer-links {
   gap: 24px;
@@ -1165,6 +1239,9 @@ footer .bottom-footer-panel .footer-links {
 footer .bottom-footer-panel .footer-links a {
   color: white;
   text-decoration: none;
+}
+footer .bottom-footer-panel .footer-links a:hover {
+  opacity: 0.8;
 }
 
 .footer-mobile {
@@ -1278,26 +1355,6 @@ footer .bottom-footer-panel .footer-links a {
 }
 .mobile-search-console--active {
   display: block;
-}
-
-.page-laoding {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #E1E1E1;
-  z-index: 99999;
-}
-.page-laoding .loading-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.page-laoding .loading-container svg {
-  width: 70px;
-  height: auto;
 }
 
 .null-offer-text {
