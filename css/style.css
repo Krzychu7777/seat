@@ -23,6 +23,11 @@
   align-items: center;
 }
 
+.fullhd-container {
+  max-width: 1920px;
+  margin: 0 auto 0;
+}
+
 .main-container {
   max-width: 1436px;
   margin: 0 auto 0;
@@ -197,7 +202,7 @@ header {
 
 .home-section {
   position: relative;
-  min-height: 52vh;
+  min-height: auto;
   padding: 113px 0 64px;
   background-color: #438A9C;
 }
@@ -216,7 +221,7 @@ header {
 .home-container {
   align-items: flex-start;
   position: relative;
-  min-height: 52vh;
+  min-height: auto;
   z-index: 10;
 }
 .home-container .home-title {
@@ -384,16 +389,25 @@ header {
   .home-container .home-title h2 {
     font-size: 1.5rem;
   }
-}
-@media screen and (max-width: 576px) {
   .home-section {
     padding: 0 0 32px;
+  }
+  .home-section .search-console {
+    display: none;
+  }
+  .home-section .search-console--active {
+    display: flex;
   }
   .home-section .home-bg-image {
     margin: auto;
     margin-right: 0;
     position: relative;
   }
+  .search-console {
+    margin-top: 32px;
+  }
+}
+@media screen and (max-width: 576px) {
   .search-console {
     margin-top: 32px;
   }
@@ -462,7 +476,7 @@ header {
   }
 }
 .finded-section {
-  min-height: 80vh;
+  min-height: auto;
   margin: 0;
   padding: 64px 0;
 }
@@ -984,7 +998,7 @@ header {
 .form-input .error, .form-input .error-second {
   display: none;
   position: absolute;
-  margin: 8px 0 0;
+  margin: 2px 0 0;
   font-size: 0.7rem;
   color: #EA5D1A;
   line-height: 18px;
@@ -1004,7 +1018,7 @@ header {
 .text-area .error, .text-area .error-second {
   display: none;
   position: absolute;
-  margin: 8px 0 0;
+  margin: 2px 0 0;
   font-size: 0.7rem;
   color: #EA5D1A;
   line-height: 18px;
@@ -1166,7 +1180,7 @@ textarea:focus {
   }
 }
 footer {
-  min-height: 34vh;
+  min-height: auto;
   background-color: #33302E;
   margin: 0;
   color: white;

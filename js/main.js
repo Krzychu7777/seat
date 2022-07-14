@@ -9,7 +9,8 @@ const phoneBtn = document.querySelectorAll('.phone-button'),
     sortListItem = document.querySelectorAll('.sort-item'),
     mobileFiltersBtn = document.getElementById('mobile-filters'),
     mobileSearchConsole = document.querySelector('.mobile-search-console'),
-    mobileCloseBg = document.querySelector('.mobile-filter-bg');
+    mobileCloseBg = document.querySelector('.mobile-filter-bg'),
+    searchConsole = document.querySelector('.search-console');
 let phoneChange = 0;
 let selectText;
 let dropDownFilters;
@@ -119,13 +120,15 @@ function openDropDownList(e) {
 
 function closeByMain(e) {
     const mainTarget = e.target,
-        dropDownSelects = mainTarget.parentNode.querySelector('.selected-option'),
-        selectedText = mainTarget.parentNode.querySelector('.selected-option p'),
-        selectedArrow = mainTarget.parentNode.querySelector('.selected-option svg');
+        dropDownSelects = mainTarget.parentNode.querySelector('.selected-option');
 
-   if(mainTarget != dropDownSelects && mainTarget != selectedText && mainTarget != selectedArrow) {
+
+   if(!searchConsole.contains(mainTarget) && mainTarget != mobileFiltersBtn && mainTarget != dropDownSelects.contains(mainTarget) && mainTarget != dropDownSelects) {
     if(dropDownFilters) {
     dropDownFilters.classList.remove('dropdown-list--active');}
+
+    if(searchConsole){
+    searchConsole.classList.remove('search-console--active');}
 
     if(selectButton) {
     selectButton.classList.remove('selected-option--active'); }
@@ -144,6 +147,10 @@ deleteBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
         clearCategory(e);
         countActiveElement();
+
+        if(searchConsole){
+            searchConsole.classList.remove('search-console--active');}
+
         location.href = "#finded-elements";
     });
 });
@@ -202,6 +209,10 @@ btnSearch.forEach((button) => {
         filterValue(e);
         carFiltering();
         countActiveElement();
+
+         if(searchConsole){
+            searchConsole.classList.remove('search-console--active');}
+
         location.href = "#finded-elements";
     });
 });
@@ -295,20 +306,19 @@ window.addEventListener('scroll', () => {
 //open mobile search console and close
 
 mobileFiltersBtn.addEventListener('click', (e) => {
-    mobileSearchConsole.classList.add('mobile-search-console--active');
-    isOpenMobileFilter = true;
+    searchConsole.classList.toggle('search-console--active');
 });
 
-mobileSearchConsole.addEventListener('click', (e) => {
-    const target = e.target,
-        searchMobileButton = target.parentNode.querySelector('.button-search'),
-        clearMobileButton = target.parentNode.querySelector('.delete-btn');
+// mobileSearchConsole.addEventListener('click', (e) => {
+//     const target = e.target,
+//         searchMobileButton = target.parentNode.querySelector('.button-search'),
+//         clearMobileButton = target.parentNode.querySelector('.delete-btn');
 
-    if(target === searchMobileButton || target === clearMobileButton) {
-        mobileSearchConsole.classList.remove('mobile-search-console--active');
-    }
-});
+//     if(target === searchMobileButton || target === clearMobileButton) {
+//         mobileSearchConsole.classList.remove('mobile-search-console--active');
+//     }
+// });
 
-mobileCloseBg.addEventListener('click', () => {
-    mobileSearchConsole.classList.remove('mobile-search-console--active');
-});
+// mobileCloseBg.addEventListener('click', () => {
+//     mobileSearchConsole.classList.remove('mobile-search-console--active');
+// });
