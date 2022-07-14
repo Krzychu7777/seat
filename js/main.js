@@ -128,7 +128,9 @@ function closeByMain(e) {
     dropDownFilters.classList.remove('dropdown-list--active');}
 
     if(searchConsole){
-    searchConsole.classList.remove('search-console--active');}
+    searchConsole.classList.remove('search-console--active');
+    consoleFixedBg.classList.remove('bg-filter--active');
+    }
 
     if(selectButton) {
     selectButton.classList.remove('selected-option--active'); }
@@ -149,7 +151,9 @@ deleteBtn.forEach((button) => {
         countActiveElement();
 
         if(searchConsole){
-            searchConsole.classList.remove('search-console--active');}
+            searchConsole.classList.remove('search-console--active');
+            consoleFixedBg.classList.remove('bg-filter--active');
+        }
 
         location.href = "#finded-elements";
     });
@@ -211,7 +215,9 @@ btnSearch.forEach((button) => {
         countActiveElement();
 
          if(searchConsole){
-            searchConsole.classList.remove('search-console--active');}
+            searchConsole.classList.remove('search-console--active');
+            consoleFixedBg.classList.remove('bg-filter--active');
+        }
 
         location.href = "#finded-elements";
     });
@@ -305,8 +311,12 @@ window.addEventListener('scroll', () => {
 
 //open mobile search console and close
 
+const consoleFixedBg = document.querySelector('.bg-filter');
+
 mobileFiltersBtn.addEventListener('click', (e) => {
     searchConsole.classList.toggle('search-console--active');
+    consoleFixedBg.classList.toggle('bg-filter--active');
+    searchConsole.classList.add('search-console--display');
 });
 
 // mobileSearchConsole.addEventListener('click', (e) => {

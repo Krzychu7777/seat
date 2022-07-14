@@ -185,7 +185,11 @@ header {
     max-width: 106px;
   }
   .second-nav-item-mobile {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
   }
   .second-nav-item-mobile button {
     background: transparent;
@@ -253,6 +257,7 @@ header {
   padding: 24px;
   box-sizing: border-box;
   background-color: #FFFFFF;
+  z-index: 999;
 }
 .search-console .console-items-container {
   width: 100%;
@@ -347,7 +352,7 @@ header {
 
 @media screen and (max-width: 1200px) {
   .home-section .home-bg-image {
-    width: 87%;
+    width: 96%;
     height: auto;
   }
   .home-section .home-bg-image img {
@@ -381,6 +386,21 @@ header {
     width: 85%;
   }
 }
+.bg-filter {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0F0F0F;
+  opacity: 0.7;
+  z-index: 99;
+}
+.bg-filter--active {
+  display: block;
+}
+
 @media screen and (max-width: 768px) {
   .home-container .home-title h1 {
     font-size: 3rem;
@@ -392,11 +412,17 @@ header {
   .home-section {
     padding: 0 0 32px;
   }
-  .home-section .search-console {
+  .home-section .search-console--display {
     display: none;
   }
   .home-section .search-console--active {
     display: flex;
+    position: fixed;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
   }
   .home-section .home-bg-image {
     margin: auto;
@@ -520,6 +546,7 @@ header {
 .finded-header .find-sorting .sort-options {
   position: absolute;
   box-sizing: border-box;
+  max-width: 300px;
   min-height: 250px;
   padding: 16px 20px 16px;
   width: 100%;
