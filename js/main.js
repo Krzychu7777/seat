@@ -1,7 +1,7 @@
 const phoneBtn = document.querySelectorAll('.phone-button'),
     selectButtons = document.querySelectorAll('.selected-option'),
     itemListChoose = document.querySelectorAll('.dropdown-list-item'),
-    deleteBtn = document.querySelectorAll('.delete-btn'),
+    clearBtn = document.querySelectorAll('.delete-btn'),
     findingItems = document.querySelectorAll('.find-element'),
     btnSearch  = document.querySelectorAll('.button-search'),
     carCount = document.getElementById('car-count'),
@@ -10,7 +10,8 @@ const phoneBtn = document.querySelectorAll('.phone-button'),
     mobileFiltersBtn = document.getElementById('mobile-filters'),
     mobileSearchConsole = document.querySelector('.mobile-search-console'),
     mobileCloseBg = document.querySelector('.mobile-filter-bg'),
-    searchConsole = document.querySelector('.search-console');
+    searchConsole = document.querySelector('.search-console'),
+    foundItems = document.getElementById('finded-elements');
 let phoneChange = 0;
 let selectText;
 let dropDownFilters;
@@ -22,6 +23,64 @@ let filters = {
     gasoline: "",
     location: ""
 };
+
+//url search
+
+const getUrlParam = window.location.search,
+    urlParam = new URLSearchParams(getUrlParam),
+    keysUrl = urlParam.entries();
+
+function assignSearchResult() {
+    for(const [key, values] of keysUrl) {
+        filters[key] = changeCharacters(values);
+    }
+
+    console.log(filters);
+}
+
+function changeCharacters(character) {
+
+    return character.replace(/ą/g, 'a').replace(/Ą/g, 'A')
+    .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+    .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+    .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+    .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+    .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+    .replace(/ś/g, 's').replace(/Ś/g, 'S')
+    .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+    .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
+    .replace('+', '');
+}
+
+function capitalizeFirstLetter(string) {
+    if(string != '') {
+    return string[0].toUpperCase() + string.slice(1);
+}
+}
+
+function chnageInputValueByUrl() {
+    const selectValueInput = document.querySelectorAll('.select-value');
+    const textchange = document.querySelectorAll('.text-change');
+
+    selectValueInput.forEach((input, index) => {
+        for(key in filters) {
+            if(input.name == key)
+                input.value = filters[key];
+        }
+        if(input.value != '')
+        textchange[index].textContent = capitalizeFirstLetter(input.value);
+    });
+}
+
+const init = () => {
+    assignSearchResult();
+    carFiltering();
+    countActiveElement();
+    chnageInputValueByUrl();
+}
+
+init();
+
 
 //phone button change
 
@@ -145,20 +204,6 @@ itemListChoose.forEach((item) => {
     item.addEventListener('click', chooseFilterValue);
 });
 
-deleteBtn.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        clearCategory(e);
-        countActiveElement();
-
-        if(searchConsole){
-            searchConsole.classList.remove('search-console--active');
-            consoleFixedBg.classList.remove('bg-filter--active');
-        }
-
-        location.href = "#finded-elements";
-    });
-});
-
 main.addEventListener('click', closeByMain);
 
 
@@ -184,10 +229,9 @@ function carFiltering() {
         }
 
         for(key in filters) {
-            if(filters[key].toLowerCase() !== carFilters[key].toLowerCase() && filters[key] !== "") {
+            if(changeCharacters(filters[key].toLowerCase()) !== changeCharacters(carFilters[key].toLowerCase()) && filters[key] !== "") {
                 item.classList.remove('find-element--active');
             } 
-            
         }
     });
 }
@@ -208,18 +252,50 @@ function countActiveElement() {
     }
 }
 
+function changeUrlValue() {
+    const url = new URL(window.location.href);
+    const param = new URLSearchParams(url.search);
+    const selectValueInput = document.querySelectorAll('.select-value');
+    
+        for(key in filters) {
+            if(filters[key] != '') {
+            url.searchParams.set(key, changeCharacters(filters[key].toLowerCase()));
+            }
+            
+            window.history.pushState(null, null, url);
+        }
+
+        console.log(filters);
+
+    window.scrollTo(0, foundItems.offsetTop);
+}
+
 btnSearch.forEach((button) => {
     button.addEventListener('click', (e) => {
         filterValue(e);
         carFiltering();
         countActiveElement();
+        changeUrlValue();
 
          if(searchConsole){
             searchConsole.classList.remove('search-console--active');
             consoleFixedBg.classList.remove('bg-filter--active');
         }
+    });
+});
 
-        location.href = "#finded-elements";
+clearBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        clearCategory(e);
+        countActiveElement();
+
+        if(searchConsole){
+            searchConsole.classList.remove('search-console--active');
+            consoleFixedBg.classList.remove('bg-filter--active');
+        }
+
+        window.history.pushState({}, document.title, '/?');
+        window.scrollTo(0, foundItems.offsetTop);
     });
 });
 
