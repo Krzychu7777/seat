@@ -48,6 +48,7 @@ function changeCharacters(character) {
 function chnageInputValueByUrl() {
     for(const key in filters) {
         const selectedText = document.getElementById(`${key}`);
+        if(selectedText) {
         const listItems = selectedText.parentNode.parentNode.querySelectorAll('.dropdown-list li');
 
         listItems.forEach((item) => {
@@ -57,6 +58,7 @@ function chnageInputValueByUrl() {
                 clearBtn.style.display = "flex";
             }
         });
+        }
     }
 
 }
@@ -168,19 +170,20 @@ function closeByMain(e) {
     const mainTarget = e.target,
         dropDownSelects = mainTarget.parentNode.querySelector('.selected-option');
 
+    if (dropDownSelects != null) {
+    if(!searchConsole.contains(mainTarget) && mainTarget != mobileFiltersBtn && mainTarget != dropDownSelects.contains(mainTarget) && mainTarget != dropDownSelects) {
+            if(dropDownFilters) {
+            dropDownFilters.classList.remove('dropdown-list--active');}
 
-   if(!searchConsole.contains(mainTarget) && mainTarget != mobileFiltersBtn && mainTarget != dropDownSelects.contains(mainTarget) && mainTarget != dropDownSelects) {
-    if(dropDownFilters) {
-    dropDownFilters.classList.remove('dropdown-list--active');}
+            if(searchConsole){
+            searchConsole.classList.remove('search-console--active');
+            consoleFixedBg.classList.remove('bg-filter--active');
+            }
 
-    if(searchConsole){
-    searchConsole.classList.remove('search-console--active');
-    consoleFixedBg.classList.remove('bg-filter--active');
+            if(selectButton) {
+            selectButton.classList.remove('selected-option--active'); }
+        }
     }
-
-    if(selectButton) {
-    selectButton.classList.remove('selected-option--active'); }
-   }
 }
 
 selectButtons.forEach((item) => {
@@ -216,9 +219,11 @@ function carFiltering() {
         }
 
         for(key in filters) {
-            if(changeCharacters(filters[key].toLowerCase()) !== changeCharacters(carFilters[key].toLowerCase()) && filters[key] !== "") {
-                item.classList.remove('find-element--active');
-            } 
+            if(carFilters[key] && filters[key]) {
+                if(changeCharacters(filters[key].toLowerCase()) !== changeCharacters(carFilters[key].toLowerCase()) && filters[key] !== "") {
+                    item.classList.remove('find-element--active');
+                }
+            }
         }
     });
 }
@@ -251,8 +256,6 @@ function changeUrlValue() {
 
             window.history.pushState(null, null, url);
         }
-
-        console.log(filters);
 
     window.scrollTo(0, foundItems.offsetTop);
 }

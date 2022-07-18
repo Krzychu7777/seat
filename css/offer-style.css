@@ -1,0 +1,13 @@
+header {
+  background-color: white;
+}
+
+.second-nav-item-desktop button:first-child {
+  border: 2px solid #190F14;
+  color: #190F14;
+}
+
+.second-nav-item-desktop button:nth-child(2) {
+  background-color: #190F14;
+  color: white;
+}/*# sourceMappingURL=offer-style.css.map */

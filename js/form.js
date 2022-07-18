@@ -127,7 +127,8 @@ const formSend = (e) => {
         content = inputValid(formObjects.textArea, formErrors.textArea),
         checkboxAgree = checkBoxValid(formObjects.agreeCheck),
         checkBoxPrivacy = checkBoxValid(formObjects.privacy),
-        checkBoxContact = checkBoxContactValid(formObjects.contactCheck);
+        checkBoxContact = checkBoxContactValid(formObjects.contactCheck),
+        contactSection = document.getElementById('contact-form');
 
 
     if (name && surname && phoneNumber && email && content && checkboxAgree && checkBoxPrivacy && checkBoxContact) {
@@ -153,7 +154,7 @@ const formSend = (e) => {
             });
 
     } else {
-        location.href = "#contact-form";
+        window.scrollTo(0, contactSection.offsetTop);
     }
 };
 
