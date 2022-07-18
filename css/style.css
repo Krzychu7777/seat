@@ -412,7 +412,7 @@ header {
   .home-section {
     padding: 0 0 32px;
   }
-  .home-section .search-console--display {
+  .home-section .search-console--hidden {
     display: none;
   }
   .home-section .search-console--active {
@@ -760,6 +760,9 @@ header {
   }
 }
 @media screen and (max-width: 768px) {
+  .finded-section {
+    padding: 16px 0;
+  }
   .finded-header {
     flex-direction: column-reverse;
     align-items: flex-start;

@@ -21,12 +21,7 @@ let selectText;
 let dropDownFilters;
 let selectButton;
 let isOpenMobileFilter = false;
-let filters = {
-    model: "",
-    gearbox: "",
-    gasoline: "",
-    location: ""
-};
+let filters = {};
 
 //url search
 
@@ -51,24 +46,19 @@ function changeCharacters(character) {
 }
 
 function chnageInputValueByUrl() {
-    const selectValueInput = document.querySelectorAll('.select-value');
-    const textchange = document.querySelectorAll('.text-change');
-    const dropDwonItems = document.querySelectorAll('.dropdown-list-item');
+    for(const key in filters) {
+        const selectedText = document.getElementById(`${key}`);
+        const listItems = selectedText.parentNode.parentNode.querySelectorAll('.dropdown-list li');
 
-    selectValueInput.forEach((input, index) => {
-        for(key in filters) {
-            if(input.name == key)
-                input.value = filters[key];
-            
-            dropDwonItems.forEach((item) => {
-                if(textchange[index].id == key && item.dataset.type == input.value) {
-                    textchange[index].textContent = item.textContent;
-                    textchange[index].classList.add('changed');
-                    clearBtn.style.display = "flex";
-                }
-            });
-        }
-    });
+        listItems.forEach((item) => {
+            if(item.dataset.type == filters[key]) {
+                selectedText.textContent = item.textContent;
+                selectedText.classList.add('changed');
+                clearBtn.style.display = "flex";
+            }
+        });
+    }
+
 }
 
 const init = () => {

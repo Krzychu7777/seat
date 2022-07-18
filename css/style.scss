@@ -407,14 +407,6 @@ header {
     }
 }
 
-@media screen and (max-width: $xxl) {
-    .home-section {
-        .home-bg-image {
-           
-        }
-    }
-}
-
 @media screen and (max-width: $xl) {
     .home-section {
         .home-bg-image {
@@ -499,7 +491,7 @@ header {
         padding: 0 0 32px;
         .search-console {
 
-            &--display {
+            &--hidden {
                 display: none;
             }
 
@@ -527,16 +519,6 @@ header {
 }
 
 @media screen and (max-width: $sm) {
-//     .home-section {
-//         padding: 0 0 32px;
-        
-//         .home-bg-image {
-//             margin: auto;
-//             margin-right: 0;
-//             position: relative;
-//     }
-// }
-
 .search-console {
     margin-top: 32px;
 }
@@ -952,6 +934,9 @@ header {
 }
 
 @media screen and (max-width: $md) {
+    .finded-section {
+        padding: 16px 0;
+    }
     .finded-header {
         flex-direction: column-reverse;
         align-items: flex-start;
