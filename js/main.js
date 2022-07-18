@@ -1,7 +1,7 @@
 const phoneBtn = document.querySelectorAll('.phone-button'),
     selectButtons = document.querySelectorAll('.selected-option'),
     itemListChoose = document.querySelectorAll('.dropdown-list-item'),
-    clearBtn = document.querySelectorAll('.delete-btn'),
+    clearBtn = document.querySelector('.delete-btn'),
     findingItems = document.querySelectorAll('.find-element'),
     btnSearch  = document.querySelectorAll('.button-search'),
     carCount = document.getElementById('car-count'),
@@ -11,7 +11,11 @@ const phoneBtn = document.querySelectorAll('.phone-button'),
     mobileSearchConsole = document.querySelector('.mobile-search-console'),
     mobileCloseBg = document.querySelector('.mobile-filter-bg'),
     searchConsole = document.querySelector('.search-console'),
-    foundItems = document.getElementById('finded-elements');
+    foundItems = document.getElementById('finded-elements'),
+    consoleFixedBg = document.querySelector('.bg-filter'),
+    getUrlParam = window.location.search,
+    urlParam = new URLSearchParams(getUrlParam),
+    keysUrl = urlParam.entries();
 let phoneChange = 0;
 let selectText;
 let dropDownFilters;
@@ -26,16 +30,10 @@ let filters = {
 
 //url search
 
-const getUrlParam = window.location.search,
-    urlParam = new URLSearchParams(getUrlParam),
-    keysUrl = urlParam.entries();
-
 function assignSearchResult() {
     for(const [key, values] of keysUrl) {
         filters[key] = changeCharacters(values);
     }
-
-    console.log(filters);
 }
 
 function changeCharacters(character) {
@@ -52,23 +50,24 @@ function changeCharacters(character) {
     .replace('+', '');
 }
 
-function capitalizeFirstLetter(string) {
-    if(string != '') {
-    return string[0].toUpperCase() + string.slice(1);
-}
-}
-
 function chnageInputValueByUrl() {
     const selectValueInput = document.querySelectorAll('.select-value');
     const textchange = document.querySelectorAll('.text-change');
+    const dropDwonItems = document.querySelectorAll('.dropdown-list-item');
 
     selectValueInput.forEach((input, index) => {
         for(key in filters) {
             if(input.name == key)
                 input.value = filters[key];
+            
+            dropDwonItems.forEach((item) => {
+                if(textchange[index].id == key && item.dataset.type == input.value) {
+                    textchange[index].textContent = item.textContent;
+                    textchange[index].classList.add('changed');
+                    clearBtn.style.display = "flex";
+                }
+            });
         }
-        if(input.value != '')
-        textchange[index].textContent = capitalizeFirstLetter(input.value);
     });
 }
 
@@ -79,7 +78,7 @@ const init = () => {
     chnageInputValueByUrl();
 }
 
-init();
+window.addEventListener('load', init);
 
 
 //phone button change
@@ -100,12 +99,11 @@ phoneBtn.forEach((item) => {
 //select options
 
 
-function changeFilterValues(currentItem, selectClass, defaultClass) {
+function changeFilterValues(currentItem, selectClass) {
     const parentTarget = currentItem.parentNode.parentNode,
         dropDownList = parentTarget.querySelector('.dropdown-list'),
         selectedBtn = parentTarget.querySelector('.selected-option'),
         selectValue = parentTarget.querySelector(selectClass),
-        defaultValue = parentTarget.querySelector(defaultClass),
         allSelectValues = parentTarget.parentNode.querySelectorAll('.select-value'),
         currentDeleteBtn = parentTarget.parentNode.parentNode.querySelector('.delete-btn');
      selectText = currentItem.parentNode.parentNode.querySelector('.text-change');
@@ -118,7 +116,7 @@ function changeFilterValues(currentItem, selectClass, defaultClass) {
     selectText.textContent = currentItem.textContent;
 
     if(!currentItem.classList.contains('sort-item')) {
-        selectValue.value == defaultValue.value ? selectValue.value = "" : currentDeleteBtn.style.display = "flex";
+        selectValue.value == selectText.dataset.default ? selectValue.value = "" : currentDeleteBtn.style.display = "flex";
         
         if(allSelectValues[0].value == "" && allSelectValues[1].value == "" && allSelectValues[2].value == "" && allSelectValues[3].value == "") {
             currentDeleteBtn.style.display = "none";
@@ -129,7 +127,7 @@ function changeFilterValues(currentItem, selectClass, defaultClass) {
 function chooseFilterValue(e) {
         const currentItem = e.currentTarget;
         const sortingItem = currentItem.parentNode;
-        changeFilterValues(currentItem, '.select-value', '.default-text');
+        changeFilterValues(currentItem, '.select-value');
 
         if(!sortingItem.classList.contains('sort-options')) {
             selectText.classList.add('changed');
@@ -143,9 +141,8 @@ function clearCategory(e) {
     const currentDelBtn = currentClearInput.querySelector('.delete-btn');
 
     changedText.forEach((item) => {
-        const defaultText = item.parentNode.querySelector('.default-text');
         const selectValueReset = item.parentNode.querySelector('.select-value');
-        item.textContent = defaultText.value;
+        item.textContent = item.dataset.default;
         selectValueReset.value = "";
 
         if(item.classList.contains('changed')) {
@@ -253,15 +250,15 @@ function countActiveElement() {
 }
 
 function changeUrlValue() {
+    window.history.pushState(null, document.title, "/?");
+
     const url = new URL(window.location.href);
-    const param = new URLSearchParams(url.search);
-    const selectValueInput = document.querySelectorAll('.select-value');
     
         for(key in filters) {
             if(filters[key] != '') {
             url.searchParams.set(key, changeCharacters(filters[key].toLowerCase()));
             }
-            
+
             window.history.pushState(null, null, url);
         }
 
@@ -284,19 +281,17 @@ btnSearch.forEach((button) => {
     });
 });
 
-clearBtn.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        clearCategory(e);
-        countActiveElement();
+clearBtn.addEventListener('click', (e) => {
+    clearCategory(e);
+    countActiveElement();
 
-        if(searchConsole){
-            searchConsole.classList.remove('search-console--active');
-            consoleFixedBg.classList.remove('bg-filter--active');
-        }
+    if(searchConsole){
+        searchConsole.classList.remove('search-console--active');
+        consoleFixedBg.classList.remove('bg-filter--active');
+    }
 
-        window.history.pushState({}, document.title, '/?');
-        window.scrollTo(0, foundItems.offsetTop);
-    });
+    window.history.pushState({}, document.title, '/?');
+    window.scrollTo(0, foundItems.offsetTop);
 });
 
 // sort
@@ -318,7 +313,7 @@ function sortItems(e) {
     const valueSort = document.querySelector('.select-value-sort');
     const itemsArray = [...findingItems];
 
-    changeFilterValues(currentSortItem, '.select-value-sort', '.default-text-sort');
+    changeFilterValues(currentSortItem, '.select-value-sort');
 
         if(valueSort.value.toLowerCase() === "") {
             itemsArray.forEach((item) => {
@@ -387,24 +382,8 @@ window.addEventListener('scroll', () => {
 
 //open mobile search console and close
 
-const consoleFixedBg = document.querySelector('.bg-filter');
-
-mobileFiltersBtn.addEventListener('click', (e) => {
+mobileFiltersBtn.addEventListener('click', () => {
     searchConsole.classList.toggle('search-console--active');
     consoleFixedBg.classList.toggle('bg-filter--active');
     searchConsole.classList.add('search-console--display');
 });
-
-// mobileSearchConsole.addEventListener('click', (e) => {
-//     const target = e.target,
-//         searchMobileButton = target.parentNode.querySelector('.button-search'),
-//         clearMobileButton = target.parentNode.querySelector('.delete-btn');
-
-//     if(target === searchMobileButton || target === clearMobileButton) {
-//         mobileSearchConsole.classList.remove('mobile-search-console--active');
-//     }
-// });
-
-// mobileCloseBg.addEventListener('click', () => {
-//     mobileSearchConsole.classList.remove('mobile-search-console--active');
-// });

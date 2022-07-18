@@ -76,102 +76,6 @@
         </div>
     </header>
 <main>
-    <!-- <section id="mobile-filter" class="mobile-search-console">
-        <div class="mobile-filter-bg"></div>
-        <div class="search-console console-mobile">
-            <div class="console-items-container console-mobile-container">
-                <div class="console-item">
-                    <p>Model</p>
-                    <div id="select-model" class="selected-option">
-                        <input class="select-value" type="text" name="model" value="" style="display: none;">
-                        <input class="default-text" type="text" value="Dowolny" style="display: none;">
-                        <p id="model" class="text-change">Dowolny</p>
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
-                        </svg>
-                    </div>
-                        <ul class="dropdown-list">
-                            <li class="dropdown-list-item">Dowolny</li>
-                            <li class="dropdown-border"></li>
-                            <li class="dropdown-list-item">Alhambra</li>
-                            <li class="dropdown-list-item">Arona</li>
-                            <li class="dropdown-list-item">Ateca</li>
-                            <li class="dropdown-list-item">Ibiza</li>
-                            <li class="dropdown-list-item">Leon</li>
-                            <li class="dropdown-list-item">Mii</li>
-                        </ul>
-                </div>
-
-                <div class="console-item">
-                    <p>Skrzynia biegów</p>
-                    <div id="select-gearbox" class="selected-option">
-                        <input class="select-value" type="text" name="gearbox" value="" style="display: none;">
-                        <input class="default-text" type="text" value="Wszystkie" style="display: none;">
-                        <p id="gearbox" class="text-change">Wszystkie</p>
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
-                        </svg>
-                    </div>
-                    <ul class="dropdown-list">
-                        <li class="dropdown-list-item">Wszystkie</li>
-                        <li class="dropdown-border"></li>
-                        <li class="dropdown-list-item">Automatyczna</li>
-                        <li class="dropdown-list-item">Manualna</li>
-                    </ul>
-                </div>
-
-                <div class="console-item">
-                    <p>Rodzaj paliwa</p>
-                    <div id="select-gasoline" class="selected-option">
-                        <input class="select-value" type="text" name="gasoline" value="" style="display: none;">
-                        <input class="default-text" type="text" value="Dowolny" style="display: none;">
-                        <p id="gasoline" class="text-change" >Dowolny</p>
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
-                        </svg>
-                    </div>
-                    <ul class="dropdown-list">
-                        <li class="dropdown-list-item">Dowolny</li>
-                        <li class="dropdown-border"></li>
-                        <li class="dropdown-list-item">Benzyna</li>
-                        <li class="dropdown-list-item">Diesel</li>
-                        <li class="dropdown-list-item">Benzyna+LPG</li>
-                        <li class="dropdown-list-item">Benzyna+CNG</li>
-                        <li class="dropdown-list-item">Elektryczny</li>
-                        <li class="dropdown-list-item">Etanol</li>
-                    </ul>
-                </div>
-
-                <div id="select-location" class="console-item">
-                    <p>Lokalizacja</p>
-                    <div class="selected-option">
-                        <input class="select-value" type="text" name="location" value="" style="display: none;">
-                        <input class="default-text" type="text" value="Dowolna" style="display: none;">
-                        <p id="location" class="text-change">Dowolna</p>
-                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
-                        </svg>
-                    </div>
-                        <ul class="dropdown-list">
-                            <li class="dropdown-list-item">Dowolna</li>
-                            <li class="dropdown-border"></li>
-                            <li class="dropdown-list-item">Gdańsk</li>
-                            <li class="dropdown-list-item">Gdynia</li>
-                            <li class="dropdown-list-item">Toruń</li>
-                        </ul>
-                    </div>
-                </div>
-            <div class="console-button-container mobile-buttons-container">
-                <button class="btn delete-btn" style="display: none;">
-                    Wyczyść filtry
-                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.17156 0.757568L0.757347 2.17178L3.58584 5.00027L0.757324 7.82879L2.17154 9.243L5.00005 6.41449L7.82841 9.24285L9.24263 7.82864L6.41427 5.00027L9.24261 2.17193L7.82839 0.757719L5.00005 3.58606L2.17156 0.757568Z" fill="#190F14"/>
-                    </svg>
-                </button>
-                <button class="btn button-search">Szukaj</button>
-            </div>
-        </div>
-    </section> -->
     <div class="scroll-container">
         <a class="scroll-arrow" href="#">
             <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -191,23 +95,22 @@
                 <div class="console-items-container">
                     <div class="console-item">
                         <p>Model</p>
-                        <div id="select-model" class="selected-option">
+                        <div class="selected-option">
                             <input class="select-value" type="text" name="model" value="" style="display: none;">
-                            <input class="default-text" type="text" value="Dowolny" style="display: none;">
-                            <p id="model" class="text-change">Dowolny</p>
+                            <p id="model" class="text-change" data-default="Dowolny">Dowolny</p>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
                             </svg>
                         </div>
                             <ul class="dropdown-list">
-                                <li class="dropdown-list-item">Dowolny</li>
+                                <li class="dropdown-list-item" data-type="dowolny">Dowolny</li>
                                 <li class="dropdown-border"></li>
-                                <li class="dropdown-list-item">Alhambra</li>
-                                <li class="dropdown-list-item">Arona</li>
-                                <li class="dropdown-list-item">Ateca</li>
-                                <li class="dropdown-list-item">Ibiza</li>
-                                <li class="dropdown-list-item">Leon</li>
-                                <li class="dropdown-list-item">Mii</li>
+                                <li class="dropdown-list-item" data-type="alhambra">Alhambra</li>
+                                <li class="dropdown-list-item" data-type="arona">Arona</li>
+                                <li class="dropdown-list-item" data-type="ateca">Ateca</li>
+                                <li class="dropdown-list-item" data-type="ibiza">Ibiza</li>
+                                <li class="dropdown-list-item" data-type="leon">Leon</li>
+                                <li class="dropdown-list-item" data-type="mii">Mii</li>
                             </ul>
                     </div>
 
@@ -215,58 +118,55 @@
                         <p>Skrzynia biegów</p>
                         <div id="select-gearbox" class="selected-option">
                             <input class="select-value" type="text" name="gearbox" value="" style="display: none;">
-                            <input class="default-text" type="text" value="Wszystkie" style="display: none;">
-                            <p id="gearbox" class="text-change">Wszystkie</p>
+                            <p id="gearbox" class="text-change" data-default="Wszystkie">Wszystkie</p>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
                             </svg>
                         </div>
                         <ul class="dropdown-list">
-                            <li class="dropdown-list-item">Wszystkie</li>
+                            <li class="dropdown-list-item" data-type="wszystkie">Wszystkie</li>
                             <li class="dropdown-border"></li>
-                            <li class="dropdown-list-item">Automatyczna</li>
-                            <li class="dropdown-list-item">Manualna</li>
+                            <li class="dropdown-list-item" data-type="automatyczna">Automatyczna</li>
+                            <li class="dropdown-list-item" data-type="manualna">Manualna</li>
                         </ul>
                     </div>
 
                     <div class="console-item">
                         <p>Rodzaj paliwa</p>
-                        <div id="select-gasoline" class="selected-option">
+                        <div class="selected-option">
                             <input class="select-value" type="text" name="gasoline" value="" style="display: none;">
-                            <input class="default-text" type="text" value="Dowolny" style="display: none;">
-                            <p id="gasoline" class="text-change" >Dowolny</p>
+                            <p id="gasoline" class="text-change" data-default="Dowolny">Dowolny</p>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
                             </svg>
                         </div>
                         <ul class="dropdown-list">
-                            <li class="dropdown-list-item">Dowolny</li>
+                            <li class="dropdown-list-item" data-type="dowolny">Dowolny</li>
                             <li class="dropdown-border"></li>
-                            <li class="dropdown-list-item">Benzyna</li>
-                            <li class="dropdown-list-item">Diesel</li>
-                            <li class="dropdown-list-item">Benzyna+LPG</li>
-                            <li class="dropdown-list-item">Benzyna+CNG</li>
-                            <li class="dropdown-list-item">Elektryczny</li>
-                            <li class="dropdown-list-item">Etanol</li>
+                            <li class="dropdown-list-item" data-type="benzyna">Benzyna</li>
+                            <li class="dropdown-list-item" data-type="diesel">Diesel</li>
+                            <li class="dropdown-list-item" data-type="benzynalpg">Benzyna+LPG</li>
+                            <li class="dropdown-list-item" data-type="benzynacng">Benzyna+CNG</li>
+                            <li class="dropdown-list-item" data-type="elektryczny">Elektryczny</li>
+                            <li class="dropdown-list-item" data-type="etanol">Etanol</li>
                         </ul>
                     </div>
 
-                    <div id="select-location" class="console-item">
+                    <div class="console-item">
                         <p>Lokalizacja</p>
                         <div class="selected-option">
                             <input class="select-value" type="text" name="location" value="" style="display: none;">
-                            <input class="default-text" type="text" value="Dowolna" style="display: none;">
-                            <p id="location" class="text-change">Dowolna</p>
+                            <p id="location" class="text-change" data-default="Dowolna">Dowolna</p>
                             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2214 0.5L6.25108 4.44359L2.27966 0.5L2.2775 0.5L0.75 2.02119L6.25108 7.5L11.75 2.02119L10.2236 0.5L10.2214 0.5Z" fill="#190F14"/>
                             </svg>
                         </div>
                             <ul class="dropdown-list">
-                                <li class="dropdown-list-item">Dowolna</li>
+                                <li class="dropdown-list-item" data-type="dowolna">Dowolna</li>
                                 <li class="dropdown-border"></li>
-                                <li class="dropdown-list-item">Gdańsk</li>
-                                <li class="dropdown-list-item">Gdynia</li>
-                                <li class="dropdown-list-item">Toruń</li>
+                                <li class="dropdown-list-item" data-type="gdansk">Gdańsk</li>
+                                <li class="dropdown-list-item" data-type="gdynia">Gdynia</li>
+                                <li class="dropdown-list-item" data-type="torun">Toruń</li>
                             </ul>
                         </div>
                     </div>
