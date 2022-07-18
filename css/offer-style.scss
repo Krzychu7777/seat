@@ -1,7 +1,9 @@
-$main-dark-color: #190F14;
+//helpers
+@import 'helpers';
 
-
-
+html {
+  font-size: 16px;
+}
 
 header {
     background-color: white;
@@ -14,4 +16,93 @@ header {
   .second-nav-item-desktop button:nth-child(2) {
     background-color: #190F14;
     color: white;
+  }
+
+
+  .info-bar-container {
+    @extend .flex-row;
+    width: 558px;
+    height: 56px;
+    
+    .info-bar-item {
+      @extend .flex-col, .flex-center;
+      position: relative;
+      width: auto;
+      height: 56px;
+
+      a {
+        padding: 0 16px;
+        margin: 0;
+        font-weight: $font-medium;
+        font-size: 1rem;
+        line-height: 20px;
+        color: $four-color;
+        opacity: 0.6;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+
+      .link-active {
+        opacity: 1;
+      }
+
+      .info-border {
+        display: none;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: $four-color;
+        bottom: 0;
+
+        &--active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .home-inf-container {
+    margin-left: -210px;
+    @extend .flex-row;
+    gap: 16px;
+    
+    .left-inf-panel {
+
+    }
+
+    .right-inf-panel {
+      @extend .flex-col;
+      width: 589px;
+      gap: 20px;
+      
+      .main-inf-dashboard {
+        background-color: $form-color;
+        padding: 40px;
+        height: 308px;
+
+        h1 {
+          margin: 0;
+          font-weight: $font-bold;
+          font-size: 3.125rem;
+          line-height: 65px;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        p {
+          margin: 0;
+        }
+
+        h3 {
+          margin: 0;
+        }
+      }
+
+      .second-inf-dashboard, .inf-button-container {
+        background-color: $form-color;
+        height: 96px;
+      }
+    }
   }

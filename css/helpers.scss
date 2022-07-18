@@ -1,0 +1,149 @@
+$main-color: #FFFFFF;
+$second-color: #438A9C;
+$three-color: #33302E;
+$form-color: #F3F3F0;
+$four-color: #190F14;
+$text-product-color: #747468;
+
+$border-color: #E8E8E8;
+
+$orange-main-color: #EA5D1A;
+$btn-hover-color: #F08D5F;
+$btn-second-color: #FFFFFF;
+$form-color-text: #0F0F0F;
+
+//offer colors
+$main-bright-color: #E5E5E5;
+
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 750;
+
+$font-style: 'SeatBNC', sans-serif, Tahoma;
+
+
+//breakpoints
+
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$min-phone: 450px;
+
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-evenly {
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fullhd-container {
+    max-width: 1920px;
+    margin: 0 auto 0;
+}
+
+.main-container {
+    max-width: 1436px;
+    margin: 0 auto 0;
+}
+
+.second-container {
+    width: 952px;
+    margin: 0 auto 0;
+}
+
+@media (max-width: 1510px) {
+    .main-container, .second-container {
+        width: 95%;
+    }
+}
+
+.btn {
+    font-family: $font-style;
+    @extend .flex-row, .flex-center;
+    height: 48px;
+    font-weight: $font-bold;
+    font-size: 1rem;
+    line-height: 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+        svg {
+            margin-right: 15px;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+}
+
+.select-style {
+    border: 1px solid $border-color;
+                cursor: pointer;
+                user-select: none;
+
+                p {
+                    color: $four-color;
+                    font-weight: $font-bold;
+                    font-size: 0.9rem;
+                    line-height: 30px;
+                }
+                
+                svg, p {
+                    padding: 0 16px;
+                }
+}
+
+.input-style {
+    font-family: $font-style;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid $border-color;
+    padding: 0 20px;
+    outline: none;
+    font-size: 1rem;
+    color: $form-color-text;
+}
+
+.placeholder-style {
+    color: #747468;
+    font-weight: $font-regular;
+    font-size: 1rem;
+    line-height: 26px;
+}
+
+.input-checkbox-style {
+        position: relative;
+        appearance: none;
+        border-radius: 2px;
+        min-width: 20px;
+        height: 20px;
+        background-color: white;
+        border: 1px solid #E1E1E1;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+}
