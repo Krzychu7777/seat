@@ -1,23 +1,23 @@
-.flex {
+.flex, .arrow-gallery-container button {
   display: flex;
 }
 
-.flex-row, .home-inf-container, .info-bar-container, .btn {
+.flex-row, .list-container, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf, .home-inf-container .left-inf-panel .car-inf-container, .home-inf-container, .info-bar-container, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .home-inf-container .right-inf-panel, .info-bar-container .info-bar-item {
+.flex-col, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-price, .home-inf-container .right-inf-panel, .home-inf-container .left-inf-panel .car-inf-container .info-column, .info-bar-container .info-bar-item {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .info-bar-container .info-bar-item, .btn {
+.flex-center, .arrow-gallery-container button, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .info-bar-container .info-bar-item, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
   justify-content: center;
   align-items: center;
 }
 
-.flex-between {
+.flex-between, .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container {
   justify-content: space-between;
   align-items: center;
 }
@@ -47,7 +47,7 @@
     width: 95%;
   }
 }
-.btn {
+.btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
   font-family: "SeatBNC", sans-serif, Tahoma;
   height: 48px;
   font-weight: 750;
@@ -57,10 +57,10 @@
   border-radius: 4px;
   cursor: pointer;
 }
-.btn svg {
+.btn svg, .home-inf-container .right-inf-panel .inf-button-container button svg, .home-inf-container .right-inf-panel .second-inf-dashboard button svg {
   margin-right: 15px;
 }
-.btn:hover {
+.btn:hover, .home-inf-container .right-inf-panel .inf-button-container button:hover, .home-inf-container .right-inf-panel .second-inf-dashboard button:hover {
   opacity: 0.8;
 }
 
@@ -133,6 +133,11 @@ header {
   color: white;
 }
 
+.information-section {
+  min-height: auto;
+  padding: 0 0 72px;
+}
+
 .info-bar-container {
   width: 558px;
   height: 56px;
@@ -172,6 +177,36 @@ header {
   margin-left: -210px;
   gap: 16px;
 }
+.home-inf-container .left-inf-panel .img-inf-container {
+  width: 100%;
+}
+.home-inf-container .left-inf-panel .img-inf-container img {
+  width: 100%;
+}
+.home-inf-container .left-inf-panel .car-inf-container {
+  justify-content: flex-end;
+  margin: 72px 0 0;
+  gap: 16px;
+}
+.home-inf-container .left-inf-panel .car-inf-container .info-column {
+  gap: 24px;
+}
+.home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf {
+  width: 260px;
+  color: #190F14;
+}
+.home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf h4 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+}
+.home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf p {
+  margin: 8px 0 0;
+  font-weight: 750;
+  font-size: 1.875rem;
+  line-height: 40px;
+}
 .home-inf-container .right-inf-panel {
   width: 589px;
   gap: 20px;
@@ -180,6 +215,7 @@ header {
   background-color: #F3F3F0;
   padding: 40px;
   height: 308px;
+  box-sizing: border-box;
 }
 .home-inf-container .right-inf-panel .main-inf-dashboard h1 {
   margin: 0;
@@ -187,16 +223,303 @@ header {
   font-size: 3.125rem;
   line-height: 65px;
 }
+.home-inf-container .right-inf-panel .main-inf-dashboard h2, .home-inf-container .right-inf-panel .main-inf-dashboard p {
+  margin: 8px 0 0;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #747468;
+}
 .home-inf-container .right-inf-panel .main-inf-dashboard h2 {
-  margin: 0;
+  line-height: 22.4px;
 }
-.home-inf-container .right-inf-panel .main-inf-dashboard p {
-  margin: 0;
+.home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf {
+  gap: 13px;
 }
-.home-inf-container .right-inf-panel .main-inf-dashboard h3 {
+.home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p {
+  line-height: 22.4px;
+}
+.home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2) {
+  gap: 11px;
+}
+.home-inf-container .right-inf-panel .main-inf-dashboard .offer-price p {
+  margin: 24px 0 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #190F14;
+  line-height: 28px;
+}
+.home-inf-container .right-inf-panel .main-inf-dashboard .offer-price h3 {
   margin: 0;
+  color: #EA5D1A;
+  font-weight: 750;
+  font-size: 2.375rem;
+  line-height: 48px;
 }
 .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container {
   background-color: #F3F3F0;
   height: 96px;
+  padding: 24px 40px;
+  box-sizing: border-box;
+}
+.home-inf-container .right-inf-panel .second-inf-dashboard p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 28px;
+  color: #190F14;
+}
+.home-inf-container .right-inf-panel .second-inf-dashboard button {
+  width: 242px;
+  font-weight: 750;
+  font-size: 16px;
+  line-height: 48px;
+  color: white;
+  background-color: black;
+}
+.home-inf-container .right-inf-panel .second-inf-dashboard button:hover {
+  opacity: 0.8;
+}
+.home-inf-container .right-inf-panel .inf-button-container button {
+  width: 243px;
+  border: 2px solid #190F14;
+  gap: 15px;
+}
+.home-inf-container .right-inf-panel .inf-button-container button span {
+  gap: 15px;
+}
+.home-inf-container .right-inf-panel .inf-button-container button svg {
+  margin: 0;
+}
+
+@media screen and (max-width: 1850px) {
+  .home-inf-container {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .home-inf-container {
+    margin-left: 0;
+  }
+  .home-inf-container .left-inf-panel {
+    width: 75%;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container {
+    margin: 30px 0 0;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column {
+    width: 30%;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf {
+    width: 100%;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboar p {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf h4 {
+    font-size: 0.9rem;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf p {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .info-bar-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .home-inf-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .home-inf-container .left-inf-panel {
+    width: 100%;
+  }
+  .home-inf-container .right-inf-panel {
+    width: 100%;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container {
+    flex-direction: row;
+    height: 96px;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboar p {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .information-section {
+    padding: 0 0 32px;
+  }
+  .info-bar-container {
+    justify-content: flex-start;
+    width: 100%;
+    overflow: auto;
+    flex-wrap: nowrap;
+  }
+  .info-bar-container .info-bar-item a {
+    font-size: 0.8rem;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container {
+    width: 100%;
+    justify-content: flex-start;
+    overflow: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 24px;
+    padding: 0 0 15px;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf h4 {
+    font-size: 0.75rem;
+  }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf p {
+    margin: 0;
+    font-size: 1.21rem;
+    line-height: 30px;
+  }
+  .home-inf-container .right-inf-panel .main-inf-dashboard {
+    padding: 20px;
+    height: auto;
+  }
+  .home-inf-container .right-inf-panel .main-inf-dashboard h1 {
+    font-size: 2.5rem;
+  }
+  .home-inf-container .right-inf-panel .main-inf-dashboard h2, .home-inf-container .right-inf-panel .main-inf-dashboard p {
+    font-size: 0.9rem;
+  }
+  .home-inf-container .right-inf-panel .main-inf-dashboard .offer-price p {
+    font-size: 0.9rem;
+  }
+  .home-inf-container .right-inf-panel .main-inf-dashboard .offer-price h3 {
+    font-size: 1.9rem;
+    line-height: 40px;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 30px;
+  }
+  .home-inf-container .right-inf-panel .second-inf-dashboar p {
+    margin: 0;
+  }
+}
+.equip-section {
+  height: auto;
+  background-color: #F3F3F0;
+  padding: 72px 0 92px;
+}
+
+.equip-container h2 {
+  margin: 0;
+  font-weight: 750;
+  font-size: 3rem;
+  line-height: 53px;
+  color: #190F14;
+}
+
+.list-container {
+  margin: 48px 0 0;
+  gap: 24px;
+}
+.list-container ul {
+  margin: 0;
+  padding: 0 0 0 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.list-container ul li {
+  color: #747468;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 24px;
+}
+.list-container ul li::marker {
+  font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+  .equip-section {
+    padding: 32px 0 48px;
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 450px) {
+  .equip-container h2 {
+    font-size: 2rem;
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.gallery-section {
+  position: relative;
+  height: auto;
+  background-color: #438A9C;
+  padding: 72px 0;
+}
+
+.gallery-container h2 {
+  font-weight: 750;
+  font-size: 3rem;
+  line-height: 52px;
+  color: white;
+}
+
+.slider-container {
+  position: relative;
+  max-width: 1856px;
+  margin: 0 auto 0;
+}
+
+.arrow-gallery-container button {
+  background-color: white;
+  height: 48px;
+  width: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 99;
+}
+.arrow-gallery-container button:hover {
+  opacity: 0.8;
+}
+.arrow-gallery-container button:first-child {
+  position: absolute;
+  left: 32px;
+}
+.arrow-gallery-container button:nth-child(2) {
+  position: absolute;
+  right: 32px;
+}
+
+.splide__pagination {
+  margin: 72px auto 0;
+}
+
+.splide__pagination__page {
+  width: 400px;
+  height: 2px;
+  border: none;
+  background-color: white;
+  opacity: 0.4;
+  transition: 0.3s ease-in-out;
+}
+
+.is-active {
+  opacity: 1;
 }/*# sourceMappingURL=offer-style.css.map */

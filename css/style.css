@@ -1,3 +1,7 @@
+.flex {
+  display: flex;
+}
+
 .flex-row, footer .bottom-footer-panel .footer-links, footer .middle-footer-panel, footer .bottom-footer-panel, footer .top-footer-panel .footer-item .opening-hours-container, footer .top-footer-panel, .checkbox-contact, .checkbox-container, .form-input, .finded-elements-pagination, .find-element .right-find-panel .footer-find-element, .find-element .right-find-panel .element-category-container, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .find-element, .finded-header .find-sorting .sorting-item, .finded-header .find-sorting, .finded-header, .search-console .console-button-container, .search-console .console-items-container .console-item .selected-option, .search-console .console-items-container, .second-nav-item-desktop, .desktop-nav, .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
   display: flex;
   flex-direction: row;

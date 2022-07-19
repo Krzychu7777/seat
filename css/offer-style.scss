@@ -18,7 +18,10 @@ header {
     color: white;
   }
 
-
+.information-section {
+  min-height: auto;
+  padding: 0 0 72px;
+}
   .info-bar-container {
     @extend .flex-row;
     width: 558px;
@@ -67,7 +70,43 @@ header {
     gap: 16px;
     
     .left-inf-panel {
+      .img-inf-container {
+        width: 100%;
 
+        img {
+          width: 100%;
+        }
+      }
+      .car-inf-container {
+        @extend .flex-row;
+        justify-content: flex-end;
+        margin: 72px 0 0;
+        gap: 16px;
+
+        .info-column {
+          @extend .flex-col;
+          gap: 24px;
+
+          .car-inf {
+            width: 260px;
+            color: $four-color;
+            
+            h4{
+              margin: 0;
+              font-weight: $font-medium;
+              font-size: 1rem;
+              line-height: 24px
+            }
+
+            p {
+              margin: 8px 0 0;
+              font-weight: $font-bold;
+              font-size: 1.875rem;
+              line-height: 40px
+            }
+          }
+        }
+      }
     }
 
     .right-inf-panel {
@@ -79,6 +118,7 @@ header {
         background-color: $form-color;
         padding: 40px;
         height: 308px;
+        box-sizing: border-box;
 
         h1 {
           margin: 0;
@@ -87,22 +127,402 @@ header {
           line-height: 65px;
         }
 
+        h2, p {
+          margin: 8px 0 0;
+          font-weight: $font-regular;
+          font-size: 1rem;
+          color: $text-product-color;
+        }
         h2 {
-          margin: 0;
+          line-height: 22.4px;
         }
 
-        p {
-          margin: 0;
+        .offer-inf {
+          @extend .flex-row;
+          gap: 13px;
+
+          p {
+            line-height: 22.4px;
+
+            &:nth-child(2) {
+              @extend .flex-row, .flex-center;
+              gap: 11px;
+            }
+          }
         }
 
-        h3 {
-          margin: 0;
+        .offer-price {
+          @extend .flex-col;
+
+          p {
+            margin: 24px 0 0;
+            font-weight: $font-medium;
+            font-size: 1rem;
+            color: $four-color;
+            line-height: 28px;
+          }
+
+          h3 {
+            margin: 0;
+            color: $orange-main-color;
+            font-weight: $font-bold;
+            font-size: 2.375rem;
+            line-height: 48px;
+          }
         }
       }
 
       .second-inf-dashboard, .inf-button-container {
+        @extend .flex-row, .flex-between;
         background-color: $form-color;
         height: 96px;
+        padding: 24px 40px;
+        box-sizing: border-box;
+      }
+
+      .second-inf-dashboard {
+        p{
+          margin: 0;
+          font-weight: $font-medium;
+          font-size: 1rem;
+          line-height: 28px;
+          color: $four-color;
+        }
+
+        button {
+          @extend .btn;
+          width: 242px;
+          font-weight: $font-bold;
+          font-size: 16px;
+          line-height: 48px;
+          color: white;
+          background-color: black;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .inf-button-container {
+        @extend .flex-row, .flex-between;
+
+        button {
+          @extend .btn, .flex-row, .flex-center;
+          width: 243px;
+          border: 2px solid $four-color;
+          gap: 15px;
+
+          span {
+            @extend .flex-row, .flex-center;
+            gap: 15px;
+          }
+          svg {
+            margin: 0;
+          }
+        }
+      }
+
+
+    }
+  }
+
+  @media screen and (max-width: 1850px) {
+    .home-inf-container {
+      margin-left: 0;
+      }
+  }
+
+  @media screen and (max-width: 1450px) {
+    .home-inf-container {
+      margin-left: 0;
+      .left-inf-panel {
+        width: 75%;
+        
+        .car-inf-container {
+          margin: 30px 0 0;
+  
+          .info-column {
+            width: 30%;
+            .car-inf {
+              width: 100%;
+              }
+            }
+          }
+        }
+      
+      .right-inf-panel {
+        .second-inf-dashboard, .inf-button-container {
+          flex-direction: column;
+          gap: 16px;
+          height: auto;
+        }
+
+        .second-inf-dashboar {
+          p {
+            margin: 0;
+          }
+        }
       }
     }
   }
+
+  @media screen and (max-width: $xl) {
+    .home-inf-container {
+      .left-inf-panel {
+        .car-inf-container {
+          .info-column {
+            .car-inf {
+              h4{
+                font-size: 0.9rem;
+              }
+              p {
+                margin: 0;
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .info-bar-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-inf-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    .left-inf-panel {
+      width: 100%;
+    }
+    .right-inf-panel {
+      width: 100%;
+      .second-inf-dashboard, .inf-button-container {
+        flex-direction: row;
+        height: 96px;
+      }
+
+      .second-inf-dashboar {
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .information-section {
+    padding: 0 0 32px;
+  }
+
+  .info-bar-container {
+    justify-content: flex-start;
+    width: 100%;
+    overflow: auto;
+    flex-wrap: nowrap;
+    
+    .info-bar-item {
+      a {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .home-inf-container {
+    .left-inf-panel {
+      .car-inf-container {
+        width: 100%;
+        justify-content: flex-start;
+        overflow: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        gap: 24px;
+        padding: 0 0 15px;
+        .info-column {
+          .car-inf {
+            h4 {
+              font-size: 0.75rem;
+            }
+            p {
+              margin: 0;
+              font-size: 1.21rem;
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+    .right-inf-panel {
+      .main-inf-dashboard {
+        padding: 20px;
+        height: auto;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2, p{
+          font-size: 0.9rem;
+        }
+
+        .offer-price {
+          p {
+            font-size: 0.9rem;
+          }
+          h3 {
+            font-size: 1.9rem;
+            line-height: 40px;
+          }
+        }
+      }
+      .second-inf-dashboard, .inf-button-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 30px;
+      }
+
+      .second-inf-dashboar {
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.equip-section {
+  height: auto;
+  background-color: $form-color;
+  padding: 72px 0 92px;
+}
+
+.equip-container {
+  h2 {
+    margin: 0;
+    font-weight: $font-bold;
+    font-size: 3rem;
+    line-height: 53px;
+    color: $four-color;
+  }
+}
+
+.list-container {
+  margin: 48px 0 0;
+  @extend .flex-row;
+  gap: 24px;
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+    li {
+      color: $text-product-color;
+      font-weight: $font-regular;
+      font-size: 1rem;
+      line-height: 24px;
+
+      &::marker {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .equip-section {
+    padding: 32px 0 48px;
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: $min-phone) {
+  .equip-container {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-section {
+  position: relative;
+  height: auto;
+  background-color: $second-color;
+  padding: 72px 0;
+}
+
+.gallery-container {
+  h2 {
+    font-weight: $font-bold;
+    font-size: 3rem;
+    line-height: 52px;
+    color: white;
+  }
+}
+
+.slider-container {
+  position: relative;
+  max-width: 1856px;
+  margin: 0 auto 0;
+}
+
+.arrow-gallery-container {
+  button {
+   @extend .flex, .flex-center;
+    background-color: white;
+    height: 48px;
+    width: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 99;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:first-child {
+      position: absolute;
+      left: 32px;
+    }
+
+    &:nth-child(2) {
+      position: absolute;
+      right: 32px;
+    }
+  }
+}
+
+.splide__pagination {
+  margin: 72px auto 0;
+}
+
+.splide__pagination__page {
+  width: 400px;
+  height: 2px;
+  border: none;
+  background-color: white;
+  opacity: 0.4;
+  transition: 0.3s ease-in-out;
+}
+
+.is-active {
+  opacity: 1;
+}
