@@ -1,18 +1,18 @@
-.flex, .arrow-gallery-container button {
+.flex, .similar-offer .content-off-item-container .new-car, .arrow-gallery-container button {
   display: flex;
 }
 
-.flex-row, .list-container, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf, .home-inf-container .left-inf-panel .car-inf-container, .home-inf-container, .info-bar-container, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
+.flex-row, .similar-offer .content-off-item-container .car-param, .list-container, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .second-inf-dashboard, .home-inf-container .right-inf-panel .inf-button-container, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf, .home-inf-container .left-inf-panel .car-inf-container, .home-inf-container, .info-bar-container, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-price, .home-inf-container .right-inf-panel, .home-inf-container .left-inf-panel .car-inf-container .info-column, .info-bar-container .info-bar-item {
+.flex-col, .similar-offer, .description-container .text-wrapper, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-price, .home-inf-container .right-inf-panel, .home-inf-container .left-inf-panel .car-inf-container .info-column, .info-bar-container .info-bar-item {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .arrow-gallery-container button, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .info-bar-container .info-bar-item, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
+.flex-center, .similar-offer .content-off-item-container .new-car, .arrow-gallery-container button, .home-inf-container .right-inf-panel .inf-button-container button span, .home-inf-container .right-inf-panel .main-inf-dashboard .offer-inf p:nth-child(2), .info-bar-container .info-bar-item, .btn, .home-inf-container .right-inf-panel .inf-button-container button, .home-inf-container .right-inf-panel .second-inf-dashboard button {
   justify-content: center;
   align-items: center;
 }
@@ -377,6 +377,10 @@ header {
     gap: 24px;
     padding: 0 0 15px;
   }
+  .home-inf-container .left-inf-panel .car-inf-container .info-column {
+    margin: 0 auto 0;
+    text-align: center;
+  }
   .home-inf-container .left-inf-panel .car-inf-container .info-column .car-inf h4 {
     font-size: 0.75rem;
   }
@@ -472,6 +476,7 @@ header {
 }
 
 .gallery-container h2 {
+  margin: 0;
   font-weight: 750;
   font-size: 3rem;
   line-height: 52px;
@@ -480,8 +485,8 @@ header {
 
 .slider-container {
   position: relative;
-  max-width: 1856px;
-  margin: 0 auto 0;
+  max-width: 1874px;
+  margin: 48px auto 0;
 }
 
 .arrow-gallery-container button {
@@ -509,10 +514,16 @@ header {
 
 .splide__pagination {
   margin: 72px auto 0;
+  max-width: 1436px;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+.splide__pagination li {
+  width: 33%;
 }
 
 .splide__pagination__page {
-  width: 400px;
+  width: 100%;
   height: 2px;
   border: none;
   background-color: white;
@@ -522,4 +533,139 @@ header {
 
 .is-active {
   opacity: 1;
+}
+
+.slider-item img {
+  max-width: 660px;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1920px) {
+  .slider-container {
+    position: relative;
+    max-width: 1874px;
+    margin: 48px 0 0 32px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .slider-container {
+    max-width: 1854px;
+    margin: 48px auto 0;
+    width: 95%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .gallery-section {
+    padding: 32px 0;
+  }
+  .gallery-container h2 {
+    font-size: 2rem;
+    line-height: 42px;
+  }
+  .slider-container {
+    margin: 16px auto 0;
+  }
+  .arrow-gallery-container button:first-child {
+    left: 5px;
+  }
+  .arrow-gallery-container button:nth-child(2) {
+    right: 5px;
+  }
+  .splide__pagination {
+    margin: 32px auto 0;
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .arrow-gallery-container button {
+    height: 40px;
+    width: 40px;
+  }
+  .arrow-gallery-container button:first-child {
+    left: 5px;
+  }
+  .arrow-gallery-container button:nth-child(2) {
+    right: 5px;
+  }
+}
+.description-section {
+  min-height: auto;
+  padding: 72px 0;
+}
+
+.description-container h2 {
+  margin: 0;
+  color: #190F14;
+  font-weight: 750;
+  font-size: 3rem;
+  line-height: 52px;
+}
+.description-container .text-wrapper {
+  gap: 24px;
+  margin: 48px 0 0;
+}
+.description-container .text-wrapper p, .description-container .text-wrapper span {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 28px;
+}
+.description-container .text-wrapper p span, .description-container .text-wrapper span span {
+  font-weight: 750;
+}
+
+@media screen and (max-width: 576px) {
+  .description-section {
+    padding: 32px 0;
+  }
+  .description-container .text-wrapper p, .description-container .text-wrapper span {
+    font-size: 0.9rem;
+    line-height: 28px;
+  }
+}
+.text-info-section {
+  min-height: auto;
+  background-color: #FAFAF9;
+  padding: 73px 0 76px;
+}
+
+.text-info-container p {
+  color: rgba(15, 15, 15, 0.6);
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 26px;
+  letter-spacing: 0.11px;
+}
+.text-info-container p a {
+  color: #0000EE;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 576px) {
+  .text-info-section {
+    padding: 32px 0;
+  }
+}
+.similar-offer {
+  position: relative;
+  width: 468px;
+  height: 566px;
+  border: 1px solid #E8E8E8;
+}
+.similar-offer .content-off-item-container .new-car {
+  top: 16px;
+  left: 16px;
+  position: absolute;
+  margin: 0;
+  background-color: black;
+  color: white;
+  width: 51px;
+  height: 24px;
+  border-radius: 3px;
+  font-weight: 750;
+  font-size: 0.8rem;
+}
+.similar-offer .content-off-item-container .car-param p {
+  margin: 0;
 }/*# sourceMappingURL=offer-style.css.map */

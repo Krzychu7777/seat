@@ -346,6 +346,8 @@ header {
         gap: 24px;
         padding: 0 0 15px;
         .info-column {
+          margin: 0 auto 0;
+          text-align: center;
           .car-inf {
             h4 {
               font-size: 0.75rem;
@@ -468,6 +470,7 @@ header {
 
 .gallery-container {
   h2 {
+    margin: 0;
     font-weight: $font-bold;
     font-size: 3rem;
     line-height: 52px;
@@ -477,8 +480,8 @@ header {
 
 .slider-container {
   position: relative;
-  max-width: 1856px;
-  margin: 0 auto 0;
+  max-width: 1874px;
+  margin: 48px auto 0;
 }
 
 .arrow-gallery-container {
@@ -512,10 +515,18 @@ header {
 
 .splide__pagination {
   margin: 72px auto 0;
+  max-width: 1436px;
+  padding: 0;
+  flex-wrap: nowrap;
+
+  li {
+    width: 33%;
+  }
 }
 
+
 .splide__pagination__page {
-  width: 400px;
+  width: 100%;
   height: 2px;
   border: none;
   background-color: white;
@@ -525,4 +536,186 @@ header {
 
 .is-active {
   opacity: 1;
+}
+
+.slider-item {
+  img {
+    max-width: 660px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .slider-container {
+    position: relative;
+    max-width: 1874px;
+    margin: 48px 0 0 32px;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .slider-container {
+    max-width: 1854px;
+    margin: 48px auto 0;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .gallery-section {
+    padding: 32px 0;
+  }
+
+  .gallery-container {
+    h2 {
+      font-size: 2rem;
+      line-height: 42px;
+     
+    }
+  }
+  .slider-container {
+    margin: 16px auto 0;
+  }
+
+  .arrow-gallery-container {
+    button {
+
+      &:first-child {
+        left: 5px;
+      }
+  
+      &:nth-child(2) {
+        right: 5px;
+      }
+    }
+  }
+
+  .splide__pagination {
+    margin: 32px auto 0;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: $min-phone) {
+
+  .arrow-gallery-container {
+    button {
+      height: 40px;
+      width: 40px;
+
+      &:first-child {
+        left: 5px;
+      }
+  
+      &:nth-child(2) {
+        right: 5px;
+      }
+    }
+  }
+}
+
+.description-section {
+  min-height: auto;
+  padding: 72px 0;
+}
+
+.description-container {
+  h2 {
+    margin: 0;
+    color: $four-color;
+    font-weight: $font-bold;
+    font-size: 3rem;
+    line-height: 52px;
+  }
+  .text-wrapper {
+    @extend .flex-col;
+    gap: 24px;
+    margin: 48px 0 0;
+
+    p, span {
+      margin: 0;
+      font-weight: $font-regular;
+      font-size: 1rem;
+      line-height: 28px;
+
+      span {
+        font-weight: $font-bold;
+      }
+    }
+}
+}
+
+@media screen and (max-width: $sm) {
+  .description-section {
+    padding: 32px 0;
+  }
+  .description-container {
+    .text-wrapper {
+      p, span {
+        font-size: 0.9rem;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+.text-info-section {
+  min-height: auto;
+  background-color: #FAFAF9;
+  padding: 73px 0 76px;
+}
+
+.text-info-container {
+  p {
+    color: rgba(15, 15, 15, 0.6);
+    font-weight: $font-regular;
+    font-size: 0.8rem;
+    line-height: 26px;
+    letter-spacing: 0.11px;
+
+    a {
+      color: #0000EE;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: $sm) {
+  .text-info-section {
+    padding: 32px 0;
+  }
+}
+
+
+.similar-offer {
+  @extend .flex-col;
+  position: relative;
+  width: 468px;
+  height: 566px;
+  border: 1px solid $border-color;
+
+  .content-off-item-container {
+    .new-car {
+      @extend .flex, .flex-center;
+      top: 16px;
+      left: 16px;
+      position: absolute;
+      margin: 0;
+      background-color: black;
+      color: white;
+      width: 51px;
+      height: 24px;
+      border-radius: 3px;
+      font-weight: $font-bold;
+      font-size: 0.8rem;
+    }
+    .car-param {
+      @extend .flex-row;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
 }
