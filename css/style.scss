@@ -75,9 +75,9 @@ header {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: 25px;
         
-        button {
+        a {
             background: transparent;
             border: none;
         }
@@ -485,7 +485,7 @@ header {
     }
 
     h2 {
-        font-weight: $font-bold;
+        font-weight: $font-bolder;
         font-size: 1.9rem;
         line-height: 48px;
         margin: 0;
@@ -1031,7 +1031,6 @@ header {
 
 .contact-form-title {
     @extend .flex-col, .flex-center;
-    font-weight: $font-bold;
     text-align: center;
     color: $form-color-text;
 
@@ -1040,12 +1039,14 @@ header {
     }
 
     h2 {
+        font-weight: $font-bold;
         margin: 0;
         font-size: 1rem;
         line-height: 30px;
     }
 
     h3 {
+        font-weight: $font-bolder;
         margin: 16px 0;
         font-size: 3rem;
         line-height: 52px;

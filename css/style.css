@@ -1,4 +1,4 @@
-.flex {
+.flex, .new-style {
   display: flex;
 }
 
@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.flex-center, .mobile-search-console .mobile-buttons-container, .scroll-container .scroll-arrow, footer .middle-footer-panel .social-icons-footer, .contact-form-title, .finded-elements-pagination, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .finded-items-container, .search-console .console-button-container, .search-console, .home-container, .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
+.flex-center, .mobile-search-console .mobile-buttons-container, .scroll-container .scroll-arrow, footer .middle-footer-panel .social-icons-footer, .contact-form-title, .finded-elements-pagination, .find-element .right-find-panel .element-description p:nth-child(3), .find-element .right-find-panel .element-description, .find-element .image-find-container, .finded-items-container, .search-console .console-button-container, .search-console, .home-container, .new-style, .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
   justify-content: center;
   align-items: center;
 }
@@ -50,7 +50,7 @@
 .btn, .form-container button, .find-element .right-find-panel .footer-find-element button {
   font-family: "SeatBNC", sans-serif, Tahoma;
   height: 48px;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 48px;
   border: none;
@@ -74,7 +74,7 @@
 }
 .select-style p, .finded-header .find-sorting .sorting-item p, .search-console .console-items-container .console-item .selected-option p {
   color: #190F14;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 0.9rem;
   line-height: 30px;
 }
@@ -127,6 +127,16 @@ textarea:-ms-input-placeholder, .form-input input:-ms-input-placeholder {
   display: grid;
   place-content: center;
   cursor: pointer;
+}
+
+.new-style {
+  position: absolute;
+  margin: 0;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 html {
@@ -193,9 +203,9 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
   }
-  .second-nav-item-mobile button {
+  .second-nav-item-mobile a {
     background: transparent;
     border: none;
   }
@@ -237,7 +247,7 @@ header {
 }
 .home-container .home-title h1 {
   margin-top: 0;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 4rem;
   line-height: 72px;
   width: 70%;
@@ -250,7 +260,7 @@ header {
   margin: 0;
 }
 .home-container .home-title h2 span {
-  font-weight: 750;
+  font-weight: 700;
 }
 
 .search-console {
@@ -311,7 +321,7 @@ header {
 }
 .search-console .console-items-container .console-item .dropdown-list li {
   font-size: 0.9rem;
-  font-weight: 750;
+  font-weight: 700;
   color: #190F14;
   list-style-type: none;
   padding: 8px 0;
@@ -342,7 +352,7 @@ header {
 .search-console .console-button-container button:first-child {
   margin-right: 18px;
   background: transparent;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 0.8rem;
 }
 .search-console .console-button-container button:first-child svg {
@@ -518,7 +528,7 @@ header {
   display: none;
 }
 .finded-header h2 {
-  font-weight: 750;
+  font-weight: 900;
   font-size: 1.9rem;
   line-height: 48px;
   margin: 0;
@@ -565,7 +575,7 @@ header {
 }
 .finded-header .find-sorting .sort-options li {
   font-size: 0.9rem;
-  font-weight: 750;
+  font-weight: 700;
   color: #190F14;
   list-style-type: none;
   padding: 8px 0;
@@ -625,7 +635,7 @@ header {
 .find-element .right-find-panel h2 {
   margin: 0;
   color: #190F14;
-  font-weight: 750;
+  font-weight: 700;
   line-height: 25px;
   font-size: 1.4rem;
 }
@@ -643,7 +653,7 @@ header {
   color: white;
   padding: 3px 8px;
   border-radius: 3px;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 0.8rem;
 }
 .find-element .right-find-panel .element-description .used {
@@ -674,7 +684,7 @@ header {
 }
 .find-element .right-find-panel .element-category-container .category-element p {
   margin: 8px 0 0;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 1.2rem;
   line-height: 24px;
 }
@@ -697,13 +707,13 @@ header {
 }
 .find-element .right-find-panel .footer-find-element .prize p {
   margin: 0;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 2rem;
   line-height: 40px;
 }
 .find-element .right-find-panel .footer-find-element button {
   width: 170px;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 1rem;
   color: #EA5D1A;
   background: transparent;
@@ -963,7 +973,6 @@ header {
 }
 
 .contact-form-title {
-  font-weight: 750;
   text-align: center;
   color: #0F0F0F;
 }
@@ -971,11 +980,13 @@ header {
   width: 75%;
 }
 .contact-form-title h2 {
+  font-weight: 700;
   margin: 0;
   font-size: 1rem;
   line-height: 30px;
 }
 .contact-form-title h3 {
+  font-weight: 900;
   margin: 16px 0;
   font-size: 3rem;
   line-height: 52px;
@@ -1224,7 +1235,7 @@ footer .top-footer-panel {
   gap: 7%;
 }
 footer .top-footer-panel .footer-item h2, footer .top-footer-panel .footer-item h3 {
-  font-weight: 750;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 19px;
   margin: 16px 0 0;

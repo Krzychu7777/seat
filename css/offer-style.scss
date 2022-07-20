@@ -24,7 +24,6 @@ header {
 }
   .info-bar-container {
     @extend .flex-row;
-    width: 558px;
     height: 56px;
     
     .info-bar-item {
@@ -43,6 +42,11 @@ header {
         opacity: 0.6;
         text-transform: uppercase;
         text-decoration: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          opacity: 1;
+        }
       }
 
       .link-active {
@@ -78,41 +82,43 @@ header {
         }
       }
       .car-inf-container {
-        @extend .flex-row;
-        justify-content: flex-end;
-        margin: 72px 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 831px;
+        margin: 72px 0 0 auto;
         gap: 16px;
+        row-gap: 24px;
 
-        .info-column {
-          @extend .flex-col;
-          gap: 24px;
-
-          .car-inf {
-            width: 260px;
-            color: $four-color;
+        .car-inf {
+          width: 100%;
+          color: $four-color;
             
-            h4{
-              margin: 0;
-              font-weight: $font-medium;
-              font-size: 1rem;
-              line-height: 24px
-            }
+          h4{
+            margin: 0;
+            font-weight: $font-medium;
+            font-size: 1rem;
+            line-height: 24px
+          }
 
-            p {
-              margin: 8px 0 0;
-              font-weight: $font-bold;
-              font-size: 1.875rem;
-              line-height: 40px
-            }
+          p {
+            margin: 8px 0 0;
+            font-weight: $font-bolder;
+            font-size: 1.8rem;
+            line-height: 40px
           }
         }
       }
     }
 
     .right-inf-panel {
-      @extend .flex-col;
-      width: 589px;
-      gap: 20px;
+      .scroll-wrapper {
+        @extend .flex-col;
+        position: sticky;
+        top: 160px;
+        width: 589px;
+        min-width: 450px;
+        gap: 20px;
+        box-sizing: border-box;
       
       .main-inf-dashboard {
         background-color: $form-color;
@@ -120,10 +126,19 @@ header {
         height: 308px;
         box-sizing: border-box;
 
+        .new-car-main {
+          @extend .new-style;
+          top: 40px;
+          right: 40px;
+          width: 59px;
+          height: 24px;
+          text-transform: uppercase;
+        }
+
         h1 {
           margin: 0;
-          font-weight: $font-bold;
-          font-size: 3.125rem;
+          font-weight: $font-bolder;
+          font-size: 3.1rem;
           line-height: 65px;
         }
 
@@ -165,8 +180,8 @@ header {
           h3 {
             margin: 0;
             color: $orange-main-color;
-            font-weight: $font-bold;
-            font-size: 2.375rem;
+            font-weight: $font-bolder;
+            font-size: 2.3rem;
             line-height: 48px;
           }
         }
@@ -212,6 +227,7 @@ header {
           width: 243px;
           border: 2px solid $four-color;
           gap: 15px;
+          background: transparent;
 
           span {
             @extend .flex-row, .flex-center;
@@ -223,7 +239,7 @@ header {
         }
       }
 
-
+      }
     }
   }
 
@@ -252,6 +268,8 @@ header {
         }
       
       .right-inf-panel {
+        .scroll-wrapper {
+          width: 100%;
         .second-inf-dashboard, .inf-button-container {
           flex-direction: column;
           gap: 16px;
@@ -264,14 +282,15 @@ header {
           }
         }
       }
+    
     }
+  }
   }
 
   @media screen and (max-width: $xl) {
     .home-inf-container {
       .left-inf-panel {
         .car-inf-container {
-          .info-column {
             .car-inf {
               h4{
                 font-size: 0.9rem;
@@ -281,7 +300,6 @@ header {
                 font-size: 1.5rem;
               }
             }
-          }
         }
       }
   }
@@ -294,25 +312,32 @@ header {
   }
 
   .home-inf-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 32px;
     .left-inf-panel {
       width: 100%;
+      .car-inf-container { 
+        max-width: auto;
+        text-align: center;
+      }
     }
     .right-inf-panel {
       width: 100%;
-      .second-inf-dashboard, .inf-button-container {
-        flex-direction: row;
-        height: 96px;
-      }
-
-      .second-inf-dashboar {
-        p {
-          margin: 0;
+      .scroll-wrapper {
+        min-width: auto;
+        .second-inf-dashboard, .inf-button-container {
+          flex-direction: row;
+          height: 96px;
         }
-      }
+
+        .second-inf-dashboar {
+          p {
+            margin: 0;
+          }
+        }
+    }
     }
   }
 }
@@ -340,14 +365,8 @@ header {
       .car-inf-container {
         width: 100%;
         justify-content: flex-start;
-        overflow: auto;
-        flex-wrap: nowrap;
-        white-space: nowrap;
         gap: 24px;
         padding: 0 0 15px;
-        .info-column {
-          margin: 0 auto 0;
-          text-align: center;
           .car-inf {
             h4 {
               font-size: 0.75rem;
@@ -358,10 +377,10 @@ header {
               line-height: 30px;
             }
           }
-        }
       }
     }
     .right-inf-panel {
+      .scroll-wrapper {
       .main-inf-dashboard {
         padding: 20px;
         height: auto;
@@ -395,6 +414,33 @@ header {
         }
       }
     }
+    }
+  }
+}
+
+@media screen and (max-width: $min-phone) {
+  .home-inf-container {
+    .left-inf-panel {
+      .car-inf-container {
+        grid-template-columns: 1fr 1fr;
+          .car-inf {
+            p {
+              font-size: 1.1rem;
+            }
+          }
+      }
+    }
+    .right-inf-panel {
+      .scroll-wrapper {
+      .main-inf-dashboard {
+        .new-car-main {
+          position: relative;
+          top: 0;
+          right: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -407,7 +453,7 @@ header {
 .equip-container {
   h2 {
     margin: 0;
-    font-weight: $font-bold;
+    font-weight: $font-bolder;
     font-size: 3rem;
     line-height: 53px;
     color: $four-color;
@@ -471,7 +517,7 @@ header {
 .gallery-container {
   h2 {
     margin: 0;
-    font-weight: $font-bold;
+    font-weight: $font-bolder;
     font-size: 3rem;
     line-height: 52px;
     color: white;
@@ -624,7 +670,7 @@ header {
   h2 {
     margin: 0;
     color: $four-color;
-    font-weight: $font-bold;
+    font-weight: $font-bolder;
     font-size: 3rem;
     line-height: 52px;
   }
@@ -697,18 +743,11 @@ header {
 
   .content-off-item-container {
     .new-car {
-      @extend .flex, .flex-center;
+      @extend .new-style;
       top: 16px;
       left: 16px;
-      position: absolute;
-      margin: 0;
-      background-color: black;
-      color: white;
       width: 51px;
       height: 24px;
-      border-radius: 3px;
-      font-weight: $font-bold;
-      font-size: 0.8rem;
     }
     .car-param {
       @extend .flex-row;
@@ -719,7 +758,7 @@ header {
     }
 
     .border-similar-offer {
-      position: absolute;
+      position: relative;
       width: 100%;
       height: 1px;
       bottom: 116px;

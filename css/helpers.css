@@ -1,4 +1,4 @@
-.flex {
+.flex, .new-style {
   display: flex;
 }
 
@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.flex-center, .btn {
+.flex-center, .new-style, .btn {
   justify-content: center;
   align-items: center;
 }
@@ -50,7 +50,7 @@
 .btn {
   font-family: "SeatBNC", sans-serif, Tahoma;
   height: 48px;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 1rem;
   line-height: 48px;
   border: none;
@@ -74,7 +74,7 @@
 }
 .select-style p {
   color: #190F14;
-  font-weight: 750;
+  font-weight: 700;
   font-size: 0.9rem;
   line-height: 30px;
 }
@@ -113,4 +113,14 @@
   display: grid;
   place-content: center;
   cursor: pointer;
+}
+
+.new-style {
+  position: absolute;
+  margin: 0;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.8rem;
 }/*# sourceMappingURL=helpers.css.map */

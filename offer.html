@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,6 +34,12 @@
             font-display: swap;
             src: url('font/SEATBCN-Bold.woff') format('woff');
         }
+        @font-face {
+            font-family: SeatBNC;
+            font-weight: 900;
+            font-display: swap;
+            src: url('font/SEATBCN-Black.woff') format('woff');
+        }
     </style>
 </head>
 <body>
@@ -64,16 +70,16 @@
                     </button>
                 </div>
                 <div class="second-nav-item-mobile">
-                    <button>
+                    <a href="tel:000000000">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="#190F14"" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9712 15.9672C8.48423 15.4749 2.49629 9.48697 2.00396 2.00001L5.97119 2.00001C5.97217 2.00001 5.97105 1.99995 5.97119 2.00001C5.97222 2.00044 5.97806 2.003 5.98614 2.01083C6.0041 2.02826 6.02151 2.059 6.02529 2.09707C6.10393 2.89047 6.26695 3.6595 6.50531 4.39481L4.93315 5.96698L5.23864 6.60534C6.51969 9.28225 8.68895 11.4515 11.3659 12.7326L12.0042 13.038L13.5764 11.4659C14.3117 11.7042 15.0807 11.8673 15.8741 11.9459C15.9122 11.9497 15.9429 11.9671 15.9604 11.9851C15.9682 11.9931 15.9708 11.9987 15.9712 11.9997C15.9713 11.9998 15.9712 11.9987 15.9712 11.9997L15.9712 15.9672ZM15.9095 17.9674C17.076 18.0393 17.9712 17.0881 17.9712 16L17.9712 12C17.9712 10.8731 17.0701 10.0547 16.0714 9.95567C15.2357 9.87282 14.4342 9.67576 13.6824 9.38046L13.0728 9.14103L11.6076 10.6062C9.83159 9.61227 8.35893 8.13961 7.36497 6.36358L8.83017 4.89839L8.59073 4.2888C8.29544 3.53697 8.09838 2.73554 8.01553 1.89978C7.91654 0.901142 7.09806 7.49973e-06 5.97119 7.4863e-06L1.97119 7.4386e-06C0.883137 7.42562e-06 -0.0681074 0.895242 0.00384159 2.06175C0.530798 10.6054 7.36577 17.4404 15.9095 17.9674Z" />
                         </svg>
-                    </button>
-                    <button>
+                    </a>
+                    <a href="#contact-form-offer">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="#190F14"" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.999827V0H0.999827C0.999711 0 0.999942 0 0.999827 0H18.9998C18.9997 0 18.9999 0 18.9998 0H20V0.99902C20 0.999673 20 1.00033 20 1.00098V16H0V0.999827C0 0.999942 0 0.999711 0 0.999827ZM2 3.41421V14H18V3.41421L10.7071 10.7071C10.3166 11.0976 9.68342 11.0976 9.29289 10.7071L2 3.41421ZM16.5858 2H3.41421L10 8.58579L16.5858 2Z" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </nav>
         </div>
@@ -83,23 +89,23 @@
         <div class="main-container">
             <div class="info-bar-container">
                 <div class="info-bar-item">
-                    <a href="" class="link-active">Informacje</a>
+                    <a href="#informations" class="link-active">Informacje</a>
                     <div class="info-border info-border--active"></div>
                 </div>
                 <div class="info-bar-item">
-                    <a href="">Wyposażenie</a>
+                    <a href="#equipment">Wyposażenie</a>
                     <div class="info-border"></div>
                 </div>
                 <div class="info-bar-item">
-                    <a href="">Galeria</a>
+                    <a href="#offer-gallery">Galeria</a>
                     <div class="info-border"></div>
                 </div>
                 <div class="info-bar-item">
-                    <a href="">Opis</a>
+                    <a href="#description">Opis</a>
                     <div class="info-border"></div>
                 </div>
                 <div class="info-bar-item">
-                    <a href="">Kontakt</a>
+                    <a href="#contact-form-offer">Kontakt</a>
                     <div class="info-border"></div>
                 </div>
             </div>
@@ -107,7 +113,6 @@
                 <div class="left-inf-panel">
                     <div class="img-inf-container"><img src="img/offer-img.jpg" alt=""></div>
                     <div class="car-inf-container">
-                        <div class="info-column">
                             <div class="car-inf">
                                 <h4>Przebieg</h4>
                                 <p>7 km</p>
@@ -120,8 +125,6 @@
                                 <h4>Liczba miejsc</h4>
                                 <p>5</p>
                             </div>
-                        </div>
-                        <div class="info-column">
                             <div class="car-inf">
                                 <h4>Pojemność</h4>
                                 <p>1498 cm3</p>
@@ -134,8 +137,6 @@
                                 <h4>Liczba drzwi</h4>
                                 <p>5</p>
                             </div>
-                        </div>
-                        <div class="info-column">
                                 <div class="car-inf">
                                     <h4>Moc</h4>
                                     <p>130 KM</p>
@@ -149,53 +150,56 @@
                                 <p>2022</p>
                             </div>
                         </div>
-                    </div>
                 </div>
-                <div class="right-inf-panel">
-                    <div class="main-inf-dashboard">
-                        <h1>SEAT Leon</h1>
-                        <h2>SEAT Leon Style 1.5 TSI 130 KM Manual Kombi</h2>
-                        <div class="offer-inf">
-                            <p>Nr oferty: 6091708456</p>
-                            <p>
-                                <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#747468"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#747468"/>
-                                </svg>
-                                Gdańsk
-                            </p>
+                    <div class="right-inf-panel">
+                        <div class="scroll-wrapper">
+                            <div class="main-inf-dashboard">
+                                <div class="new-car-main">Nowy</div>
+                                <h1>SEAT Leon</h1>
+                                <h2>SEAT Leon Style 1.5 TSI 130 KM Manual Kombi</h2>
+                                <div class="offer-inf">
+                                    <p>Nr oferty: 6091708456</p>
+                                    <p>
+                                        <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#747468"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#747468"/>
+                                        </svg>
+                                        Gdańsk
+                                    </p>
+                                </div>
+                                <div class="offer-price">
+                                    <p>Cena brutto</p>
+                                    <h3>130 900 zł</h3>
+                                </div>
+                            </div>
+                            <div class="second-inf-dashboard">
+                                <p>Samochód dostępny od ręki</p>
+                                <button>
+                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.999827V0H0.999827C0.999711 0 0.999942 0 0.999827 0H18.9998C18.9997 0 18.9999 0 18.9998 0H20V0.99902C20 0.999673 20 1.00033 20 1.00098V16H0V0.999827C0 0.999942 0 0.999711 0 0.999827ZM2 3.41421V14H18V3.41421L10.7071 10.7071C10.3166 11.0976 9.68342 11.0976 9.29289 10.7071L2 3.41421ZM16.5858 2H3.41421L10 8.58579L16.5858 2Z" />
+                                    </svg>
+                                    Zapytaj o ofertę
+                                </button>
+                            </div>
+                            <div class="inf-button-container">
+                                <button>
+                                    <span class="btn phone-button">
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="#190F14"" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9712 15.9672C8.48423 15.4749 2.49629 9.48697 2.00396 2.00001L5.97119 2.00001C5.97217 2.00001 5.97105 1.99995 5.97119 2.00001C5.97222 2.00044 5.97806 2.003 5.98614 2.01083C6.0041 2.02826 6.02151 2.059 6.02529 2.09707C6.10393 2.89047 6.26695 3.6595 6.50531 4.39481L4.93315 5.96698L5.23864 6.60534C6.51969 9.28225 8.68895 11.4515 11.3659 12.7326L12.0042 13.038L13.5764 11.4659C14.3117 11.7042 15.0807 11.8673 15.8741 11.9459C15.9122 11.9497 15.9429 11.9671 15.9604 11.9851C15.9682 11.9931 15.9708 11.9987 15.9712 11.9997C15.9713 11.9998 15.9712 11.9987 15.9712 11.9997L15.9712 15.9672ZM15.9095 17.9674C17.076 18.0393 17.9712 17.0881 17.9712 16L17.9712 12C17.9712 10.8731 17.0701 10.0547 16.0714 9.95567C15.2357 9.87282 14.4342 9.67576 13.6824 9.38046L13.0728 9.14103L11.6076 10.6062C9.83159 9.61227 8.35893 8.13961 7.36497 6.36358L8.83017 4.89839L8.59073 4.2888C8.29544 3.53697 8.09838 2.73554 8.01553 1.89978C7.91654 0.901142 7.09806 7.49973e-06 5.97119 7.4863e-06L1.97119 7.4386e-06C0.883137 7.42562e-06 -0.0681074 0.895242 0.00384159 2.06175C0.530798 10.6054 7.36577 17.4404 15.9095 17.9674Z" />
+                                        </svg>
+                                        Pokaż telefon
+                                    </span>
+                                    <p class="phone-button phone-btn-style" style="display: none;">+48 000 000 000</p>                      
+                                </button>
+                                <button>
+                                    <svg width="18" height="21" viewBox="0 0 18 21" fill="#190F14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#747468"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z"/>
+                                    </svg>
+                                    Sprawdź dojazd
+                                </button>
+                           
                         </div>
-                        <div class="offer-price">
-                            <p>Cena brutto</p>
-                            <h3>130 900 zł</h3>
-                        </div>
-                    </div>
-                    <div class="second-inf-dashboard">
-                        <p>Samochód dostępny od ręki</p>
-                        <button>
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.999827V0H0.999827C0.999711 0 0.999942 0 0.999827 0H18.9998C18.9997 0 18.9999 0 18.9998 0H20V0.99902C20 0.999673 20 1.00033 20 1.00098V16H0V0.999827C0 0.999942 0 0.999711 0 0.999827ZM2 3.41421V14H18V3.41421L10.7071 10.7071C10.3166 11.0976 9.68342 11.0976 9.29289 10.7071L2 3.41421ZM16.5858 2H3.41421L10 8.58579L16.5858 2Z" />
-                            </svg>
-                            Zapytaj o ofertę
-                        </button>
-                    </div>
-                    <div class="inf-button-container">
-                        <button>
-                            <span class="btn phone-button">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="#190F14"" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9712 15.9672C8.48423 15.4749 2.49629 9.48697 2.00396 2.00001L5.97119 2.00001C5.97217 2.00001 5.97105 1.99995 5.97119 2.00001C5.97222 2.00044 5.97806 2.003 5.98614 2.01083C6.0041 2.02826 6.02151 2.059 6.02529 2.09707C6.10393 2.89047 6.26695 3.6595 6.50531 4.39481L4.93315 5.96698L5.23864 6.60534C6.51969 9.28225 8.68895 11.4515 11.3659 12.7326L12.0042 13.038L13.5764 11.4659C14.3117 11.7042 15.0807 11.8673 15.8741 11.9459C15.9122 11.9497 15.9429 11.9671 15.9604 11.9851C15.9682 11.9931 15.9708 11.9987 15.9712 11.9997C15.9713 11.9998 15.9712 11.9987 15.9712 11.9997L15.9712 15.9672ZM15.9095 17.9674C17.076 18.0393 17.9712 17.0881 17.9712 16L17.9712 12C17.9712 10.8731 17.0701 10.0547 16.0714 9.95567C15.2357 9.87282 14.4342 9.67576 13.6824 9.38046L13.0728 9.14103L11.6076 10.6062C9.83159 9.61227 8.35893 8.13961 7.36497 6.36358L8.83017 4.89839L8.59073 4.2888C8.29544 3.53697 8.09838 2.73554 8.01553 1.89978C7.91654 0.901142 7.09806 7.49973e-06 5.97119 7.4863e-06L1.97119 7.4386e-06C0.883137 7.42562e-06 -0.0681074 0.895242 0.00384159 2.06175C0.530798 10.6054 7.36577 17.4404 15.9095 17.9674Z" />
-                                </svg>
-                                Pokaż telefon
-                            </span>
-                            <p class="phone-button phone-btn-style" style="display: none;">+48 000 000 000</p>                      
-                        </button>
-                        <button>
-                            <svg width="18" height="21" viewBox="0 0 18 21" fill="#190F14" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#747468"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z"/>
-                            </svg>
-                            Sprawdź dojazd
-                        </button>
                     </div>
                 </div>
             </div>
@@ -407,7 +411,7 @@
             </form>
         </div>
     </section>
-    <section id="similar-offert" class="similar-off-section">
+    <!-- <section id="similar-offert" class="similar-off-section">
         <div class="main-container similar-off-container">
             <h2>Sprawdź podobne oferty</h2>
             <div class="similar-items-container">
@@ -417,14 +421,16 @@
                     </div>
                     <div class="content-off-item-container">
                         <div class="new-car"><p>Nowy</p></div>
-                        <h2>SEAT Leon</h2>
-                        <p>SEAT Leon Style 1.5 TSI 130 KM</p>
-                        <div class="car-param">
-                            <p>2022</p>
-                            <p>7km</p>
-                            <p>150 KM</p>
-                            <p>Benzyna</p>
-                            <p>Automat</p>
+                        <div class="top-panel">
+                            <h2>SEAT Leon</h2>
+                            <p>SEAT Leon Style 1.5 TSI 130 KM</p>
+                            <div class="car-param">
+                                <p>2022</p>
+                                <p>7km</p>
+                                <p>150 KM</p>
+                                <p>Benzyna</p>
+                                <p>Automat</p>
+                            </div>
                         </div>
                         <div class="border-similar-offer"></div>
                         <div class="similar-off-price">
@@ -435,7 +441,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>
 <script>
     var splide = new Splide( '#offer-gallery', {
