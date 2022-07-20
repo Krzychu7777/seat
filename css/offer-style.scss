@@ -717,5 +717,13 @@ header {
         margin: 0;
       }
     }
+
+    .border-similar-offer {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 116px;
+      background-color: $border-color;
+    }
   }
 }
