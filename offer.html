@@ -445,10 +445,13 @@
 </main>
 <script>
     var splide = new Splide( '#offer-gallery', {
-        perPage: 3,
+        perPage: 4,
         gap: 16,
         speed: 1500,
         breakpoints: {
+            1920: {
+                perPage: 3,
+            },
             1450: {
                 perPage: 2,
             },

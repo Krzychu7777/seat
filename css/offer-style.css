@@ -528,7 +528,7 @@ header {
 .slider-container {
   position: relative;
   max-width: 1874px;
-  margin: 48px auto 0;
+  margin: 48px 0 0 auto;
 }
 
 .arrow-gallery-container button {
@@ -590,13 +590,6 @@ header {
     margin: 48px 0 0 32px;
   }
 }
-@media screen and (max-width: 1450px) {
-  .slider-container {
-    max-width: 1854px;
-    margin: 48px auto 0;
-    width: 95%;
-  }
-}
 @media screen and (max-width: 576px) {
   .gallery-section {
     padding: 32px 0;
@@ -606,7 +599,7 @@ header {
     line-height: 42px;
   }
   .slider-container {
-    margin: 16px auto 0;
+    margin: 16px 0 0 5%;
   }
   .arrow-gallery-container button:first-child {
     left: 5px;
