@@ -77,9 +77,10 @@ $min-phone: 450px;
     margin: 0 auto 0;
 }
 
-@media (max-width: 1510px) {
+@media (max-width: 1505px) {
     .main-container, .second-container {
-        width: 95%;
+        width: auto;
+        padding: 0 16px;
     }
 }
 

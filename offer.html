@@ -263,14 +263,19 @@
                 </button>
             </div>
             <ul class="splide__list">
-                <li class="splide__slide slider-item"><img src="img/img_slider.png" alt=""></li>
-                <li class="splide__slide slider-item"><img src="img/img-offer-gallery.jpg" alt=""></li>
-                <li class="splide__slide slider-item"><img src="img/img_slider.png" alt=""></li>
-                <li class="splide__slide slider-item"><img src="img/img_slider.png" alt=""></li>
-                <li class="splide__slide slider-item"><img src="img/img-offer-gallery.jpg" alt=""></li>
-                <li class="splide__slide slider-item"><img src="img/img_slider.png" alt=""></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img_slider.png"><img src="img/img_slider.png" alt=""></a></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img-offer-gallery.jpg"><img src="img/img-offer-gallery.jpg" alt=""></a></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img_slider.png"><img src="img/img_slider.png" alt=""></a></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img_slider.png"><img src="img/img_slider.png" alt=""></a></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img-offer-gallery.jpg"><img src="img/img-offer-gallery.jpg" alt=""></a></li>
+                <li class="splide__slide slider-item"><a data-fslightbox="gallery" href="img/img_slider.png"><img src="img/img_slider.png" alt=""></a></li>
             </ul>
         </div>
+    </div>
+    <div class="main-container">
+        <div class="my-slider-progress">
+            <div class="my-slider-progress-bar"></div>
+          </div>
     </div>
     </section>
     <section id="description" class="description-section">
@@ -411,10 +416,34 @@
             </form>
         </div>
     </section>
-    <!-- <section id="similar-offert" class="similar-off-section">
+    <section id="similar-offert" class="similar-off-section">
         <div class="main-container similar-off-container">
             <h2>Sprawdź podobne oferty</h2>
             <div class="similar-items-container">
+                <div class="similar-offer">
+                    <div class="img-off-item-container">
+                        <img src="img/similar_img.jpg" alt="">
+                    </div>
+                    <div class="content-off-item-container">
+                        <div class="used-car"><p>Używany</p></div>
+                        <div class="top-panel">
+                            <h2>SEAT Leon</h2>
+                            <p>SEAT Leon Style 1.5 TSI 130 KM</p>
+                            <div class="car-param">
+                                <p>2022</p>
+                                <p>7km</p>
+                                <p>150 KM</p>
+                                <p>Benzyna</p>
+                                <p>Automat</p>
+                            </div>
+                        </div>
+                        <div class="border-similar-offer"></div>
+                        <div class="similar-off-price">
+                            <p>Cena brutto</p>
+                            <h3>130 900 zł</h3>
+                        </div>
+                    </div>
+                </div>
                 <div class="similar-offer">
                     <div class="img-off-item-container">
                         <img src="img/similar_img.jpg" alt="">
@@ -439,38 +468,201 @@
                         </div>
                     </div>
                 </div>
+                <div class="similar-offer">
+                    <div class="img-off-item-container">
+                        <img src="img/similar_img.jpg" alt="">
+                    </div>
+                    <div class="content-off-item-container">
+                        <div class="used-car"><p>Używany</p></div>
+                        <div class="top-panel">
+                            <h2>SEAT Leon</h2>
+                            <p>SEAT Leon Style 1.5 TSI 130 KM</p>
+                            <div class="car-param">
+                                <p>2022</p>
+                                <p>7km</p>
+                                <p>150 KM</p>
+                                <p>Benzyna</p>
+                                <p>Automat</p>
+                            </div>
+                        </div>
+                        <div class="border-similar-offer"></div>
+                        <div class="similar-off-price">
+                            <p>Cena brutto</p>
+                            <h3>130 900 zł</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section> -->
+    </section>
+    <section id="location" class="location-section">
+        <div class="maps"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d578.4763248788316!2d18.42156467517741!3d54.55279483741536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda45b57f99d37%3A0xb5f3016f58b98aab!2sMorska%20318%2C%2081-006%20Gdynia!5e0!3m2!1spl!2spl!4v1658399954938!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="main-container">
+            <div class="location-items-container">
+                <div class="location-item">
+                    <div class="item-title">
+                        <h2>SEAT Plichta Gdynia</h2>
+                        <h3>Morska 318, 81-006 Gdynia</h3>
+                    </div>
+                    <div class="opening-hours">
+                        <h4>Godziny otwarcia</h4>
+                        <p>Salon</p>
+                        <div class="hours">
+                            <p>pon-pt:</p>
+                            <p>9:00 - 19:00</p>
+                            <p>sob:</p>
+                            <p>9:00 - 15:00</p>
+                        </div>
+                    </div>
+                    <div class="location-btn">
+                        <a href="">
+                            <svg width="18" height="21" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.99976 7.5C8.17133 7.5 7.49976 8.17157 7.49976 9V9.01C7.49976 9.83843 8.17133 10.51 8.99976 10.51H9.00976C9.83818 10.51 10.5098 9.83843 10.5098 9.01V9C10.5098 8.17157 9.83818 7.5 9.00976 7.5H8.99976Z" fill="#190F14"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14.7069 3.29365C11.5549 0.1417 6.44462 0.1417 3.29267 3.29365C0.140725 6.4456 0.140722 11.5559 3.29267 14.7079L8.99978 20.415L14.7069 14.7079C17.8588 11.5559 17.8588 6.4456 14.7069 3.29365ZM4.70689 4.70786C7.07779 2.33696 10.9218 2.33696 13.2927 4.70786C15.6636 7.07876 15.6636 10.9228 13.2927 13.2937L8.99978 17.5865L4.70689 13.2936C2.33598 10.9227 2.33599 7.07876 4.70689 4.70786Z" fill="#190F14"/>
+                            </svg>
+                            Sprawdź dojazd   
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+<footer> 
+    <div class="main-container">
+        <div class="footer-desktop">
+            <div class="top-footer-panel">
+                <div class="footer-item">
+                    <h2>SEAT Plichta Gdynia</h2>
+                    <p>Morska 318,<br>81-006 Gdynia</p>
+                    <button>
+                        Sprawdź dojazd
+                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.49988 0.5L0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5Z" fill="white"/>
+                        </svg>                
+                    </button>
+                </div>
+                <div class="footer-item">
+                    <h2>SEAT Plichta Gdańsk</h2>
+                    <p>Lubowidzka 40,<br>80-174 Gdańsk</p>
+                    <button>
+                        Sprawdź dojazd
+                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.49988 0.5L0.442383 1.5575L3.87738 5L0.442383 8.4425L1.49988 9.5L5.99988 5L1.49988 0.5Z" fill="white"/>
+                        </svg>                
+                    </button>
+                </div>
+                <div class="footer-item">
+                    <h2>Godziny otwarcia</h2>
+                    <div class="opening-hours-container">
+                        <div class="left">
+                            <h3>Salon</h3>
+                            <p>pon-pt: 9:00 - 19:00</p>
+                            <p>sob: 9:00 - 15:00</p>
+                        </div>
+                        <div class="right">
+                            <h3>Serwis</h3>
+                            <p>pon-pt: 7:00 - 19:00</p>
+                            <p>sob: 7:00 - 15:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <h2>Kontakt</h2>
+                    <h3>Email</h3>
+                    <p>bdc@plichta.com.pl</p>
+                </div>
+            </div>
+            <div class="footer-border"></div>
+            <div class="middle-footer-panel">
+                <img src="img/seat-logo-footer.svg" alt="">
+                <div class="social-icons-footer">
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21 0H3C1.35 0 0 1.35 0 3V21C0 22.65 1.35 24 3 24H12.075V15.375H9.225V11.625H12.075V9.75C12.075 6.825 14.175 4.575 16.95 4.575H19.575V8.775H17.25C16.65 8.775 16.425 9.15 16.425 9.6V11.55H19.575V15.3H16.425V24H21C22.65 24 24 22.65 24 21V3C24 1.35 22.65 0 21 0Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 5.8501C8.62498 5.8501 5.84998 8.6251 5.84998 12.0001C5.84998 15.3751 8.62498 18.1501 12 18.1501C15.375 18.1501 18.15 15.3751 18.15 12.0001C18.15 8.6251 15.375 5.8501 12 5.8501ZM12 15.9751C9.82498 15.9751 8.02497 14.1751 8.02497 12.0001C8.02497 9.8251 9.82498 8.0251 12 8.0251C14.175 8.0251 15.975 9.8251 15.975 12.0001C15.975 14.1751 14.175 15.9751 12 15.9751Z" fill="white"/>
+                            <path d="M18.45 7.04995C19.2 7.04995 19.875 6.44995 19.875 5.62495C19.875 4.79995 19.2 4.19995 18.45 4.19995C17.7 4.19995 17.025 4.87495 17.025 5.62495C17.025 6.37495 17.7 7.04995 18.45 7.04995Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C8.775 0 8.325 0 7.05 0.075C5.775 0.15 4.875 0.3 4.125 0.6C3.3 0.9 2.7 1.35 2.025 1.95C1.35 2.7 0.9 3.375 0.6 4.125C0.3 4.875 0.075 5.775 0.075 7.05C0 8.325 0 8.775 0 12C0 15.225 0 15.675 0.075 16.95C0.15 18.225 0.3 19.125 0.6 19.875C0.9 20.7 1.35 21.3 1.95 21.975C2.625 22.65 3.3 23.025 4.05 23.325C4.8 23.625 5.7 23.85 6.975 23.85C8.325 24 8.775 24 12 24C15.225 24 15.675 24 16.95 23.925C18.225 23.85 19.125 23.7 19.875 23.4C20.7 23.1 21.3 22.65 21.975 22.05C22.65 21.375 23.025 20.7 23.325 19.95C23.625 19.2 23.85 18.3 23.85 17.025C24 15.675 24 15.225 24 12C24 8.775 24 8.325 23.925 7.05C23.85 5.775 23.7 4.875 23.4 4.125C23.1 3.3 22.65 2.7 22.05 2.025C21.375 1.35 20.7 0.975 19.95 0.675C19.2 0.375 18.3 0.15 17.025 0.15C15.675 0 15.225 0 12 0ZM12 2.175C15.225 2.175 15.6 2.175 16.875 2.25C18.075 2.325 18.675 2.475 19.125 2.625C19.65 2.85 20.1 3.075 20.475 3.525C20.85 3.975 21.15 4.35 21.375 4.875C21.525 5.325 21.75 6 21.75 7.125C21.825 8.4 21.825 8.775 21.825 12C21.825 15.225 21.825 15.6 21.75 16.875C21.675 18.075 21.525 18.675 21.3 19.125C21.075 19.65 20.85 20.1 20.4 20.475C19.95 20.85 19.575 21.15 19.05 21.375L18.9603 21.4051C18.5195 21.5536 17.922 21.7549 16.8 21.825C15.525 21.9 15.15 21.9 11.925 21.9C8.7 21.9 8.325 21.9 7.05 21.825C5.85 21.75 5.25 21.6 4.8 21.375C4.275 21.15 3.825 20.925 3.45 20.475C3 20.025 2.775 19.65 2.55 19.125C2.53223 19.0184 2.50603 18.8991 2.4764 18.7642C2.38099 18.3298 2.25 17.7334 2.25 16.875C2.175 15.6 2.175 15.225 2.175 12C2.175 8.77506 2.175 8.4 2.25 7.125C2.25 6 2.475 5.325 2.625 4.95C2.85 4.425 3.075 3.975 3.525 3.6C3.975 3.225 4.35 2.925 4.875 2.7C5.325 2.475 6 2.25 7.125 2.25C8.4 2.175 8.77506 2.175 12 2.175Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4982 3.37365C24 5.24545 24 9.15 24 9.15C24 9.15 24 13.0553 23.4982 14.9263C23.2222 15.9591 22.4093 16.7721 21.3765 17.0485C19.5053 17.55 12 17.55 12 17.55C12 17.55 4.49475 17.55 2.6235 17.0485C1.59075 16.7721 0.77775 15.9591 0.50175 14.9263C0 13.0553 0 9.15 0 9.15C0 9.15 0 5.24545 0.50175 3.37365C0.77775 2.34088 1.59075 1.52793 2.6235 1.25148C4.49475 0.75 12 0.75 12 0.75C12 0.75 19.5053 0.75 21.3765 1.25148C22.4093 1.52793 23.2222 2.34088 23.4982 3.37365ZM9.6 12.75L15.6 9.15L9.6 5.55V12.75Z" fill="white"/>
+                        </svg> 
+                    </a>   
+                </div>
+            </div>
+            <div class="bottom-footer-panel">
+                <p>© 2022 Volkswagen Group Polska Sp. z o.o.</p>
+                <div class="footer-links">
+                    <a href="#">Polityka prywatności</a>
+                    <a href="#">Polityka cookies</a>
+                </div>
+            </div>
+        </div>
+    <div class="footer-mobile">
+        <a href="#">Polityka prywatności</a>
+        <div class="border-footer-mobile"></div>
+        <a href="#">Polityka cookies</a>
+        <div class="border-footer-mobile"></div>
+        <div class="social-icons-footer-mobile flex-row flex-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 0H3C1.35 0 0 1.35 0 3V21C0 22.65 1.35 24 3 24H12.075V15.375H9.225V11.625H12.075V9.75C12.075 6.825 14.175 4.575 16.95 4.575H19.575V8.775H17.25C16.65 8.775 16.425 9.15 16.425 9.6V11.55H19.575V15.3H16.425V24H21C22.65 24 24 22.65 24 21V3C24 1.35 22.65 0 21 0Z" fill="white"/>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 5.8501C8.62498 5.8501 5.84998 8.6251 5.84998 12.0001C5.84998 15.3751 8.62498 18.1501 12 18.1501C15.375 18.1501 18.15 15.3751 18.15 12.0001C18.15 8.6251 15.375 5.8501 12 5.8501ZM12 15.9751C9.82498 15.9751 8.02497 14.1751 8.02497 12.0001C8.02497 9.8251 9.82498 8.0251 12 8.0251C14.175 8.0251 15.975 9.8251 15.975 12.0001C15.975 14.1751 14.175 15.9751 12 15.9751Z" fill="white"/>
+                <path d="M18.45 7.04995C19.2 7.04995 19.875 6.44995 19.875 5.62495C19.875 4.79995 19.2 4.19995 18.45 4.19995C17.7 4.19995 17.025 4.87495 17.025 5.62495C17.025 6.37495 17.7 7.04995 18.45 7.04995Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C8.775 0 8.325 0 7.05 0.075C5.775 0.15 4.875 0.3 4.125 0.6C3.3 0.9 2.7 1.35 2.025 1.95C1.35 2.7 0.9 3.375 0.6 4.125C0.3 4.875 0.075 5.775 0.075 7.05C0 8.325 0 8.775 0 12C0 15.225 0 15.675 0.075 16.95C0.15 18.225 0.3 19.125 0.6 19.875C0.9 20.7 1.35 21.3 1.95 21.975C2.625 22.65 3.3 23.025 4.05 23.325C4.8 23.625 5.7 23.85 6.975 23.85C8.325 24 8.775 24 12 24C15.225 24 15.675 24 16.95 23.925C18.225 23.85 19.125 23.7 19.875 23.4C20.7 23.1 21.3 22.65 21.975 22.05C22.65 21.375 23.025 20.7 23.325 19.95C23.625 19.2 23.85 18.3 23.85 17.025C24 15.675 24 15.225 24 12C24 8.775 24 8.325 23.925 7.05C23.85 5.775 23.7 4.875 23.4 4.125C23.1 3.3 22.65 2.7 22.05 2.025C21.375 1.35 20.7 0.975 19.95 0.675C19.2 0.375 18.3 0.15 17.025 0.15C15.675 0 15.225 0 12 0ZM12 2.175C15.225 2.175 15.6 2.175 16.875 2.25C18.075 2.325 18.675 2.475 19.125 2.625C19.65 2.85 20.1 3.075 20.475 3.525C20.85 3.975 21.15 4.35 21.375 4.875C21.525 5.325 21.75 6 21.75 7.125C21.825 8.4 21.825 8.775 21.825 12C21.825 15.225 21.825 15.6 21.75 16.875C21.675 18.075 21.525 18.675 21.3 19.125C21.075 19.65 20.85 20.1 20.4 20.475C19.95 20.85 19.575 21.15 19.05 21.375L18.9603 21.4051C18.5195 21.5536 17.922 21.7549 16.8 21.825C15.525 21.9 15.15 21.9 11.925 21.9C8.7 21.9 8.325 21.9 7.05 21.825C5.85 21.75 5.25 21.6 4.8 21.375C4.275 21.15 3.825 20.925 3.45 20.475C3 20.025 2.775 19.65 2.55 19.125C2.53223 19.0184 2.50603 18.8991 2.4764 18.7642C2.38099 18.3298 2.25 17.7334 2.25 16.875C2.175 15.6 2.175 15.225 2.175 12C2.175 8.77506 2.175 8.4 2.25 7.125C2.25 6 2.475 5.325 2.625 4.95C2.85 4.425 3.075 3.975 3.525 3.6C3.975 3.225 4.35 2.925 4.875 2.7C5.325 2.475 6 2.25 7.125 2.25C8.4 2.175 8.77506 2.175 12 2.175Z" fill="white"/>
+            </svg>
+            <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M23.4982 3.37365C24 5.24545 24 9.15 24 9.15C24 9.15 24 13.0553 23.4982 14.9263C23.2222 15.9591 22.4093 16.7721 21.3765 17.0485C19.5053 17.55 12 17.55 12 17.55C12 17.55 4.49475 17.55 2.6235 17.0485C1.59075 16.7721 0.77775 15.9591 0.50175 14.9263C0 13.0553 0 9.15 0 9.15C0 9.15 0 5.24545 0.50175 3.37365C0.77775 2.34088 1.59075 1.52793 2.6235 1.25148C4.49475 0.75 12 0.75 12 0.75C12 0.75 19.5053 0.75 21.3765 1.25148C22.4093 1.52793 23.2222 2.34088 23.4982 3.37365ZM9.6 12.75L15.6 9.15L9.6 5.55V12.75Z" fill="white"/>
+            </svg>    
+        </div>
+        <div class="border-footer-mobile"></div>
+        <div class="footer-item-mobile">
+            <img src="img/seat-logo-footer.svg" alt="">
+            <p>© 2022 Volkswagen Group Polska Sp. z o.o.</p>
+        </div>
+    </div>
+</div>
+</footer>
+
+<script src="js/form.js"></script>
+<script src="js/fslightbox.min.js"></script>
 <script>
     var splide = new Splide( '#offer-gallery', {
+        type: 'loop',
         perPage: 4,
         gap: 16,
-        speed: 1500,
+        speed: 1000,
+        perMove: 1,
+        pagination: false,
         breakpoints: {
             1920: {
                 perPage: 3,
             },
-            1450: {
+            1360: {
                 perPage: 2,
             },
 
-            850: {
+            670: {
                 perPage: 1,
-                gap: -50,
-            },
-
-            760: {
-                gap: -20,
-            },
-
-            720: {
-                gap: 16,
+                
             },
         }
     } );
-    splide.mount();
+    var bar = splide.root.querySelector( '.my-slider-progress-bar' );
+  
+  splide.on( 'mounted move', function () {
+    var end = splide.Components.Controller.getEnd() + 1;
+    bar.style.width = String( 100 * ( splide.index + 1 ) / end ) + '%';
+  } );
+  
+  splide.mount();
 </script>
 </body>
 </html>
