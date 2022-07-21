@@ -128,7 +128,8 @@ const formSend = (e) => {
         checkboxAgree = checkBoxValid(formObjects.agreeCheck),
         checkBoxPrivacy = checkBoxValid(formObjects.privacy),
         checkBoxContact = checkBoxContactValid(formObjects.contactCheck),
-        contactSection = document.getElementById('contact-form');
+        contactSection = document.getElementById('contact-form'),
+        contactSectionOffer = document.getElementById('contact-form-offer');
 
 
     if (name && surname && phoneNumber && email && content && checkboxAgree && checkBoxPrivacy && checkBoxContact) {
@@ -154,7 +155,7 @@ const formSend = (e) => {
             });
 
     } else {
-        window.scrollTo(0, contactSection.offsetTop);
+        contactSection ? window.scrollTo(0, contactSection.offsetTop) : window.scrollTo(0, contactSectionOffer.offsetTop);
     }
 };
 
@@ -166,34 +167,34 @@ inputs.forEach((input) => {
         const currentError = currentInput.parentNode.querySelector('.error');
         const errorMismatch = currentInput.parentNode.querySelector('.error-second');
     
-        if(currentInput.name == "name") {
+        if(currentInput.name === "name") {
             inputAlerts(currentInput, currentError, errorMismatch);
-        };
+        }
 
-        if(currentInput.name == "Last-name") {
+        if(currentInput.name === "Last-name") {
             inputAlerts(currentInput, currentError, errorMismatch);
-        };
+        }
 
-        if(currentInput.name == "Phone-number") {
+        if(currentInput.name === "Phone-number") {
             inputAlerts(currentInput, currentError, errorMismatch);
             currentInput.value = currentInput.value.replace(' ', '');
             currentInput.value = currentInput.value.replace(/[^\d, +,' ']/, '');
-        };
+        }
 
-        if(currentInput.name == "Mail") {
+        if(currentInput.name === "Mail") {
             inputAlerts(currentInput, currentError, errorMismatch);
             emailAlert(currentInput, errorMismatch);
-        };
+        }
     });
 
     input.addEventListener('change', (e) => {
         const currentCheckbox = e.target;
 
-        if(currentCheckbox.name == "send_agree") {
+        if(currentCheckbox.name === "send_agree") {
             currentCheckbox.style.borderColor = "";
         }
 
-        if(currentCheckbox.name == "privacy-policy") {
+        if(currentCheckbox.name === "privacy-policy") {
             currentCheckbox.style.borderColor = "";
         }
     });
