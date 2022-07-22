@@ -1,15 +1,28 @@
 const menuBar = document.querySelector('header'),
-    phoneBtnInf = document.querySelectorAll('.phone-button-inf');
+    phoneBtnInf = document.querySelectorAll('.phone-button-inf'),
+    infoBarItems = document.querySelectorAll('.info-bar-item'),
+    infLinks = document.querySelectorAll('.info-bar-item a'),
+    infBorders = document.querySelectorAll('.info-border');
 let phoneChangeInf = 0;
 
 window.addEventListener('scroll', (e) => {
  const currentScroll = window.pageYOffset;
+ const scrollArrowOffer = document.querySelector('.scroll-container');
 
- if(200 < currentScroll) {
-    menuBar.classList.add('header-box-shadow');
- } else if ( currentScroll < 200) {
-    menuBar.classList.remove('header-box-shadow');
- }
+    200 < currentScroll ? menuBar.classList.add('header-box-shadow') : menuBar.classList.remove('header-box-shadow');
+
+    if(800 < currentScroll) {
+        scrollArrowOffer.classList.add('scroll-container--active');
+        infoBarItems.forEach((item, index) => {
+            infLinks[index].classList.remove('link-active');
+            infBorders[index].classList.remove('info-border--active');
+
+            infLinks[0].classList.add('link-active');
+            infBorders[0].classList.add('info-border--active');
+        });
+    } else {
+        scrollArrowOffer.classList.remove('scroll-container--active');
+    }
 });
 
 function changePhoneTextInf(item) {
@@ -21,28 +34,26 @@ function changePhoneTextInf(item) {
 
 phoneBtnInf.forEach((item) => {
     item.addEventListener('click', (e) => {
-
-        const siema = e.currentTarget;
         changePhoneTextInf(item);
-
-        console.log(item);
     });
 });
 
 
-const infoBarItems = document.querySelectorAll('.info-bar-item');
-
 infoBarItems.forEach((item) => {
     item.addEventListener('click', (e) => {
         const currentItem = e.target;
+        const linkInf = currentItem.parentNode.querySelector('.info-bar-item a');
+        const borderInf = currentItem.parentNode.querySelector('.info-border');
+
+        for(let i=0; i<infoBarItems.length; i++) {
+            infLinks[i].classList.remove('link-active');
+            infBorders[i].classList.remove('info-border--active');
+        }
+
+        linkInf.classList.add('link-active');
+        borderInf.classList.add('info-border--active');
     });
 })
-
-
-
-
-
-
 
 
 // slider
